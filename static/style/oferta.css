@@ -1,0 +1,121 @@
+.oferta {
+    padding: 5vh 5vw;
+}
+
+.oferta h2, .oferta h3 {
+    text-align: center;
+}
+
+.oferta h2 {
+    font-size: 3em;
+}
+
+.oferta h3 {
+    font-family: "Roboto Thin", sans-serif;
+    font-weight: 100;
+    margin-top: 20px;
+}
+
+.oferta .ofertaGrid {
+    margin: 40px 0;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(5, 16vw);
+    grid-column-gap: 2vw;
+    grid-template-rows: repeat(2, 16vw);
+    grid-row-gap: 20px;
+}
+
+.oferta .ofertaGrid .ofertaItem {
+    background-color: #f6f6f6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    -webkit-box-shadow: 0 0 4px 0 rgba(0,0,0,0.75);
+    -moz-box-shadow: 0 0 4px 0 rgba(0,0,0,0.75);
+    box-shadow: 0 0 4px 0 rgba(0,0,0,0.75);
+}
+
+.oferta .ofertaItem img {
+    width: 5vw;
+    height: 5vw;
+}
+
+.oferta .ofertaItem h4 {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: calc(12px + 8 * ((100vw - 1000px)/(1000)));
+}
+
+.oferta .ofertaItem button {
+    background-color: #75C3DE;
+    color: white;
+    text-transform: uppercase;
+    height: 40px;
+    width: 50%;
+    border-radius: 4px;
+    font-size: calc(12px + 8 * ((100vw - 1000px)/(1000)));
+    font-weight: 900;
+}
+
+.oferta .ofertaItem button a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+@media(max-width: 900px) {
+    .oferta {
+        padding: 5vh 10vw;
+    }
+
+    .oferta .ofertaGrid {
+        grid-template-columns: repeat(2, 35vw);
+        grid-template-rows: repeat(5, 35vw);
+        grid-column-gap: 5vw;
+        grid-row-gap: 30px;
+    }
+
+    .oferta .ofertaItem img {
+        width: 12vw;
+        height: 12vw;
+    }
+
+    .oferta .ofertaItem h4 {
+        font-size: calc(12px + 8 * ((100vw - 300px)/(600)));
+    }
+
+    .oferta .ofertaItem button {
+        font-size: calc(12px + 8 * ((100vw - 300px)/(600)));
+    }
+}
+
+/* ANIMATION */
+
+.animation {
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+@keyframes shake {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%, 80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%, 60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}
