@@ -1,0 +1,73 @@
+.oNas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #363636;
+}
+
+.oNas h2 {
+    text-align: center;
+    font-size: 3em;
+    font-weight: 100;
+    text-transform: uppercase;
+}
+
+.oNas .oNasInner {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 25vw);
+    grid-column-gap: 40px;
+    grid-template-rows: repeat(8, 60px);
+}
+
+.oNas .oNasInner .gatsby-image-wrapper {
+    grid-row: 1 / span 6;
+    -webkit-box-shadow: 0 0 4px 0 rgba(0,0,0,0.75);
+    -moz-box-shadow: 0 0 4px 0 rgba(0,0,0,0.75);
+    box-shadow: 0 0 4px 0 rgba(0,0,0,0.75);
+}
+
+.oNas .oNasInner p {
+    grid-row: 1 / span 3;
+    grid-column: 2 / span 2;
+    text-align: justify;
+    font-size: calc(12px + 6 * ((100vw - 700px)/(1000)));
+}
+
+.oNasInner > h3 {
+    grid-column: 2 / span 2;
+    grid-row: 3;
+    font-size: calc(1em + 25 * ((100vw - 700px)/(1000)));
+    margin: 20px 0;
+}
+
+.oNasInner .messengerBtn {
+    grid-row: 5 / span 2;
+    height: 80px;
+    width: 90%;
+    grid-column: 2;
+    border-radius: 10px;
+    font-size: calc(12px + 6 * ((100vw - 700px)/(1000)));
+}
+
+.oNasInner .socialMedia {
+    grid-column: 3;
+    display: flex;
+    align-items: center;
+    justify-self: end;
+    font-size: calc(12px + 6 * ((100vw - 700px)/(1000)));
+}
+
+.oNasInner .facebook {
+    grid-row: 5;
+}
+
+.oNasInner .instagram {
+    grid-row: 6;
+}
+
+.oNasInner .socialMedia img {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+}

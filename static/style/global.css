@@ -20,8 +20,34 @@ a {
 button {
     outline: none;
     border: none;
+    cursor: pointer;
 }
 
 .blue {
     color: #75C3DE;
+}
+
+.bold {
+    font-weight: 900;
+}
+
+.checked {
+    width: 70%;
+    height: 70%;
+    background-color: #75C3DE !important;
+    border-radius: 50%;
+}
+
+.checkedPolityka {
+    width: 70%;
+    height: 70%;
+    background-color: #75C3DE !important;
+}
+
+label {
+    cursor: pointer;
+}
+
+.redBorder {
+    border-color: #ff0800 !important;
 }

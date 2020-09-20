@@ -22,12 +22,15 @@ const LandingPage = () => {
     }}`);
 
     const handleScroll = (arg) => {
-      if(typeof window !== 'undefined') {
+      if((typeof window !== 'undefined')&&(typeof document !== 'undefined')) {
           if(arg === "oferta") {
-              window.scrollTo({
-                 top: window.innerHeight,
-                 behavior: "smooth"
-              });
+              document.querySelector(".oferta").scrollIntoView({behavior: "smooth"});
+          }
+          else if(arg === "oNas") {
+              document.querySelector(".oNas").scrollIntoView({behavior: "smooth"});
+          }
+          else if(arg === "kontakt") {
+              document.querySelector(".kontakt").scrollIntoView({behavior: "smooth"});
           }
       }
     };
@@ -40,10 +43,11 @@ const LandingPage = () => {
             <ul>
                 <li>Strona główna</li>
                 <li onClick={() => handleScroll("oferta")}>Oferta</li>
-                <li>O nas</li>
-                <li>Kontakt</li>
+                <li onClick={() => handleScroll("oNas")}>O nas</li>
+                <li onClick={() => handleScroll("kontakt")}>Kontakt</li>
             </ul>
             <div className="phoneNumber">
+                <img src={require("../../static/img/telefon.png")} alt="telefon" />
                 <a href="tel:+48728879491">728 879 491</a>
             </div>
         </menu>
@@ -65,7 +69,7 @@ const LandingPage = () => {
         </div>
 
         <div className="haslo">
-            <h1>Sprzątamy aż miło</h1>
+            <h1>Sprzątamy <span className="blue">aż miło</span></h1>
             <h2>Lorem ipsum dolor sit amet</h2>
         </div>
 
