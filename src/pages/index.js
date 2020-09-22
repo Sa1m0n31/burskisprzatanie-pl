@@ -25,6 +25,13 @@ import Footer from "../components/Footer";
 export default function Home() {
   return (<div className="app">
     <Helmet>
+      <html lang="pl" />
+      <title>Burski sprzątanie</title>
+      <meta charSet="utf-8" />
+      <meta name="description" content="Burski sprzątanie - sprzątanie mieszkań, hoteli i samochodów." />
+      <meta name="theme-color" content="#75C3DE" />
+      <meta name="referrer" content="origin" />
+      <link rel="icon" type="image/png" href={require("../../static/img/logo.png")} sizes="16x16" />
       <script async defer crossOrigin="anonymous" src="https://connect.facebook.net/pl_PL/sdk.js#xfbml=1&version=v8.0"
                                                  nonce="FDmu4cnd"></script>
     </Helmet>

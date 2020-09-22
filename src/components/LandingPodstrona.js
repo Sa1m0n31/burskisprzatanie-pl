@@ -107,7 +107,7 @@ const LandingPodstrona = (props) => {
     };
 
     return (<main className="landingPage podstrona">
-        <img className="logo" src={require("../../static/img/logo.png")} alt="burski-sprzatanie-logo" />
+        <img className="logo" src={require("../../static/img/logo.png")} alt="burski-sprzatanie-logo" onClick={() => { window.location="/"; }} />
         <Img fluid={data.childImageSharp.fluid} alt={props.haslo} />
 
         <menu>

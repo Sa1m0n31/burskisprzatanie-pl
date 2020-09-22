@@ -19,7 +19,7 @@ const DlaczegoMy = () => {
 
             <div className="text text1">
                 <h3>Ubezpieczenie</h3>
-                <p>Nasza firma posiada ubezpieczenie na kwotę <span className="bold">200 000 zł</span></p>
+                <p>Nasza firma posiada ubezpieczenie na kwotę <span className="bold">200&nbsp;000 zł</span></p>
             </div>
             <div className="text text2">
                 <h3>Szybka realizacja</h3>
