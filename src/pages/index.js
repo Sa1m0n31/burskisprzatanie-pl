@@ -10,6 +10,7 @@ import '../../static/style/rekomendacje.css';
 import '../../static/style/kontakt.css';
 import '../../static/style/o-nas.css';
 import '../../static/style/footer.css';
+import "../../static/style/cennik.css";
 
 import LandingPage from "../components/LandingPage";
 import Oferta from "../components/Oferta";
@@ -23,7 +24,7 @@ export default function Home() {
   return (<div className="app">
     <Helmet>
       <script async defer crossOrigin="anonymous" src="https://connect.facebook.net/pl_PL/sdk.js#xfbml=1&version=v8.0"
-              nonce="FDmu4cnd"></script>
+                                                 nonce="FDmu4cnd"></script>
     </Helmet>
     <LandingPage />
     <Oferta />

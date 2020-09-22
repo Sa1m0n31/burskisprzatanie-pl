@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { ReCaptcha, loadReCaptcha } from 'react-recaptcha-v3';
+
 export default class Kontakt extends React.Component {
     constructor(props) {
         super(props);
@@ -24,12 +26,27 @@ export default class Kontakt extends React.Component {
             emailError: false,
             phoneError: false,
             politykaError: false,
-            msg: ""
+            msg: "",
+            status: "",
+            isVerified: false
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleChangeRatio = this.handleChangeRatio.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChangeInput = this.handleChangeInput.bind(this);
+        this.verifyCallback = this.verifyCallback.bind(this);
+    }
+
+    componentDidMount() {
+        loadReCaptcha("6LdZVs8ZAAAAALyZPpx4JXLGSz7bJ8uMgGIH_DTM");
+    }
+
+    verifyCallback(res) {
+        if(res) {
+            this.setState({
+                isVerified: true
+            });
+        }
     }
 
     handleChange(e) {
@@ -158,8 +175,7 @@ export default class Kontakt extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-
-        console.log("HI!");
+        let isValid = true;
 
         /* Email validation */
         const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -167,6 +183,7 @@ export default class Kontakt extends React.Component {
            this.setState({
                emailError: true
            });
+           isValid = false;
         }
         else {
             this.setState({
@@ -179,11 +196,12 @@ export default class Kontakt extends React.Component {
             this.setState({
                 phoneError: true
             });
+            isValid = false;
         }
         else {
             this.setState({
                 phoneError: false
-            })
+            });
         }
 
         /* Any contact validation */
@@ -191,6 +209,7 @@ export default class Kontakt extends React.Component {
             this.setState({
                 emailError: true
             });
+            isValid = false;
         }
         else {
             this.setState({
@@ -203,11 +222,53 @@ export default class Kontakt extends React.Component {
             this.setState({
                 politykaError: true
             });
+            isValid = false;
         }
         else {
             this.setState({
                 politykaError: false
             });
+        }
+
+        if((isValid)&&(this.state.isVerified)) {
+            const form = e.target;
+
+            let uslugi = new Array();
+            if(this.state.sprzatanieMieszkania) uslugi.push("sprzątanie mieszkania");
+            if(this.state.hoteleIApartamenty) uslugi.push("hotele i apartamenty");
+            if(this.state.biura) uslugi.push("biura");
+            if(this.state.pranie) uslugi.push("pranie");
+            if(this.state.wnetrzeAuta) uslugi.push("wnętrze auta");
+            if(this.state.groby) uslugi.push("groby");
+            if(this.state.lokaleUzytkowe) uslugi.push("lokale użytkowe");
+            if(this.state.poRemoncie) uslugi.push("sprzątanie po remoncie");
+            if(this.state.mycieOkien) uslugi.push("mycie okien");
+            if(this.state.mycieCisnieniowe) uslugi.push("mycie ciśnieniowe");
+
+            const data = {
+                telefon: this.state.phoneNumber,
+                email: this.state.email,
+                wiadomosc: this.state.msg,
+                uslugi: uslugi,
+                firma: this.state.firma,
+                osobaPrywatna: this.state.osobaPrywatna,
+                cyklicznie: this.state.cyklicznie,
+                jednorazowo: this.state.jednorazowo
+            };
+
+            const xhr = new XMLHttpRequest();
+            xhr.open(form.method, form.action);
+            xhr.setRequestHeader("Accept", "application/json");
+            xhr.onreadystatechange = () => {
+                if (xhr.readyState !== XMLHttpRequest.DONE) return;
+                if (xhr.status === 200) {
+                    form.reset();
+                    this.setState({ status: "SUCCESS" });
+                } else {
+                    this.setState({ status: "ERROR" });
+                }
+            };
+            xhr.send(JSON.stringify(data));
         }
     }
 
@@ -216,7 +277,7 @@ export default class Kontakt extends React.Component {
         return (<section className="kontakt">
             <h2>Kontakt</h2>
             <h3>Zaznacz w formularzu czego potrzebujesz,<br/>a my odezwiemy się do Ciebie</h3>
-            <form action="#" method="POST" onSubmit={e => this.handleSubmit(e)}>
+            <form action="https://formspree.io/moqpqlgw" method="POST" onSubmit={e => this.handleSubmit(e)}>
                 <div className="row row1">
                     <label id="sprzatanieMieszkania" onClick={e => this.handleChange(e)}>
                         <button id="sprzatanieMieszkania" name="sprzatanie-mieszkania">
@@ -325,6 +386,13 @@ export default class Kontakt extends React.Component {
                         Zapoznałem się i akceptuję politykę prywatności
                     </label>
                 </div>
+
+                <ReCaptcha
+                    sitekey="6LdZVs8ZAAAAALyZPpx4JXLGSz7bJ8uMgGIH_DTM"
+                    render="implicit"
+                    verifyCallback={this.verifyCallback}
+                />
+
                 <button type="submit">Wyślij</button>
             </form>
         </section>);
