@@ -191,7 +191,110 @@
         width: 350px;
     }
 
+    .landingPage .logo {
+        width: 118px;
+        height: 100px;
+        left: 30px;
+        top: 30px;
+    }
+
     .landingPage button img {
         margin-right: 10px;
     }
+
+    .landingPage menu ul {
+        display: none;
+    }
+
+    .landingPage menu .phoneNumber {
+        transform: translateX(-50px);
+    }
+
+    .landingPage menu .phoneNumber a {
+        font-size: 1em !important;
+    }
+}
+
+@media(max-width: 700px) {
+    .landingPage .buttonDiv, .landingPage menu .phoneNumber {
+        display: none;
+    }
+
+    .landingPage .logo {
+        width: 95px;
+        height: 80px;
+        left: 20px;
+        top: 20px;
+    }
+
+    .landingPage .bm-burger-button {
+        position: absolute !important;
+        left: 80vw !important;
+    }
+
+    .bm-menu {
+        padding: 0 !important;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .bm-morph-shape {
+        display: flex;
+        justify-content: center !important;
+    }
+
+    .bm-menu-wrap {
+        opacity: .75;
+        top: 0 !important;
+        width: 100% !important;
+    }
+
+    .bm-item-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 90%;
+    }
+
+    .bm-item-list a {
+        display: block;
+        text-align: center;
+    }
+
+    .landingPage .haslo {
+        bottom: 50px;
+        left: 20px;
+    }
+
+    .landingPage .leftBtns {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        right: -90px;
+        top: 150px;
+    }
+
+    .landingPage .leftBtns button {
+        width: 150px;
+        height: 50px;
+        margin: 10px 0;
+        padding-left: 10px;
+        border-radius: 50px;
+    }
+
+    .landingPage .leftBtns button a {
+        padding: 0 !important;
+        height: 50px;
+    }
+
+    .landingPage .leftBtns button a img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .landingPage .haslo h2 {
+        font-size: 15px;
+    }
+
 }

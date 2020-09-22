@@ -4,13 +4,13 @@ const DlaczegoMy = () => {
     return (<section className="dlaczegoMy">
         <h2>Dlaczego <span className="blue">my</span>?</h2>
         <div className="dlaczegoMyInner">
-            <div className="number number1">1</div>
-            <img className="border border1" src={require("../../static/img/border.png")} alt="border" />
-            <div className="number number2">2</div>
-            <img className="border border2" src={require("../../static/img/border.png")} alt="border" />
-            <div className="number number3">3</div>
-            <img className="border border3" src={require("../../static/img/border.png")} alt="border" />
-            <div className="number number4">4</div>
+            <div className="number number1 desktopOnly">1</div>
+            <img className="border border1 desktopOnly" src={require("../../static/img/border.png")} alt="border" />
+            <div className="number number2 desktopOnly">2</div>
+            <img className="border border2 desktopOnly" src={require("../../static/img/border.png")} alt="border" />
+            <div className="number number3 desktopOnly">3</div>
+            <img className="border border3 desktopOnly" src={require("../../static/img/border.png")} alt="border" />
+            <div className="number number4 desktopOnly">4</div>
 
             <img className="photo photo1" src={require("../../static/img/ubezpieczenie.png")} alt="ubezpieczenie" />
             <img className="photo photo2" src={require("../../static/img/czas.png")} alt="czas" />

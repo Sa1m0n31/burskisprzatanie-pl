@@ -126,3 +126,9 @@
     margin: 0 10px;
     padding: 3px;
 }
+
+.kontakt form .recaptchaText {
+    margin-left: 10vw;
+    font-size: 12px;
+    color: #d5d5d5;
+}

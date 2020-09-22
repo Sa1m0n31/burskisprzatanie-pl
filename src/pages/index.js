@@ -11,11 +11,13 @@ import '../../static/style/kontakt.css';
 import '../../static/style/o-nas.css';
 import '../../static/style/footer.css';
 import "../../static/style/cennik.css";
+import "../../static/style/realizacje.css";
 
 import LandingPage from "../components/LandingPage";
 import Oferta from "../components/Oferta";
 import DlaczegoMy from "../components/DlaczegoMy";
 import Rekomendacje from "../components/Rekomendacje";
+import Realizacje from "../components/Realizacje";
 import Kontakt from "../components/Kontakt";
 import ONas from "../components/ONas";
 import Footer from "../components/Footer";
@@ -30,6 +32,7 @@ export default function Home() {
     <Oferta />
     <DlaczegoMy />
     <Rekomendacje />
+    <Realizacje />
     <Kontakt />
     <ONas />
     <Footer />

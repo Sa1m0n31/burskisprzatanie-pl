@@ -347,7 +347,7 @@ export default class Kontakt extends React.Component {
                     <p>lub</p>
                     <input className={this.state.phoneError ? "redBorder" : ""} type="text" name="phoneNumber" placeholder="Numer telefonu" value={this.state.phoneNumber} onChange={e => this.handleChangeInput(e)}/>
                 </div>
-                <textarea name="msg" placeholder="Dodatkowe uwagi" />
+                <textarea name="msg" placeholder="Dodatkowe uwagi" value={this.state.msg} onChange={e => this.handleChangeInput(e)} />
                 <div className="usluga">
                     <h4>Zlecam usługę jako:</h4>
                     <label id="firma" onClick={e => this.handleChangeRatio(e)}>
@@ -387,11 +387,14 @@ export default class Kontakt extends React.Component {
                     </label>
                 </div>
 
-                <ReCaptcha
-                    sitekey="6LdZVs8ZAAAAALyZPpx4JXLGSz7bJ8uMgGIH_DTM"
-                    render="implicit"
-                    verifyCallback={this.verifyCallback}
-                />
+                <div className="recaptcha">
+                    <ReCaptcha
+                        sitekey="6LdZVs8ZAAAAALyZPpx4JXLGSz7bJ8uMgGIH_DTM"
+                        render="implicit"
+                        verifyCallback={this.verifyCallback}
+                    />
+                </div>
+                <p className="recaptchaText">This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.</p>
 
                 <button type="submit">Wyślij</button>
             </form>

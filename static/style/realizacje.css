@@ -1,0 +1,34 @@
+.realizacje {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.realizacje h2 {
+    font-size: 2.5em;
+    color: #363636;
+    font-weight: 100;
+}
+
+.realizacje .image {
+    margin: 50px 0;
+    display: flex;
+    align-items: center;
+}
+
+.realizacje .image > img {
+    height: 50px;
+    width: 50px;
+    margin: 0 30px;
+    cursor: pointer;
+}
+
+.realizacje .image .gatsby-image-wrapper {
+    width: 70vw;
+    height: 500px;
+    border: 3px solid #363636;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 0 9px 0 rgba(0,0,0,0.75);
+    -moz-box-shadow: 0 0 9px 0 rgba(0,0,0,0.75);
+    box-shadow: 0 0 9px 0 rgba(0,0,0,0.75);
+}

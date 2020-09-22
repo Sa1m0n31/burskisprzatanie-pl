@@ -8,13 +8,14 @@
 }
 
 .oferta h2 {
-    font-size: 3em;
+    font-size: calc(20px + 32 * ((100vw - 300px)/(1000)));
 }
 
 .oferta h3 {
     font-family: "Roboto Thin", sans-serif;
     font-weight: 100;
     margin-top: 20px;
+    font-size: calc(13px + 8 * ((100vw - 300px)/(1000)));
 }
 
 .oferta .ofertaGrid {
@@ -118,5 +119,24 @@
 
     40%, 60% {
         transform: translate3d(4px, 0, 0);
+    }
+}
+
+@media(max-width: 500px) {
+    .oferta .ofertaItem {
+        padding: 4px;
+    }
+
+    .oferta .ofertaItem img {
+        width: 40px !important;
+        height: 40px !important;
+    }
+
+    .oferta .ofertaItem h4 {
+        font-size: 12px;
+    }
+
+    .oferta .ofertaItem button {
+        height: 20px;
     }
 }

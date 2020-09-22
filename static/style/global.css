@@ -51,3 +51,21 @@ label {
 .redBorder {
     border-color: #ff0800 !important;
 }
+
+.grecaptcha-badge {
+    visibility: hidden !important;
+}
+
+.mobileOnly {
+    display: none;
+}
+
+@media(max-width: 700px) {
+    .mobileOnly {
+        display: block;
+    }
+
+    .desktopOnly {
+        display: none !important;
+    }
+}

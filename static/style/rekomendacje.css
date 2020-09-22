@@ -11,17 +11,60 @@
     color: #363636;
 }
 
-.rekomendacje .rekomendacjeInner {
-    margin-top: 70px;
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+.rekomendacje .rekomendacjeWindow {
+    width: 70%;
+    height: 400px;
+    overflow-y: scroll;
+    background-color: #f2f2f2;
+    margin: 40px 0;
+    display: grid;
+    grid-template-columns: 45% 45%;
+    grid-auto-rows: 300px;
+    grid-column-gap: 5%;
+    grid-row-gap: 40px;
+    justify-items: center;
+    padding: 50px 0;
+    border-radius: 10px;
+    border: 3px solid #d5d5d5;
+    -webkit-box-shadow: 0 0 10px 0 rgba(0,0,0,0.75);
+    -moz-box-shadow: 0 0 10px 0 rgba(0,0,0,0.75);
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.75);
 }
 
-.rekomendacje .rekomendacjeInner > div {
-    margin: 20px !important;
-    -webkit-box-shadow: 0 0 7px 0 rgba(0,0,0,0.75);
-    -moz-box-shadow: 0 0 7px 0 rgba(0,0,0,0.75);
-    box-shadow: 0 0 7px 0 rgba(0,0,0,0.75);
+.rekomendacje .rekomendacjeWindow img {
+    width: 100%;
 }
 
+.rekomendacje .rekomendacjeWindow::-webkit-scrollbar {
+    width: 20px;
+}
+
+.rekomendacje .rekomendacjeWindow::-webkit-scrollbar-track {
+    background-color: #363636;
+    border-top-right-radius: 10px;
+}
+
+.rekomendacje .rekomendacjeWindow::-webkit-scrollbar-thumb {
+    background-color: #75C3DE;
+    height: 50px;
+}
+
+@media(max-width: 1200px) {
+    .rekomendacje .rekomendacjeWindow {
+        width: 90%;
+    }
+}
+
+@media(max-width: 1000px) {
+    .rekomendacje .rekomendacjeWindow {
+        grid-template-columns: 100%;
+    }
+
+    .rekomendacje .rekomendacjeWindow {
+        width: 95%;
+    }
+
+    .fb-post {
+        width: 100px !important;
+    }
+}

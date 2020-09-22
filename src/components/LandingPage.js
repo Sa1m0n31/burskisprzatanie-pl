@@ -3,7 +3,55 @@ import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import Img from 'gatsby-image';
 
+import { bubble as HamburgerMenu } from 'react-burger-menu';
+import { Link } from 'react-scroll';
+
 const LandingPage = () => {
+    let styles = {
+        bmBurgerButton: {
+            position: 'fixed',
+            width: '36px',
+            height: '30px',
+            left: '36px',
+            top: '36px'
+        },
+        bmBurgerBars: {
+            background: '#373a47'
+        },
+        bmBurgerBarsHover: {
+            background: '#a90000'
+        },
+        bmCrossButton: {
+            height: '24px',
+            width: '24px'
+        },
+        bmCross: {
+            background: '#bdc3c7'
+        },
+        bmMenuWrap: {
+            position: 'fixed',
+            height: '100%'
+        },
+        bmMenu: {
+            background: '#373a47',
+            padding: '2.5em 1.5em 0',
+            fontSize: '1.15em'
+        },
+        bmMorphShape: {
+            fill: '#373a47'
+        },
+        bmItemList: {
+            color: '#b8b7ad',
+            padding: '0.8em'
+        },
+        bmItem: {
+            display: 'inline-block'
+        },
+        bmOverlay: {
+            background: 'rgba(0, 0, 0, 0.3)'
+        }
+    };
+
     const data = useStaticQuery(graphql`
         query SliderQuery {
     landingPage: file(relativePath: { eq: "landingPage.png" }) {
@@ -37,7 +85,7 @@ const LandingPage = () => {
 
     return (<main className="landingPage">
         <img className="logo" src={require("../../static/img/logo.png")} alt="burski-sprzatanie-logo" />
-        <Img imgStyle={{objectPosition: '90% 10%' }} fluid={data.landingPage.childImageSharp.fluid} alt="burski-sprzatanie" />
+        <Img imgStyle={{objectPosition: '40% 0%' }} fluid={data.landingPage.childImageSharp.fluid} alt="burski-sprzatanie" />
 
         <menu>
             <ul>
@@ -71,6 +119,43 @@ const LandingPage = () => {
         <div className="haslo">
             <h1>Sprzątamy <span className="blue">aż miło</span></h1>
             <h2>Lorem ipsum dolor sit amet</h2>
+        </div>
+
+        <div className="mobileOnly hamburgerMenu">
+            <HamburgerMenu styles={styles} onStateChange={() => { console.log("State change"); }}>
+                <Link
+                    activeClass="active"
+                    to="oferta"
+                    smooth={true}
+                    duration={500}
+                >OFERTA</Link>
+                <Link
+                    activeClass="active"
+                    to="kontakt"
+                    smooth={true}
+                    duration={500}
+                >KONTAKT</Link>
+                <Link
+                    activeClass="active"
+                    to="realizacje"
+                    smooth={true}
+                    duration={500}
+                >NASZE REALIZACJE</Link>
+            </HamburgerMenu>
+        </div>
+
+        <div className="mobileOnly leftBtns">
+            <button className="messengerBtn">
+                <a href="https://m.me/burskisprzatanie" target="_blank">
+                    <img src={require("../../static/img/messenger.png")} alt="messenger" />
+                </a>
+            </button>
+
+            <button className="phoneBtn">
+                <a href="tel:+48728879491">
+                    <img src={require("../../static/img/whatsapp.png")} alt="telefon" />
+                </a>
+            </button>
         </div>
 
     </main>)
