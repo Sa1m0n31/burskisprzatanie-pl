@@ -75,7 +75,7 @@
     }
 
     .swiper-wrapper {
-        height: 100px !important;
+        height: 300px !important;
         width: 100vw !important;
     }
 
@@ -85,11 +85,24 @@
         justify-content: center;
     }
 
+    .rekomendacje .swiper-slide {
+        width: 300px !important;
+    }
+
     .swiper-scrollbar, .swiper-pagination {
         height: 50px !important;
     }
 
     .rekomendacje .swiper-scrollbar {
         margin-bottom: -50px !important;
+    }
+
+    .rekomendacje .gatsby-image-wrapper {
+        width: 90vw !important;
+    }
+
+    .rekomendacje .firstImg {
+        width: 300px;
+        height: 166px;
     }
 }

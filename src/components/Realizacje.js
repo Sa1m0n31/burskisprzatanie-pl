@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import Img from 'gatsby-image';
 
-import SwiperCore, {Pagination, Scrollbar} from 'swiper';
+import SwiperCore, {Pagination} from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper.scss';
 import 'swiper/components/navigation/navigation.scss';

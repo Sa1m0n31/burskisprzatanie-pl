@@ -36,18 +36,28 @@
 .realizacje .mobileOnly .gatsby-image-wrapper {
     width: 90vw;
     height: 300px;
+    -webkit-box-shadow: 0 0 9px 0 rgba(0,0,0,0.75);
+    -moz-box-shadow: 0 0 9px 0 rgba(0,0,0,0.75);
+    box-shadow: 0 0 9px 0 rgba(0,0,0,0.75);
 }
 
 .swiper-container {
     margin: 30px 0;
     height: 300px !important;
+    position: relative;
 }
 
 .swiper-scrollbar {
     background-color: #75C3DE;
 }
 
-.realizacje .swiper-button-prev, .realizacje .swiper-button-next {
-    bottom: 0 !important;
-    top: -100% !important;
+.swiper-pagination {
+    position: absolute;
+    bottom: -60px !important;
+}
+
+@media(max-width: 700px) {
+    .realizacje {
+        margin-top: -50px !important;
+    }
 }
