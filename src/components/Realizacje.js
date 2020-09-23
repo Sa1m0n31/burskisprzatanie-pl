@@ -3,7 +3,15 @@ import React, { useState } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import Img from 'gatsby-image';
 
+import SwiperCore, {Pagination, Scrollbar} from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/swiper.scss';
+import 'swiper/components/navigation/navigation.scss';
+import 'swiper/components/pagination/pagination.scss';
+import 'swiper/components/scrollbar/scrollbar.scss';
+
 const Realizacje = () => {
+    SwiperCore.use([Pagination]);
 
     const data = useStaticQuery(graphql`
         query RealizacjeQuery {
@@ -60,10 +68,26 @@ const Realizacje = () => {
     return (<section className="realizacje">
         <h2>Nasze realizacje</h2>
         <div className="realizacjeInner">
-            <div className="image">
+            <div className="image desktopOnly">
                 <img src={require("../../static/img/left.png")} alt="lewo" onClick={() => moveSlider(false)} />
                 <Img fluid={kolejka[image].childImageSharp.fluid} alt="Realizacje1" />
                 <img src={require("../../static/img/right.png")} alt="prawo" onClick={() => moveSlider(true)} />
+            </div>
+            <div className="mobileOnly">
+                <Swiper
+                    loop={true}
+                    pagination={{ clickable: true }}
+                >
+                    <SwiperSlide>
+                        <Img fluid={kolejka[0].childImageSharp.fluid} alt="Realizacje1" />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <Img fluid={kolejka[1].childImageSharp.fluid} alt="Realizacje2" />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <Img fluid={kolejka[2].childImageSharp.fluid} alt="Realizacje3" />
+                    </SwiperSlide>
+                </Swiper>
             </div>
         </div>
     </section>);

@@ -1,12 +1,15 @@
 import React from "react";
 
 // Import Swiper React components
+import SwiperCore, { Scrollbar } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
 import 'swiper/swiper.scss';
 
 const Rekomendacje = () => {
+    SwiperCore.use([Scrollbar]);
+
     return (<section className="rekomendacje">
         <h2>Rekomendacje</h2>
         <div className="rekomendacjeWindow desktopOnly">
@@ -29,7 +32,7 @@ const Rekomendacje = () => {
                         2020</a></blockquote>
             </div>
             <div className="fb-post" data-href="https://www.facebook.com/daniela.chojnacka.568/posts/168301751426942"
-                 data-show-text="true" data-width={350}>
+                 data-show-text="true" data-width="auto">
                 <blockquote cite="https://www.facebook.com/daniela.chojnacka.568/posts/168301751426942"
                             className="fb-xfbml-parse-ignore"><p>Wykonanie usługi - perfekcyjnie, czas pracy -
                     rewelacja, ceny - bardzo dobre, odwzorowują nakład pracy i zaangażowania....</p>Opublikowany
@@ -50,11 +53,10 @@ const Rekomendacje = () => {
                 onSlideChange={() => console.log('slide change')}
                 onSwiper={(swiper) => console.log(swiper)}
                 scrollbar={{ draggable: true }}
-                pagination={{ clickable: true }}
             >
                 <SwiperSlide>
                     <div className="fb-post" data-href="https://www.facebook.com/daniela.chojnacka.568/posts/168301751426942"
-                         data-show-text="true" data-width={350}>
+                         data-show-text="true" data-width={350} >
                         <blockquote cite="https://www.facebook.com/daniela.chojnacka.568/posts/168301751426942"
                                     className="fb-xfbml-parse-ignore"><p>Wykonanie usługi - perfekcyjnie, czas pracy -
                             rewelacja, ceny - bardzo dobre, odwzorowują nakład pracy i zaangażowania....</p>Opublikowany

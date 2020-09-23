@@ -32,3 +32,22 @@
     -moz-box-shadow: 0 0 9px 0 rgba(0,0,0,0.75);
     box-shadow: 0 0 9px 0 rgba(0,0,0,0.75);
 }
+
+.realizacje .mobileOnly .gatsby-image-wrapper {
+    width: 90vw;
+    height: 300px;
+}
+
+.swiper-container {
+    margin: 30px 0;
+    height: 300px !important;
+}
+
+.swiper-scrollbar {
+    background-color: #75C3DE;
+}
+
+.realizacje .swiper-button-prev, .realizacje .swiper-button-next {
+    bottom: 0 !important;
+    top: -100% !important;
+}

@@ -246,20 +246,32 @@
         margin: 12px 0;
     }
 
+    .uslugiMenu::-webkit-scrollbar {
+        display: none !important;
+    }
+
+    .uslugiMenu .ReactModal__Content::-webkit-scrollbar {
+        display: none !important;
+    }
+
     .uslugiMenu .ReactModal__Content {
-        width: 70vw;
+        width: 80vw;
         padding: 0 !important;
+        height: 80vh !important;
     }
 
     .uslugiMenu label {
         border-bottom: 1px solid #d5d5d5;
         width: 98% !important;
+        height: 60px !important;
+        font-size: 15px;
     }
 
     .uslugiMenu label button {
         width: 15px;
         height: 15px;
         border-width: 1px;
+        margin: 0 15px 0 10px;
     }
 
     .usluga {

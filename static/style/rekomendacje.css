@@ -64,12 +64,14 @@
         width: 95%;
     }
 
-    .fb-post {
-        width: 100px !important;
-    }
-
     .swiper {
         margin: 50px 0;
+        height: 400px !important;
+    }
+
+    .swiper-container {
+        height: 100% !important;
+        overflow: revert !important;
     }
 
     .swiper-wrapper {
@@ -81,5 +83,13 @@
         width: 100vw !important;
         display: flex;
         justify-content: center;
+    }
+
+    .swiper-scrollbar, .swiper-pagination {
+        height: 50px !important;
+    }
+
+    .rekomendacje .swiper-scrollbar {
+        margin-bottom: -50px !important;
     }
 }
