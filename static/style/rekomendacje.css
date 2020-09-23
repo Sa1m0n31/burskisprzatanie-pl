@@ -6,7 +6,7 @@
 }
 
 .rekomendacje h2 {
-    font-size: 3em;
+    font-size: calc(30px + 25 * ((100vw - 300px)/(1000)));
     font-weight: 100;
     color: #363636;
 }
@@ -66,5 +66,20 @@
 
     .fb-post {
         width: 100px !important;
+    }
+
+    .swiper {
+        margin: 50px 0;
+    }
+
+    .swiper-wrapper {
+        height: 100px !important;
+        width: 100vw !important;
+    }
+
+    .swiper-slide {
+        width: 100vw !important;
+        display: flex;
+        justify-content: center;
     }
 }

@@ -7,7 +7,7 @@
 
 .oNas h2 {
     text-align: center;
-    font-size: 3em;
+    font-size: calc(30px + 25 * ((100vw - 300px)/(1000)));
     font-weight: 100;
     text-transform: uppercase;
 }
@@ -66,8 +66,98 @@
     grid-row: 6;
 }
 
-.oNasInner .socialMedia img {
+.oNasInner .socialMedia .sm {
     width: 50px;
     height: 50px;
     margin: 10px;
+}
+
+.oNasInner .fixly {
+    grid-row: 7;
+    grid-column: 2 !important;
+    padding: 10px 0 !important;
+    justify-self: start;
+    margin-left: calc((25vw * 0.9)/2) !important;
+    transform: translateX(-50%);
+}
+
+@media(max-width: 900px) {
+    .oNasInner {
+        grid-template-columns: 40vw 20vw 20vw !important;
+    }
+
+    .oNasInner .messengerBtn {
+        grid-column: 1;
+        grid-row: 7;
+        margin: 30px 0 !important;
+        justify-self: center !important;
+    }
+
+    .oNasInner .facebook {
+        grid-column: 2 / span 2 !important;
+        grid-row: 5 !important;
+    }
+
+    .oNasInner .instagram {
+        grid-column: 2 / span 2 !important;
+        grid-row: 6 !important;
+    }
+}
+
+@media(max-width: 700px) {
+    .oNas .oNasInner {
+        grid-template-columns: 90% !important;
+        grid-template-rows: 300px repeat(10, 50px) !important;
+        justify-content: center;
+        grid-row-gap: 5px;
+    }
+
+    .oNas .oNasInner > * {
+        grid-column: 1 !important;
+    }
+
+    .oNas .oNasInner > .gatsby-image-wrapper {
+        grid-row: 1 !important;
+    }
+
+    .oNas .oNasInner p {
+        grid-row: 2 / span 4;
+        margin-top: 30px !important;
+        font-size: 12px !important;
+    }
+
+    .oNas .oNasInner h3 {
+        grid-row: 6 !important;
+        font-size: 16px !important;
+        text-align: center;
+    }
+
+    .oNas .oNasInner .messengerBtn {
+        grid-row: 7 / span 2 !important;
+    }
+
+    .oNas .oNasInner .messengerBtn a {
+        padding-left: 10px;
+    }
+
+    .oNasInner .socialMedia {
+        width: 100% !important;
+        justify-content: center;
+    }
+
+    .oNasInner .facebook {
+        grid-row: 10 !important;
+    }
+
+    .oNasInner .instagram {
+        grid-row: 11 !important;
+    }
+
+    .oNasInner .fixly {
+        grid-row: 12 !important;
+        transform: none !important;
+        justify-self: auto !important;
+        margin-left: 0 !important;
+        margin-bottom: 30px !important;
+    }
 }

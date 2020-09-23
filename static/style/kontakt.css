@@ -8,14 +8,14 @@
 
 .kontakt h2 {
     text-align: center;
-    font-size: 3em;
+    font-size: calc(30px + 25 * ((100vw - 300px)/(1000)));
     font-weight: 100;
     text-transform: uppercase;
 }
 
 .kontakt h3 {
     font-weight: 100;
-    font-size: 1em;
+    font-size: calc(13px + 25 * ((100vw - 300px)/(1000)));
     text-align: center;
     margin-top: 10px;
 }
@@ -33,7 +33,7 @@
     align-self: center;
 }
 
-.kontakt form label {
+.kontakt form label, .uslugiMenu label {
     display: flex;
     margin: 10px 1vw;
     height: 25px;
@@ -41,9 +41,12 @@
     font-weight: 900;
     align-items: center;
     font-size: calc(12px + 8 * ((100vw - 700px)/(1000)));
+    position: relative;
+    z-index: 10;
+    background-color: transparent;
 }
 
-.kontakt form label button {
+.kontakt form label button, .uslugiMenu label button {
     width: 25px;
     height: 25px;
     border-radius: 50%;
@@ -131,4 +134,164 @@
     margin-left: 10vw;
     font-size: 12px;
     color: #d5d5d5;
+}
+
+/* Modal */
+
+.formSend, .uslugiMenu {
+    position: relative;
+    z-index: 10000 !important;
+}
+
+.ReactModal__Overlay {
+    background-color: rgba(0, 0, 0, .5) !important;
+    display: flex;
+    justify-content: center;
+}
+
+.ReactModal__Content {
+    position: relative !important;
+    z-index: 10000 !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+}
+
+.formSend .ReactModal__Content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    z-index: 10000 !important;
+    width: 40vw;
+    height: 500px;
+}
+
+.formSend .modalExit {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.formSend .modalInner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.formSend .modalInner h2, .formSend .modalInner h3 {
+    text-align: center;
+}
+
+.formSend .modalInner h3 {
+    font-weight: 100;
+    font-size: 15px;
+    margin: 30px 0;
+}
+
+.formSend .modalInner img {
+    margin: 20px 0;
+}
+
+.uslugiMenu {
+
+}
+
+@media(max-width: 700px) {
+    .formSend .ReactModal__Content {
+        height: 300px;
+        width: 85vw;
+    }
+
+    .formSend .ReactModal__Content .okejka {
+        width: 150px;
+        height: 120px;
+    }
+
+    .uslugiBtn {
+        position: relative;
+        width: 70vw;
+        height: 60px;
+        border-radius: 10px;
+        background-color: #f2f2f2;
+        overflow: hidden;
+        display: flex;
+        align-self: center;
+        justify-content: center;
+        border: 2px solid #d5d5d5;
+        padding: 0 15%;
+    }
+
+    .uslugiBtn h3 {
+        font-weight: 900;
+    }
+
+    .blueArea {
+        position: absolute;
+        bottom: -15px;
+        right: -15px;
+        background-color: #75C3DE;
+        width: 30px;
+        height: 30px;
+        transform: rotate(45deg);
+    }
+
+    .inputy {
+        flex-direction: column;
+    }
+
+    .inputy > * {
+        margin: 12px 0;
+    }
+
+    .uslugiMenu .ReactModal__Content {
+        width: 70vw;
+        padding: 0 !important;
+    }
+
+    .uslugiMenu label {
+        border-bottom: 1px solid #d5d5d5;
+        width: 98% !important;
+    }
+
+    .uslugiMenu label button {
+        width: 15px;
+        height: 15px;
+        border-width: 1px;
+    }
+
+    .usluga {
+        flex-wrap: wrap;
+    }
+
+    .usluga h4 {
+        width: 100%;
+    }
+
+    .usluga label {
+        font-size: 12px !important;
+    }
+
+    .usluga label button {
+        width: 15px !important;
+        height: 15px !important;
+        border-width: 1px !important;
+    }
+
+    .kontakt button[type="submit"] {
+        width: 200px !important;
+    }
+}
+
+@media(max-height: 600px) {
+    .formSend .ReactModal__Content {
+        height: 80vh;
+    }
+
+    .formSend .ReactModal__Content .okejka {
+        width: 100px;
+        height: 80px;
+    }
 }

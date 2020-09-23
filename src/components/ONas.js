@@ -29,12 +29,18 @@ const ONas = () => {
             <div className="socialMedia facebook">
                 <h4>Znajdziesz nas na facebooku</h4>
                 <a href="https://www.facebook.com/burskisprzatanie" target="_blank">
-                    <img src={require("../../static/img/facebook.png")} alt="facebook"/>
+                    <img className="sm" src={require("../../static/img/facebook.png")} alt="facebook"/>
                 </a>
             </div>
             <div className="socialMedia instagram">
                 <h4>Obserwuj nas na instagramie</h4>
-                <img src={require("../../static/img/instagram.png")} alt="instagram" />
+                <img className="sm" src={require("../../static/img/instagram.png")} alt="instagram" />
+            </div>
+            <div className="socialMedia fixly">
+                <a href="https://fixly.pl/profil/mAYK1kwm" target="_blank">
+                    <img alt="Polecają mnie na Fixly"
+                         src="https://fixly.pl/profil/mAYK1kwm/widget-a01.png" />
+                </a>
             </div>
         </div>
     </section>);

@@ -1,11 +1,12 @@
 .landingPage {
     height: 100vh;
-    min-height: 400px;
+    min-height: 500px !important;
     position: relative;
 }
 
 .landingPage .gatsby-image-wrapper {
     height: 100vh;
+    min-height: 500px !important;
 }
 
 .landingPage .logo {

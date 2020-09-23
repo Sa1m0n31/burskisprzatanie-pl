@@ -2,6 +2,8 @@ import React from 'react';
 
 import { ReCaptcha, loadReCaptcha } from 'react-recaptcha-v3';
 
+import Modal from 'react-modal';
+
 export default class Kontakt extends React.Component {
     constructor(props) {
         super(props);
@@ -28,7 +30,9 @@ export default class Kontakt extends React.Component {
             politykaError: false,
             msg: "",
             status: "",
-            isVerified: false
+            isVerified: false,
+            send: false,
+            uslugiOpen: false
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleChangeRatio = this.handleChangeRatio.bind(this);
@@ -52,6 +56,7 @@ export default class Kontakt extends React.Component {
     handleChange(e) {
         e.preventDefault();
         let name = e.target.id;
+        console.log(name);
         switch(name) {
             case "sprzatanieMieszkania":
                 this.setState(prevState => {
@@ -230,6 +235,13 @@ export default class Kontakt extends React.Component {
             });
         }
 
+        /* TMP */
+        if(isValid) {
+            this.setState({
+                send: true
+            });
+        }
+
         if((isValid)&&(this.state.isVerified)) {
             const form = e.target;
 
@@ -269,6 +281,9 @@ export default class Kontakt extends React.Component {
                 }
             };
             xhr.send(JSON.stringify(data));
+            this.setState({
+                send: true
+            });
         }
     }
 
@@ -278,54 +293,122 @@ export default class Kontakt extends React.Component {
             <h2>Kontakt</h2>
             <h3>Zaznacz w formularzu czego potrzebujesz,<br/>a my odezwiemy się do Ciebie</h3>
             <form action="https://formspree.io/moqpqlgw" method="POST" onSubmit={e => this.handleSubmit(e)}>
-                <div className="row row1">
+                <div className="row row1 desktopOnly">
                     <label id="sprzatanieMieszkania" onClick={e => this.handleChange(e)}>
                         <button id="sprzatanieMieszkania" name="sprzatanie-mieszkania">
-                            <div className={this.state.sprzatanieMieszkania ? "checked" : ""} />
+                            <div id="sprzatanieMieszkania" className={this.state.sprzatanieMieszkania ? "checked" : ""} />
                         </button>
                         Sprzątanie mieszkania
                     </label>
                     <label id="hoteleIApartamenty" onClick={e => this.handleChange(e)}>
                         <button id="hoteleIApartamenty" name="hotele-i-apartamenty">
-                            <div className={this.state.hoteleIApartamenty ? "checked" : ""} />
+                            <div id="hoteleIApartamenty" className={this.state.hoteleIApartamenty ? "checked" : ""} />
                         </button>
                         Hotele i apartamenty
                     </label>
                     <label id="biura" onClick={e => this.handleChange(e)}>
                         <button id="biura" name="biura">
-                            <div className={this.state.biura ? "checked" : ""} />
+                            <div id="biura" className={this.state.biura ? "checked" : ""} />
                         </button>
                         Biura
                     </label>
                     <label id="pranie" onClick={e => this.handleChange(e)}>
                         <button id="pranie" name="pranie">
-                            <div className={this.state.pranie ? "checked" : ""} />
+                            <div id="pranie" className={this.state.pranie ? "checked" : ""} />
                         </button>
                         Pranie
                     </label>
                     <label id="wnetrzeAuta" onClick={e => this.handleChange(e)}>
                         <button id="wnetrzeAuta" name="wnetrze-auta">
-                            <div className={this.state.wnetrzeAuta ? "checked" : ""} />
+                            <div id="wnetrzeAuta" className={this.state.wnetrzeAuta ? "checked" : ""} />
                         </button>
                         Wnętrze auta
                     </label>
                 </div>
-                <div className="row row2">
+                <div className="row row2 desktopOnly">
                     <label id="groby" onClick={e => this.handleChange(e)}>
                         <button id="groby" name="groby">
-                            <div className={this.state.groby ? "checked" : ""} />
+                            <div id="wnetrzeAuta" className={this.state.groby ? "checked" : ""} />
                         </button>
                         Groby
                     </label>
                     <label id="lokaleUzytkowe" onClick={e => this.handleChange(e)}>
                         <button id="lokaleUzytkowe" name="lokale-uzytkowe">
-                            <div className={this.state.lokaleUzytkowe ? "checked" : ""} />
+                            <div id="lokaleUzytkowe" className={this.state.lokaleUzytkowe ? "checked" : ""} />
                         </button>
                         Lokale użytkowe
                     </label>
                     <label id="poRemoncie" onClick={e => this.handleChange(e)}>
                         <button id="poRemoncie" name="po-remoncie">
-                            <div className={this.state.poRemoncie ? "checked" : ""} />
+                            <div id="poRemoncie" className={this.state.poRemoncie ? "checked" : ""} />
+                        </button>
+                        Po remoncie
+                    </label>
+                    <label id="mycieOkien" onClick={e => this.handleChange(e)}>
+                        <button id="mycieOkien" name="mycie-okien">
+                            <div id="mycieOkien" className={this.state.mycieOkien ? "checked" : ""} />
+                        </button>
+                        Mycie okien
+                    </label>
+                    <label id="mycieCisnieniowe" onClick={e => this.handleChange(e)}>
+                        <button id="mycieCisnieniowe" name="mycie-cisnieniowe">
+                            <div id="mycieCisnieniowe" className={this.state.mycieCisnieniowe ? "checked" : ""} />
+                        </button>
+                        Mycie ciśnieniowe
+                    </label>
+                </div>
+
+                <div className="mobileOnly uslugiBtn" onClick={() => { this.setState({ uslugiOpen: true }) }}>
+                    <h3>Naciśnij i rozwiń listę usług</h3>
+                    <div className="blueArea" />
+                </div>
+
+                <Modal isOpen={this.state.uslugiOpen} closeTimeoutMS={500} onRequestClose={() => { this.setState({uslugiOpen: false}) }} portalClassName="uslugiMenu">
+                    <label id="sprzatanieMieszkania" onClick={e => this.handleChange(e)}>
+                        <button id="sprzatanieMieszkania" name="sprzatanie-mieszkania">
+                            <div id="sprzatanieMieszkania" className={this.state.sprzatanieMieszkania ? "checked" : ""} />
+                        </button>
+                        Sprzątanie mieszkania
+                    </label>
+                    <label id="hoteleIApartamenty" onClick={e => this.handleChange(e)}>
+                        <button id="hoteleIApartamenty" name="hotele-i-apartamenty">
+                            <div id="hoteleIApartamenty" className={this.state.hoteleIApartamenty ? "checked" : ""} />
+                        </button>
+                        Hotele i apartamenty
+                    </label>
+                    <label id="biura" onClick={e => this.handleChange(e)}>
+                        <button id="biura" name="biura">
+                            <div id="biura" className={this.state.biura ? "checked" : ""} />
+                        </button>
+                        Biura
+                    </label>
+                    <label id="pranie" onClick={e => this.handleChange(e)}>
+                        <button id="pranie" name="pranie">
+                            <div id="pranie" className={this.state.pranie ? "checked" : ""} />
+                        </button>
+                        Pranie
+                    </label>
+                    <label id="wnetrzeAuta" onClick={e => this.handleChange(e)}>
+                        <button id="wnetrzeAuta" name="wnetrze-auta">
+                            <div id="wnetrzeAuta" className={this.state.wnetrzeAuta ? "checked" : ""} />
+                        </button>
+                        Wnętrze auta
+                    </label>
+                    <label id="groby" onClick={e => this.handleChange(e)}>
+                        <button id="groby" name="groby">
+                            <div id="wnetrzeAuta" className={this.state.groby ? "checked" : ""} />
+                        </button>
+                        Groby
+                    </label>
+                    <label id="lokaleUzytkowe" onClick={e => this.handleChange(e)}>
+                        <button id="lokaleUzytkowe" name="lokale-uzytkowe">
+                            <div id="lokaleUzytkowe" className={this.state.lokaleUzytkowe ? "checked" : ""} />
+                        </button>
+                        Lokale użytkowe
+                    </label>
+                    <label id="poRemoncie" onClick={e => this.handleChange(e)}>
+                        <button id="poRemoncie" name="po-remoncie">
+                            <div id="poRemoncie" className={this.state.poRemoncie ? "checked" : ""} />
                         </button>
                         Po remoncie
                     </label>
@@ -341,7 +424,8 @@ export default class Kontakt extends React.Component {
                         </button>
                         Mycie ciśnieniowe
                     </label>
-                </div>
+                </Modal>
+
                 <div className="inputy">
                     <input className={this.state.emailError ? "redBorder" : ""} type="text" name="email" placeholder="Email" value={this.state.email} onChange={e => this.handleChangeInput(e)}/>
                     <p>lub</p>
@@ -394,9 +478,17 @@ export default class Kontakt extends React.Component {
                         verifyCallback={this.verifyCallback}
                     />
                 </div>
-                <p className="recaptchaText">This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.</p>
 
                 <button type="submit">Wyślij</button>
+
+                <Modal isOpen={this.state.send} closeTimeoutMS={500} onRequestClose={() => { this.setState({ send: false }) }} portalClassName="formSend">
+                    <img className="modalExit" src={require("../../static/img/x.png")} alt="exit" onClick={() => this.setState({ send: false })} />
+                    <div className="modalInner">
+                        <img className="okejka" src={require("../../static/img/okejka.png")} alt="ok" />
+                        <h2>Formularz wysłany!</h2>
+                        <h3>Odezwę się do Ciebie jak najszybciej!</h3>
+                    </div>
+                </Modal>
             </form>
         </section>);
     }
