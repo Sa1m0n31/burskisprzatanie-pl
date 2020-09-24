@@ -37,14 +37,14 @@ export default function Home() {
       <script async defer crossOrigin="anonymous" src="https://connect.facebook.net/pl_PL/sdk.js#xfbml=1&version=v8.0"
                                                  nonce="FDmu4cnd"></script>
     </Helmet>
-    {/*<LandingPage />
+    <LandingPage />
     <Oferta />
     <DlaczegoMy />
     <Rekomendacje />
     <Realizacje />
     <Kontakt />
     <ONas />
-    <Footer />*/}
-    <Temporary/>
+    <Footer />
+    {/*<Temporary/>*/}
   </div>);
 }

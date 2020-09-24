@@ -31,6 +31,10 @@ button {
     font-weight: 900;
 }
 
+.white {
+    color: #ffffff;
+}
+
 .checked {
     width: 70%;
     height: 70%;
@@ -111,5 +115,78 @@ label {
 @media(max-width: 700px) {
     .tmp h1 {
         font-size: 14px;
+    }
+}
+
+/* TINDER CARDS */
+
+.swipe {
+    position: absolute;
+}
+
+.cardContainer {
+    width: 90vw;
+    height: 200px;
+}
+
+.card {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+
+.cardContent {
+    width: 100%;
+    height: 100%;
+}
+
+.card h3 {
+    position: absolute;
+    bottom: 0;
+    margin: 10px;
+    color: #fff;
+}
+
+/* Popup button */
+
+.rightDownBtn {
+    display: none;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    z-index: 100000;
+    cursor: pointer;
+}
+
+.rightDownBtn h5 {
+    text-align: center;
+    color: white;
+    position: absolute;
+    font-size: 13px;
+    left: 95px;
+    top: 40px;
+    transform: translate(-50%, -50%);
+    font-weight: 100 !important;
+}
+
+.rightDownBtn .info {
+    width: 200px;
+    height: 80px;
+}
+
+.rightDownBtn .telefon {
+    width: 80px;
+    height: 80px;
+}
+
+@media(max-width: 700px) {
+    .rightDownBtn {
+        right: 10px;
+        bottom: 10px;
+    }
+
+    .rightDownBtn .telefon {
+        width: 60px;
+        height: 60px;
     }
 }

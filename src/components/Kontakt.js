@@ -32,17 +32,43 @@ export default class Kontakt extends React.Component {
             status: "",
             isVerified: false,
             send: false,
-            uslugiOpen: false
+            uslugiOpen: false,
+            topOffset: 0,
+            phoneFormOpen: false,
+            phoneNumberModal: "",
+            politykaModal: false,
+            politykaModalError: false,
+            modalPhoneError: false
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleChangeRatio = this.handleChangeRatio.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChangeInput = this.handleChangeInput.bind(this);
         this.verifyCallback = this.verifyCallback.bind(this);
+        this.handleModalSubmit = this.handleModalSubmit.bind(this);
     }
 
     componentDidMount() {
         loadReCaptcha("6LdZVs8ZAAAAALyZPpx4JXLGSz7bJ8uMgGIH_DTM");
+
+        if((typeof window !== 'undefined')&&(typeof document !== 'undefined')) {
+            this.setState({
+                topOffset: window.pageYOffset
+            });
+            window.addEventListener("scroll", () => {
+               this.setState({
+                   topOffset: window.pageYOffset
+               }, () => {
+                   let el = document.querySelector(".rightDownBtn");
+                  if(this.state.topOffset > 200) {
+                      el.style.display = "block";
+                  }
+                  else if(this.state.topOffset < 200) {
+                      el.style.display = "none";
+                  }
+               });
+            });
+        }
     }
 
     verifyCallback(res) {
@@ -56,7 +82,6 @@ export default class Kontakt extends React.Component {
     handleChange(e) {
         e.preventDefault();
         let name = e.target.id;
-        console.log(name);
         switch(name) {
             case "sprzatanieMieszkania":
                 this.setState(prevState => {
@@ -168,6 +193,13 @@ export default class Kontakt extends React.Component {
                     politykaPrywatnosci: !prevState.politykaPrywatnosci
                 });
             })
+        }
+        else if(name === "politykaModal") {
+            this.setState((prevState) => {
+                return ({
+                    politykaModal: !prevState.politykaModal
+                });
+            });
         }
     }
 
@@ -282,11 +314,86 @@ export default class Kontakt extends React.Component {
             };
             xhr.send(JSON.stringify(data));
             this.setState({
-                send: true
+                send: true,
+                sprzatanieMieszkania: false,
+                hoteleIApartamenty: false,
+                biura: false,
+                pranie: false,
+                wnetrzeAuta: false,
+                groby: false,
+                lokaleUzytkowe: false,
+                poRemoncie: false,
+                mycieOkien: false,
+                mycieCisnieniowe: false,
+                firma: false,
+                osobaPrywatna: false,
+                jednorazowo: false,
+                cyklicznie: false,
+                politykaPrywatnosci: false,
+                email: "",
+                phoneNumber: "",
+                msg: ""
             });
         }
     }
 
+    handleModalSubmit(e) {
+        e.preventDefault();
+
+        let isValid = true;
+
+        /* Phone number validation */
+        if((isNaN(this.state.phoneNumberModal))||(this.state.phoneNumberModal.length > 11)||((this.state.phoneNumberModal.length < 9))) {
+            this.setState({
+                modalPhoneError: true
+            });
+            isValid = false;
+        }
+        else {
+            this.setState({
+                modalPhoneError: false
+            });
+        }
+
+        /* Polityka prywatności validation */
+        if(!this.state.politykaModal) {
+            this.setState({
+                politykaModalError: true
+            });
+            isValid = false;
+        }
+        else {
+            this.setState({
+                politykaModalError: false
+            });
+        }
+
+        if((isValid)&&(this.state.isVerified)) {
+            const form = e.target;
+            const data = {
+                numerTelefonu: this.state.phoneNumberModal
+            };
+            const xhr = new XMLHttpRequest();
+            xhr.open(form.method, form.action);
+            xhr.setRequestHeader("Accept", "application/json");
+            xhr.onreadystatechange = () => {
+                if (xhr.readyState !== XMLHttpRequest.DONE) return;
+                if (xhr.status === 200) {
+                    form.reset();
+                    this.setState({ status: "SUCCESS" });
+                } else {
+                    this.setState({ status: "ERROR" });
+                }
+            };
+            xhr.send(JSON.stringify(data));
+            this.setState({
+                phoneFormOpen: false,
+                phoneNumberModal: "",
+                politykaModal: false,
+                send: true
+            });
+        }
+    }
 
     render() {
         return (<section className="kontakt">
@@ -490,6 +597,34 @@ export default class Kontakt extends React.Component {
                     </div>
                 </Modal>
             </form>
+
+            <div className="rightDownBtn" onClick={() => { this.setState({ phoneFormOpen: true }) }}>
+                <h5 className="desktopOnly">Hej!<br/>Zostaw do siebie numer -<br/><span className="bold white">ODDZWONIMY!</span></h5>
+                <img src={require("../../static/img/info-popup-bg.png")} alt="zadzwoń do nas" className="info desktopOnly"/>
+                <img src={require("../../static/img/popup-icon.png")} alt="telefon" className="telefon"/>
+            </div>
+
+            <Modal portalClassName="formSend phoneForm" isOpen={this.state.phoneFormOpen} closeTimeoutMS={500} onRequestClose={() => { this.setState({ phoneFormOpen: false }) }}>
+                <img className="x" src={require("../../static/img/x.png")} alt="exit" onClick={() => { this.setState({ phoneFormOpen: false }) }}/>
+                <img className="telefon" src={require("../../static/img/telefon-niebieski.png")} alt="telefon" />
+                <h3>Zostaw do siebie numer, a my oddzwonimy do Ciebie jeszcze dzisiaj!</h3>
+                <form action="https://formspree.io/moqpqzje" method="POST" onSubmit={e => this.handleModalSubmit(e)}>
+                    <input className={this.state.modalPhoneError ? "redBorder" : ""} type="text" name="phoneNumberModal" value={this.state.phoneNumberModal} onChange={e => this.handleChangeInput(e)}/>
+                    <label id="politykaModal" onClick={e => this.handleChangeRatio(e)}>
+                        <button id="politykaModal" name="polityka-prywatnosci" className={this.state.politykaModalError ? "redBorder" : ""}>
+                            <div id="politykaModal" className={this.state.politykaModal ? "checkedPolityka" : ""} />
+                        </button>
+                        Zapoznałem się i akceptuję politykę prywatności
+                    </label>
+                    <ReCaptcha
+                        sitekey="6LdZVs8ZAAAAALyZPpx4JXLGSz7bJ8uMgGIH_DTM"
+                        render="implicit"
+                        verifyCallback={this.verifyCallback}
+                    />
+                    <button type="submit">Zatwierdź</button>
+                </form>
+            </Modal>
+
         </section>);
     }
 }

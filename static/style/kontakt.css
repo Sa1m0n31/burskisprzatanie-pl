@@ -15,7 +15,7 @@
 
 .kontakt h3 {
     font-weight: 100;
-    font-size: calc(13px + 25 * ((100vw - 300px)/(1000)));
+    font-size: calc(13px + 20 * ((100vw - 300px)/(1000)));
     text-align: center;
     margin-top: 10px;
 }
@@ -90,23 +90,27 @@
     font-weight: 100;
 }
 
-.kontakt form .politykaPrywatnosci button {
+.kontakt form .politykaPrywatnosci button, .phoneForm #politykaModal button {
     border-radius: 2px;
     width: 18px;
     height: 18px;
     border-width: 1px;
 }
 
-.kontakt form button[type="submit"] {
+.kontakt form button[type="submit"], .phoneForm button[type="submit"] {
     width: 20vw;
     height: 50px;
     border-radius: 10px;
     background-color: #75C3DE;
     color: white;
-    margin: 10px 0 0 10vw;
     font-size: 1.5em;
     font-weight: 900;
     text-transform: uppercase;
+    margin: 20px 0;
+}
+
+.kontakt form button[type="submit"] {
+    margin: 10px 0 0 10vw;
 }
 
 .kontakt form button[type="submit"]:hover {
@@ -172,6 +176,7 @@
     position: absolute;
     top: 5px;
     right: 5px;
+    cursor: pointer;
 }
 
 .formSend .modalInner {
@@ -195,8 +200,95 @@
     margin: 20px 0;
 }
 
-.uslugiMenu {
+.phoneForm .ReactModal__Content {
+    height: 500px !important;
+    border-radius: 30px !important;
+}
 
+.phoneForm .x {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.phoneForm .telefon {
+    width: 100px;
+    height: 100px;
+}
+
+.phoneForm h3 {
+    font-size: 16px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.phoneForm form {
+    display: flex;
+    flex-direction: column;
+}
+
+.phoneForm input {
+    height: 40px;
+    padding: 3px 8px;
+    background-color: #f2f2f2;
+    border: 2px solid #d5d5d5;
+    border-radius: 10px;
+    outline: none;
+    margin: 10px 0;
+}
+
+.phoneForm button[type="submit"] {
+    align-self: center;
+}
+
+.phoneForm #politykaModal {
+    font-size: 12px;
+    margin: 10px 0;
+}
+
+.phoneForm form > #politykaModal {
+    display: flex;
+    align-items: center;
+}
+
+.phoneForm form #politykaModal > button {
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #d5d5d5;
+}
+
+@media(max-height: 600px) {
+    .phoneForm .ReactModal__Content {
+        height: 400px !important;
+    }
+
+    .phoneForm .telefon {
+        width: 75px;
+        height: 75px;
+    }
+
+    .phoneForm form button[type="submit"] {
+        height: 30px;
+    }
+
+    .phoneForm form > * {
+        margin: 5px 0;
+    }
+
+    .phoneForm .x {
+        right: 5px;
+        top: 5px;
+    }
+}
+
+@media(max-width: 900px) {
+    .phoneForm button[type="submit"] {
+        width: 150px;
+        font-size: 14px;
+    }
 }
 
 @media(max-width: 700px) {
@@ -302,6 +394,10 @@
 
     .kontakt form textarea {
         width: 75vw;
+    }
+
+    .phoneForm h3 {
+        font-size: 13px;
     }
 }
 
