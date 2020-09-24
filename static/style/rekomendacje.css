@@ -31,8 +31,9 @@
     box-shadow: 0 0 10px 0 rgba(0,0,0,0.75);
 }
 
-.rekomendacje .rekomendacjeWindow img {
-    width: 100%;
+.rekomendacje .rekomendacjeWindow .gatsby-image-wrapper {
+    width: 350px;
+    height: fit-content;
 }
 
 .rekomendacje .rekomendacjeWindow::-webkit-scrollbar {
@@ -97,8 +98,8 @@
         margin-bottom: -50px !important;
     }
 
-    .rekomendacje .gatsby-image-wrapper {
-        width: 90vw !important;
+    .rekomendacje .swiper .gatsby-image-wrapper {
+        width: 300px;
     }
 
     .rekomendacje .firstImg {

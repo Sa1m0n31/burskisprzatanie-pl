@@ -10,35 +10,37 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/swiper.scss';
 
+import TinderCard from 'react-tinder-card';
+
 const Rekomendacje = () => {
     SwiperCore.use([Pagination]);
 
     const data = useStaticQuery(graphql`
         query RekomendacjeQuery {
-    rekomendacje1: file(relativePath: { eq: "rekomendacje1.jpg" }) {
+    rekomendacje1: file(relativePath: { eq: "rekomendacje1.png" }) {
         childImageSharp {
-            fluid(maxWidth: 300, maxHeight: 300) {
+            fluid(maxWidth: 300, maxHeight: 148) {
                 ...GatsbyImageSharpFluid
             }
         }
     }
-    rekomendacje2: file(relativePath: { eq: "rekomendacje2.jpg" }) {
+    rekomendacje2: file(relativePath: { eq: "rekomendacje1.png" }) {
         childImageSharp {
             fluid(maxWidth: 300, maxHeight: 100) {
                 ...GatsbyImageSharpFluid
             }
         }
     }
-    rekomendacje3: file(relativePath: { eq: "rekomendacje3.jpg" }) {
+    rekomendacje3: file(relativePath: { eq: "rekomendacje3.png" }) {
         childImageSharp {
-            fluid(maxWidth: 300, maxHeight: 300) {
+            fluid(maxWidth: 350, maxHeight: 159) {
                 ...GatsbyImageSharpFluid
             }
         }
     }
-    rekomendacje4: file(relativePath: { eq: "rekomendacje3.jpg" }) {
+    rekomendacje4: file(relativePath: { eq: "rekomendacje4.png" }) {
         childImageSharp {
-            fluid(maxWidth: 1000, maxHeight: 1000) {
+            fluid(maxWidth: 350, maxHeight: 150) {
                 ...GatsbyImageSharpFluid
             }
         }
@@ -68,44 +70,25 @@ const Rekomendacje = () => {
     }
     `);
 
+    const onSwipe = (direction) => {
+        console.log('You swiped: ' + direction)
+    };
+
+    const onCardLeftScreen = (myIdentifier) => {
+        console.log(myIdentifier + ' left the screen')
+    };
+
     return (<section className="rekomendacje">
         <h2>Rekomendacje</h2>
         <div className="rekomendacjeWindow desktopOnly">
-            <div className="fb-post" data-href="https://www.facebook.com/daniela.chojnacka.568/posts/168301751426942"
-                 data-show-text="true" data-width={350}>
-                <blockquote cite="https://www.facebook.com/daniela.chojnacka.568/posts/168301751426942"
-                            className="fb-xfbml-parse-ignore"><p>Wykonanie usługi - perfekcyjnie, czas pracy -
-                    rewelacja, ceny - bardzo dobre, odwzorowują nakład pracy i zaangażowania....</p>Opublikowany
-                    przez <a href="#" role="button">Danielę Chojnacką</a>&nbsp;<a
-                        href="https://www.facebook.com/daniela.chojnacka.568/posts/168301751426942">Sobota, 1 sierpnia
-                        2020</a></blockquote>
-            </div>
-            <div className="fb-post" data-href="https://www.facebook.com/daniela.chojnacka.568/posts/168301751426942"
-                 data-show-text="true" data-width={350}>
-                <blockquote cite="https://www.facebook.com/daniela.chojnacka.568/posts/168301751426942"
-                            className="fb-xfbml-parse-ignore"><p>Wykonanie usługi - perfekcyjnie, czas pracy -
-                    rewelacja, ceny - bardzo dobre, odwzorowują nakład pracy i zaangażowania....</p>Opublikowany
-                    przez <a href="#" role="button">Danielę Chojnacką</a>&nbsp;<a
-                        href="https://www.facebook.com/daniela.chojnacka.568/posts/168301751426942">Sobota, 1 sierpnia
-                        2020</a></blockquote>
-            </div>
-            <div className="fb-post" data-href="https://www.facebook.com/daniela.chojnacka.568/posts/168301751426942"
-                 data-show-text="true" data-width="auto">
-                <blockquote cite="https://www.facebook.com/daniela.chojnacka.568/posts/168301751426942"
-                            className="fb-xfbml-parse-ignore"><p>Wykonanie usługi - perfekcyjnie, czas pracy -
-                    rewelacja, ceny - bardzo dobre, odwzorowują nakład pracy i zaangażowania....</p>Opublikowany
-                    przez <a href="#" role="button">Danielę Chojnacką</a>&nbsp;<a
-                        href="https://www.facebook.com/daniela.chojnacka.568/posts/168301751426942">Sobota, 1 sierpnia
-                        2020</a></blockquote>
-            </div>
-
-            <div>
-                <img src={require("../../static/img/fixly.png")} alt="fixly" />
-            </div>
+            <Img fluid={data.rekomendacje1.childImageSharp.fluid} alt="rekomendacje1" />
+            <Img fluid={data.rekomendacje2.childImageSharp.fluid} alt="rekomendacje2" />
+            <Img fluid={data.rekomendacje3.childImageSharp.fluid} alt="rekomendacje3" />
+            <Img fluid={data.rekomendacje4.childImageSharp.fluid} alt="rekomendacje4" />
         </div>
 
         <div className="mobileOnly swiper">
-            <Swiper
+            {/*<Swiper
                 spaceBetween={50}
                 slidesPerView={1}
                 onSlideChange={() => console.log('slide change')}
@@ -114,10 +97,10 @@ const Rekomendacje = () => {
                 pagination={{ clickable: true }}
             >
                 <SwiperSlide>
-                    <img className="firstImg" src={require("../../static/img/fixly1.png")} alt="fixly1" />
+                    <Img fluid={data.rekomendacje1.childImageSharp.fluid} alt="rekomendacje1" />
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img className="secondImg" src={require("../../static/img/fixly2.png")} alt="fixly2" />
+                    <Img fluid={data.rekomendacje2.childImageSharp.fluid} alt="rekomendacje2" />
                 </SwiperSlide>
                 <SwiperSlide>
                     <Img fluid={data.rekomendacje3.childImageSharp.fluid} alt="rekomendacje3" />
@@ -125,7 +108,11 @@ const Rekomendacje = () => {
                 <SwiperSlide>
                     <Img fluid={data.rekomendacje4.childImageSharp.fluid} alt="rekomendacje4" />
                 </SwiperSlide>
-            </Swiper>
+            </Swiper>*/}
+
+            <TinderCard onSwipe={onSwipe} onCardLeftScreen={() => onCardLeftScreen('fooBar')} preventSwipe={['right', 'left']}>Hello, World!</TinderCard>
+            <TinderCard onSwipe={onSwipe} onCardLeftScreen={() => onCardLeftScreen('fooBar')} preventSwipe={['right', 'left']}>Hello, 1!</TinderCard>
+            <TinderCard onSwipe={onSwipe} onCardLeftScreen={() => onCardLeftScreen('fooBar')} preventSwipe={['right', 'left']}>Hello, 2!</TinderCard>
         </div>
     </section>);
 };

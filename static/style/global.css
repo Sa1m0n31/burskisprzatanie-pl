@@ -91,3 +91,25 @@ label {
     opacity: 0;
     transform: translateX(-100px);
 }
+
+/* Temporary */
+
+.tmp {
+    height: 100vh;
+    background-color: #363636;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.tmp h1 {
+    text-align: center;
+}
+
+@media(max-width: 700px) {
+    .tmp h1 {
+        font-size: 14px;
+    }
+}
