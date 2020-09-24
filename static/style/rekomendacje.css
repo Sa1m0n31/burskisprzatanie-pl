@@ -19,7 +19,8 @@
     margin: 40px 0;
     display: grid;
     grid-template-columns: 45% 45%;
-    grid-auto-rows: 300px;
+    grid-template-rows: repeat(2, 200px);
+    grid-auto-rows: 200px;
     grid-column-gap: 5%;
     grid-row-gap: 40px;
     justify-items: center;

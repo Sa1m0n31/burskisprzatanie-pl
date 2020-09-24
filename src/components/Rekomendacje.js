@@ -16,8 +16,6 @@ import Loader from 'react-loader-spinner';
 const Rekomendacje = () => {
     SwiperCore.use([Pagination]);
 
-    const [empty, setEmpty] = useState(false);
-
     const data = useStaticQuery(graphql`
         query RekomendacjeQuery {
     rekomendacje2: file(relativePath: { eq: "rekomendacje2.jpg" }) {
@@ -27,9 +25,9 @@ const Rekomendacje = () => {
             }
         }
     }
-    rekomendacje3: file(relativePath: { eq: "rekomendacje3.png" }) {
+    rekomendacje3: file(relativePath: { eq: "rekomendacje3.jpg" }) {
         childImageSharp {
-            fluid(maxWidth: 280, maxHeight: 160) {
+            fluid(maxWidth: 300, maxHeight: 160) {
                 ...GatsbyImageSharpFluid
             }
         }

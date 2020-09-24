@@ -101,6 +101,12 @@
     border-radius: 12px;
 }
 
+.messengerBtn, .phoneBtn {
+    -webkit-box-shadow: 0 0 9px 0 rgba(0,0,0,0.75);
+    -moz-box-shadow: 0 0 9px 0 rgba(0,0,0,0.75);
+    box-shadow: 0 0 9px 0 rgba(0,0,0,0.75);
+}
+
 .landingPage .phoneBtn {
     background-color: #4BAF4F;
     border-radius: 12px;

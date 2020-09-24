@@ -28,6 +28,12 @@ module.exports = {
         // Disable the loading spinner.
         showSpinner: true
       }
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-157720334-2"
+      }
     }
   ],
 };

@@ -54,6 +54,7 @@
 .swiper-pagination {
     position: absolute;
     bottom: -60px !important;
+    width: 100vw !important;
 }
 
 @media(max-width: 700px) {
