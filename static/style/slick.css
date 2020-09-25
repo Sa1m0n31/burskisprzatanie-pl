@@ -1,0 +1,30 @@
+.react-multi-carousel-list {
+    width: 80vw;
+    height: fit-content;
+}
+
+.react-multi-carousel-track {
+    width: 100vw;
+    height: fit-content;
+}
+
+.react-multi-carousel-item {
+    margin: 0 40px !important;
+}
+
+/* SWIPER */
+
+.swiper-container {
+    height: 800px !important;
+}
+
+.swiper-slide {
+    position: relative;
+}
+
+.swiper-slide .gatsby-image-wrapper {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+}

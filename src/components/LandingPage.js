@@ -74,8 +74,8 @@ const LandingPage = () => {
           if(arg === "oferta") {
               document.querySelector(".oferta").scrollIntoView({behavior: "smooth"});
           }
-          else if(arg === "oNas") {
-              document.querySelector(".oNas").scrollIntoView({behavior: "smooth"});
+          else if(arg === "dlaczegoMy") {
+              document.querySelector(".dlaczegoMy").scrollIntoView({behavior: "smooth"});
           }
           else if(arg === "kontakt") {
               document.querySelector(".kontakt").scrollIntoView({behavior: "smooth"});
@@ -91,7 +91,7 @@ const LandingPage = () => {
             <ul>
                 <li>Strona główna</li>
                 <li onClick={() => handleScroll("oferta")}>Oferta</li>
-                <li onClick={() => handleScroll("oNas")}>O nas</li>
+                <li onClick={() => handleScroll("dlaczegoMy")}>O nas</li>
                 <li onClick={() => handleScroll("kontakt")}>Kontakt</li>
             </ul>
             <div className="phoneNumber">
@@ -117,8 +117,8 @@ const LandingPage = () => {
         </div>
 
         <div className="haslo">
-            <h1>Sprzątamy <span className="blue">aż miło</span></h1>
-            <h2>Lorem ipsum dolor sit amet</h2>
+            <h1>Sprzątamy <span className="blue">za Ciebie</span></h1>
+            <h2>Czysta oszczędność czasu</h2>
         </div>
 
         <div className="mobileOnly hamburgerMenu">

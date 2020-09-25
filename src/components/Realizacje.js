@@ -10,6 +10,9 @@ import 'swiper/components/navigation/navigation.scss';
 import 'swiper/components/pagination/pagination.scss';
 import 'swiper/components/scrollbar/scrollbar.scss';
 
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+
 const Realizacje = () => {
     SwiperCore.use([Pagination]);
 
@@ -17,25 +20,40 @@ const Realizacje = () => {
         query RealizacjeQuery {
     realizacje1: file(relativePath: { eq: "realizacje1.jpg" }) {
         childImageSharp {
-            fluid(maxWidth: 2560, maxHeight: 1800) {
+            fluid(maxWidth: 300, maxHeight: 400) {
                 ...GatsbyImageSharpFluid
             }
         }
     }
      realizacje2: file(relativePath: { eq: "realizacje2.jpg" }) {
         childImageSharp {
-            fluid(maxWidth: 2560, maxHeight: 1800) {
+            fluid(maxWidth: 500, maxHeight: 670) {
                 ...GatsbyImageSharpFluid
             }
         }
     }
      realizacje3: file(relativePath: { eq: "realizacje3.jpg" }) {
         childImageSharp {
-            fluid(maxWidth: 2560, maxHeight: 1800) {
+            fluid(maxWidth: 500, maxHeight: 670) {
                 ...GatsbyImageSharpFluid
             }
         }
-    }}
+    }
+    realizacje4: file(relativePath: { eq: "realizacje4.jpg" }) {
+        childImageSharp {
+            fluid(maxWidth: 500, maxHeight: 670) {
+                ...GatsbyImageSharpFluid
+            }
+        }
+    }
+     realizacje5: file(relativePath: { eq: "realizacje5.jpg" }) {
+        childImageSharp {
+            fluid(maxWidth: 500, maxHeight: 670) {
+                ...GatsbyImageSharpFluid
+            }
+        }
+    }
+    }
     `);
 
     let [ image, setImage ] = useState(0);
@@ -46,22 +64,23 @@ const Realizacje = () => {
         data.realizacje3
     ];
 
-    let moveSlider = (right) => {
-        if(right) {
-            if(image < 2) {
-                setImage(image+1);
-            }
-            else {
-                setImage(0);
-            }
-        }
-        else {
-            if(image === 0) {
-                setImage(2);
-            }
-            else {
-                setImage(image-1);
-            }
+    const responsive = {
+        superLargeDesktop: {
+            // the naming can be any, depends on you.
+            breakpoint: { max: 4000, min: 3000 },
+            items: 5
+        },
+        desktop: {
+            breakpoint: { max: 3000, min: 1024 },
+            items: 2
+        },
+        tablet: {
+            breakpoint: { max: 1024, min: 464 },
+            items: 2
+        },
+        mobile: {
+            breakpoint: { max: 464, min: 0 },
+            items: 1
         }
     };
 
@@ -69,9 +88,22 @@ const Realizacje = () => {
         <h2>Nasze realizacje</h2>
         <div className="realizacjeInner">
             <div className="image desktopOnly">
-                <img src={require("../../static/img/left.png")} alt="lewo" onClick={() => moveSlider(false)} />
-                <Img fluid={kolejka[image].childImageSharp.fluid} alt="Realizacje1" />
-                <img src={require("../../static/img/right.png")} alt="prawo" onClick={() => moveSlider(true)} />
+                <div className="container">
+                    <Carousel responsive={responsive} infinite={true}>
+                        <div>
+                            <Img fluid={data.realizacje2.childImageSharp.fluid} alt="Realizacje1" />
+                        </div>
+                        <div>
+                            <Img fluid={data.realizacje3.childImageSharp.fluid} alt="Realizacje1" />
+                        </div>
+                        <div>
+                            <Img fluid={data.realizacje4.childImageSharp.fluid} alt="Realizacje1" />
+                        </div>
+                        <div>
+                            <Img fluid={data.realizacje5.childImageSharp.fluid} alt="Realizacje1" />
+                        </div>
+                    </Carousel>
+                </div>
             </div>
             <div className="mobileOnly">
                 <Swiper
@@ -79,13 +111,16 @@ const Realizacje = () => {
                     pagination={{ clickable: true }}
                 >
                     <SwiperSlide>
-                        <Img fluid={kolejka[0].childImageSharp.fluid} alt="Realizacje1" />
+                        <Img fluid={data.realizacje2.childImageSharp.fluid} alt="Realizacje1" />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <Img fluid={kolejka[1].childImageSharp.fluid} alt="Realizacje2" />
+                        <Img fluid={data.realizacje3.childImageSharp.fluid} alt="Realizacje2" />
                     </SwiperSlide>
                     <SwiperSlide>
-                        <Img fluid={kolejka[2].childImageSharp.fluid} alt="Realizacje3" />
+                        <Img fluid={data.realizacje5.childImageSharp.fluid} alt="Realizacje3" />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <Img fluid={data.realizacje4.childImageSharp.fluid} alt="Realizacje4" />
                     </SwiperSlide>
                 </Swiper>
             </div>

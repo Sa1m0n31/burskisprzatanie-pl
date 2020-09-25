@@ -12,104 +12,23 @@
 
 .dlaczegoMy .dlaczegoMyInner {
     margin-top: 50px;
-    display: grid;
-    grid-template-rows: 150px 50px 170px;
-    grid-template-columns: repeat(37, 2vw);
     align-items: center;
-}
-
-.dlaczegoMy .border {
-    width: 100%;
-    padding: 0 10px;
-}
-
-.dlaczegoMy .number {
-    grid-row: 1;
-    background-color: #363636;
-    color: white;
-    height: 6vw;
-    border-radius: 5%;
-    font-weight: 900;
-    font-size: 2em;
     display: flex;
     justify-content: center;
-    align-items: center;
-}
-
-.dlaczegoMy .border {
-    grid-row: 1;
-}
-
-.dlaczegoMy .number1 {
-    grid-column: 3 / span 3;
-}
-
-.dlaczegoMy .number2 {
-    grid-column: 13 / span 3;
-}
-
-.dlaczegoMy .number3 {
-    grid-column: 23 / span 3;
-}
-
-.dlaczegoMy .number4 {
-    grid-column: 33 / span 3;
-}
-
-.dlaczegoMy .border1 {
-    grid-column: 6 / span 7;
-}
-
-.dlaczegoMy .border2 {
-    grid-column: 16 / span 7;
-}
-
-.dlaczegoMy .border3 {
-    grid-column: 26 / span 7;
 }
 
 .dlaczegoMy .photo {
-    grid-row: 2;
-    height: 6vw;
-}
-
-.dlaczegoMy .photo1 {
-    grid-column: 3 / span 3;
-    margin-left: 3px;
-}
-
-.dlaczegoMy .photo2 {
-    grid-column: 13 / span 3;
-}
-
-.dlaczegoMy .photo3 {
-    grid-column: 23 / span 3;
-}
-
-.dlaczegoMy .photo4 {
-    grid-column: 33 / span 3;
+    margin: 20px 0;
 }
 
 .dlaczegoMy .text {
-    grid-row: 3;
-    align-self: flex-start;
-    margin-top: 20px;
-}
-
-.dlaczegoMy .text1 {
-    grid-column: 1 / span 7;
-}
-
-.dlaczegoMy .text2 {
-    grid-column: 10 / span 9;
-}
-
-.dlaczegoMy .text3 {
-    grid-column: 21 / span 7;
-}
-
-.dlaczegoMy .text4 {
-    grid-column: 31 / span 7;
+    height: 350px;
+    position: relative;
+    width: 20%;
+    margin: 20px 50px 0 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .dlaczegoMy .text h3, .dlaczegoMy .text p {
@@ -117,12 +36,12 @@
 }
 
 .dlaczegoMy .text h3 {
-    font-size: 15px;
+    font-size: 20px;
     margin-bottom: 10px;
 }
 
 .dlaczegoMy .text p {
-    font-size: 13px;
+    font-size: 15px;
 }
 
 @media(max-width: 700px) {
@@ -132,9 +51,14 @@
         width: 80%;
     }
 
+    .dlaczegoMy .dlaczegoMyInner .text {
+        width: 100% !important;
+        height: fit-content;
+    }
+
     .dlaczegoMy .dlaczegoMyInner img {
-        width: 50px;
-        height: 50px;
+        width: 70px;
+        height: 70px;
     }
 
     .dlaczegoMy .dlaczegoMyInner .text {
@@ -146,37 +70,7 @@
         margin-top: 30px;
     }
 
-    .dlaczegoMy .dlaczegoMyInner .photo1 {
-        order: 1;
-        margin-top: 0;
-    }
-
-    .dlaczegoMy .dlaczegoMyInner .text1 {
-        order: 2;
-    }
-
-    .dlaczegoMy .dlaczegoMyInner .photo2 {
-        order: 3;
-    }
-
-    .dlaczegoMy .dlaczegoMyInner .text2 {
-        order: 4;
-    }
-
-    .dlaczegoMy .dlaczegoMyInner .photo3 {
-        order: 5;
-    }
-
     .dlaczegoMy .dlaczegoMyInner .text3 {
-        order: 6;
-    }
-
-    .dlaczegoMy .dlaczegoMyInner .photo4 {
-        order: 7;
-    }
-
-    .dlaczegoMy .dlaczegoMyInner .text4 {
-        order: 8;
         border-bottom: none;
     }
 }

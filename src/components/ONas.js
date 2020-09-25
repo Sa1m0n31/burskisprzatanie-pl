@@ -15,7 +15,8 @@ const ONas = () => {
     `);
 
     return (<section className="oNas">
-        <h2>O nas</h2>
+        <div className="oNasInner">
+        {/*<h2>O nas</h2>
         <div className="oNasInner">
             <Img fluid={data.onas.childImageSharp.fluid} />
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus turpis nec fringilla viverra. Maecenas et lacus malesuada, consequat felis ac, accumsan lacus. Nunc lacinia bibendum laoreet. Aliquam auctor in elit eget semper. Quisque convallis ullamcorper mi a rhoncus. Fusce at ante urna. Mauris luctus dui et nulla lacinia volutpat. Cras luctus pretium sollicitudin. Suspendisse scelerisque mi ac turpis lobortis, sed fringilla est egestas. Sed porttitor venenatis dui, vitae interdum est convallis quis.</p>
@@ -25,17 +26,17 @@ const ONas = () => {
                     <img src={require("../../static/img/messenger.png")} alt="messenger" />
                     <h3>Napisz na prywatnego messengera</h3>
                 </a>
-            </button>
+            </button>*/}
             <div className="socialMedia facebook">
                 <h4>Znajdziesz nas na facebooku</h4>
                 <a href="https://www.facebook.com/burskisprzatanie" target="_blank">
                     <img className="sm" src={require("../../static/img/facebook.png")} alt="facebook"/>
                 </a>
             </div>
-            <div className="socialMedia instagram">
+            {/*<div className="socialMedia instagram">
                 <h4>Obserwuj nas na instagramie</h4>
                 <img className="sm" src={require("../../static/img/instagram.png")} alt="instagram" />
-            </div>
+            </div>*/}
             <div className="socialMedia fixly">
                 <a href="https://fixly.pl/profil/mAYK1kwm" target="_blank">
                     <img alt="Polecają mnie na Fixly"

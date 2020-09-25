@@ -161,3 +161,11 @@
         margin-bottom: 30px !important;
     }
 }
+
+/* TMP */
+
+.oNas .oNasInner {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 50px 0;
+}

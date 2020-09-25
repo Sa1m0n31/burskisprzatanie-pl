@@ -23,7 +23,7 @@
     right: calc(30px + 70 * ((100vw - 1000px) / (1000)));
     top: 50px;
     display: flex;
-    font-size: calc(12px + 10 * ((100vw - 700px)/(1000)));
+    font-size: calc(12px + 8 * ((100vw - 700px)/(1000)));
 }
 
 .landingPage ul {

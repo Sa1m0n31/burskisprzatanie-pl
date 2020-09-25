@@ -31,12 +31,16 @@
     "react-awesome-slider": "^4.1.0",
     "react-burger-menu": "^2.7.1",
     "react-dom": "^16.12.0",
+    "react-glider-carousel": "^0.1.2",
     "react-helmet": "^6.1.0",
     "react-loader-spinner": "^3.1.14",
     "react-modal": "^3.11.2",
+    "react-multi-carousel": "^2.5.5",
     "react-recaptcha-v3": "^2.0.1",
     "react-scroll": "^1.8.1",
+    "react-slick": "^0.27.11",
     "react-tinder-card": "^1.2.1",
+    "slick-carousel": "^1.8.1",
     "swiper": "^6.2.0"
   },
   "devDependencies": {

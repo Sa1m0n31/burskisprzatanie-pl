@@ -13,6 +13,8 @@ import '../../static/style/footer.css';
 import "../../static/style/cennik.css";
 import "../../static/style/realizacje.css";
 
+import '../../static/style/slick.css';
+
 import LandingPage from "../components/LandingPage";
 import Oferta from "../components/Oferta";
 import DlaczegoMy from "../components/DlaczegoMy";
@@ -45,6 +47,5 @@ export default function Home() {
     <Kontakt />
     <ONas />
     <Footer />
-    {/*<Temporary/>*/}
   </div>);
 }

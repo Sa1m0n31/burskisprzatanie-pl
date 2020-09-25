@@ -82,8 +82,6 @@
 
     .swiper-slide {
         width: 100vw !important;
-        display: flex;
-        justify-content: center;
     }
 
     .rekomendacje .swiper-slide {
@@ -125,9 +123,9 @@
     .rekomendacje .swipe .card {
         height: fit-content !important;
         border: 2px solid #363636;
-        -webkit-box-shadow: 0 0 10px 0 rgba(0,0,0,0.75);
-        -moz-box-shadow: 0 0 10px 0 rgba(0,0,0,0.75);
-        box-shadow: 0 0 10px 0 rgba(0,0,0,0.75);
+        -webkit-box-shadow: 0 0 3px 0 rgba(0,0,0,0.75);
+        -moz-box-shadow: 0 0 3px 0 rgba(0,0,0,0.75);
+        box-shadow: 0 0 3px 0 rgba(0,0,0,0.75);
     }
 
     .rekomendacje .swipe .gatsby-image-wrapper {
