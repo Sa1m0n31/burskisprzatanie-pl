@@ -225,9 +225,9 @@ const LandingPodstrona = (props) => {
                         Strona główna
                     </AniLink>
                 </li>
-                <li>Oferta</li>
-                <li>O nas</li>
-                <li>Kontakt</li>
+                <li><a href="/#oferta">Oferta</a></li>
+                <li><a href="/#dlaczegoMy">O nas</a></li>
+                <li><a href="/#kontakt">Kontakt</a></li>
             </ul>
             <div className="phoneNumber">
                 <img src={require("../../static/img/telefon.png")} alt="telefon" />
