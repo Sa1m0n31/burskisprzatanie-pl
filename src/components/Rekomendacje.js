@@ -11,7 +11,7 @@ import 'swiper/swiper.scss';
 
 import TinderCard from 'react-tinder-card';
 
-import Loader from 'react-loader-spinner';
+import StarRatings from 'react-star-ratings';
 
 const Rekomendacje = () => {
     SwiperCore.use([Pagination]);
@@ -83,27 +83,54 @@ const Rekomendacje = () => {
 
     return (<section className="rekomendacje">
         <h2>Rekomendacje</h2>
-        <div className="rekomendacjeWindow desktopOnly">
-            <a href="https://fixly.pl/profil/mAYK1kwm" target="_blank">
-                <Img fluid={data.rekomendacje2.childImageSharp.fluid} alt="rekomendacje2" />
-            </a>
-            <a href="https://fixly.pl/profil/mAYK1kwm" target="_blank">
-                <Img fluid={data.rekomendacje3.childImageSharp.fluid} alt="rekomendacje3" />
-            </a>
-            <a href="https://fixly.pl/profil/mAYK1kwm" target="_blank">
-                <Img fluid={data.rekomendacje4.childImageSharp.fluid} alt="rekomendacje4" />
-            </a>
-        </div>
-
-        <div className="mobileOnly swiper">
-            <div className='cardContainer'>
-                {kolejka.map((character, index) =>
-                    <TinderCard className='swipe' key={1} onCardLeftScreen={() => cardLeftScreen()}>
-                        <div className='card'>
-                            <Img fluid={character.childImageSharp.fluid} alt="rekomendacje1" />
-                        </div>
-                    </TinderCard>
-                )}
+        <div className="rekomendacjeInner">
+            <div className="opinia">
+                <a href="https://fixly.pl/profil/mAYK1kwm" target="_blank">
+                <img className="avatar" src={require("../../static/img/b.jpg")} alt="avatar" />
+                <StarRatings
+                    className="ocena"
+                    rating={5}
+                    numberOfStars={5}
+                    starRatedColor="#FFD700"
+                    starDimension='20px'
+                />
+                <h4 className="imie">Bartek</h4>
+                <div className="data">21 września 2020</div>
+                <p className="text">Wszystko w jak najlepszym porządku. Zarówno kontakt z Panem Łukaszem, jak i wykonanie samej usługi sprzątania jest godne polecenia.</p>
+                <img className="opinieFixly" src="https://fixly.pl/profil/mAYK1kwm/widget-a01.png" alt="fixly" />
+                </a>
+            </div>
+            <div className="opinia">
+                <a href="https://fixly.pl/profil/mAYK1kwm" target="_blank">
+                    <img className="avatar" src={require("../../static/img/a.jpg")} alt="avatar" />
+                    <StarRatings
+                        className="ocena"
+                        rating={5}
+                        numberOfStars={5}
+                        starRatedColor="#FFD700"
+                        starDimension='20px'
+                    />
+                    <h4 className="imie">Aleksander</h4>
+                    <div className="data">19 września 2020</div>
+                    <p className="text">Solidnie wykonana robota w uczciwej cenie. Polecam.</p>
+                    <img className="opinieFixly" src="https://fixly.pl/profil/mAYK1kwm/widget-a01.png" alt="fixly" />
+                </a>
+            </div>
+            <div className="opinia">
+                <a href="https://fixly.pl/profil/mAYK1kwm" target="_blank">
+                    <img className="avatar" src={require("../../static/img/s.jpg")} alt="avatar" />
+                    <StarRatings
+                        className="ocena"
+                        rating={5}
+                        numberOfStars={5}
+                        starRatedColor="#FFD700"
+                        starDimension='20px'
+                    />
+                    <h4 className="imie">Szymon</h4>
+                    <div className="data">18 września 2020</div>
+                    <p className="text">Perfekcyjnie czyściutkie okna, wszystko na czas, przemiła obsługa. Zdecydowanie polecam.</p>
+                    <img className="opinieFixly" src="https://fixly.pl/profil/mAYK1kwm/widget-a01.png" alt="fixly" />
+                </a>
             </div>
         </div>
     </section>);

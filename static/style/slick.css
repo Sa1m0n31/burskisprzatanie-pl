@@ -14,10 +14,6 @@
 
 /* SWIPER */
 
-.swiper-container {
-    height: 800px !important;
-}
-
 .swiper-slide {
     position: relative;
 }

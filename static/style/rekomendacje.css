@@ -11,44 +11,66 @@
     color: #363636;
 }
 
-.rekomendacje .rekomendacjeWindow {
-    width: 70%;
-    height: 400px;
-    overflow-y: scroll;
-    background-color: #f2f2f2;
-    margin: 40px 0;
+.rekomendacje .rekomendacjeInner {
+    display: flex;
+    justify-content: space-evenly;
+    width: 90vw;
+    margin: 20px 0;
+}
+
+.rekomendacje .opinia > a {
+    color: #363636;
     display: grid;
-    grid-template-columns: 45% 45%;
-    grid-template-rows: repeat(2, 200px);
-    grid-auto-rows: 200px;
-    grid-column-gap: 5%;
-    grid-row-gap: 40px;
+    grid-template-rows: 25px 25px 15px 150px 50px;
+    grid-template-columns: 30% 60%;
+    grid-column-gap: 10%;
+    grid-row-gap: 10px;
+    width: 25vw;
+    background-color: #f2f2f2;
     justify-items: center;
-    padding: 50px 0;
+    align-items: center;
+    padding: 10px;
     border-radius: 10px;
-    border: 3px solid #d5d5d5;
-    -webkit-box-shadow: 0 0 10px 0 rgba(0,0,0,0.75);
-    -moz-box-shadow: 0 0 10px 0 rgba(0,0,0,0.75);
-    box-shadow: 0 0 10px 0 rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0 0 3px 0 rgba(0,0,0,0.75);
+    -moz-box-shadow: 0 0 3px 0 rgba(0,0,0,0.75);
+    box-shadow: 0 0 3px 0 rgba(0,0,0,0.75);
 }
 
-.rekomendacje .rekomendacjeWindow .gatsby-image-wrapper {
-    width: 350px;
-    height: fit-content;
-}
-
-.rekomendacje .rekomendacjeWindow::-webkit-scrollbar {
-    width: 20px;
-}
-
-.rekomendacje .rekomendacjeWindow::-webkit-scrollbar-track {
-    background-color: #363636;
-    border-top-right-radius: 10px;
-}
-
-.rekomendacje .rekomendacjeWindow::-webkit-scrollbar-thumb {
-    background-color: #75C3DE;
+.rekomendacje .opinia .avatar {
+    width: 50px;
     height: 50px;
+    border-radius: 50%;
+    grid-column: 1;
+    grid-row: 1 / span 3;
+}
+
+.rekomendacje .opinia .imie {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.rekomendacje .opinia .ocena {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.rekomendacje .opinia .data {
+    grid-column: 2;
+    grid-row: 3;
+    font-size: 13px;
+    color: grey;
+}
+
+.rekomendacje .opinia .text {
+    grid-column: 1 / span 2;
+    grid-row: 4;
+    padding: 0 20px;
+}
+
+.rekomendacje .opinia .opinieFixly {
+    grid-column: 1 / span 2;
+    grid-row: 5;
+    margin-bottom: 30px;
 }
 
 @media(max-width: 1200px) {
@@ -76,7 +98,6 @@
     }
 
     .swiper-wrapper {
-        height: 300px !important;
         width: 100vw !important;
     }
 
@@ -140,5 +161,38 @@
 @media(max-width: 700px) {
     .rekomendacje .cardContainer {
         width: 300px !important;
+    }
+}
+
+@media(max-width: 1300px) {
+    .rekomendacje .rekomendacjeInner {
+        width: 100vw;
+    }
+
+    .rekomendacje .rekomendacjeInner {
+        flex-wrap: wrap;
+    }
+
+    .rekomendacje .opinia a {
+        width: 35vw;
+        margin: 30px 0;
+    }
+}
+
+@media(max-width: 900px) {
+    .rekomendacje .opinia a {
+        width: 40vw;
+    }
+}
+
+@media(max-width: 800px) {
+    .rekomendacje .opinia a {
+        width: 55vw;
+    }
+}
+
+@media(max-width: 600px) {
+    .rekomendacje .opinia a {
+        width: 90vw;
     }
 }

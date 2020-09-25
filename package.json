@@ -39,6 +39,7 @@
     "react-recaptcha-v3": "^2.0.1",
     "react-scroll": "^1.8.1",
     "react-slick": "^0.27.11",
+    "react-star-ratings": "^2.3.0",
     "react-tinder-card": "^1.2.1",
     "slick-carousel": "^1.8.1",
     "swiper": "^6.2.0"

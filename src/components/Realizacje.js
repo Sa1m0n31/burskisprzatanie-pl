@@ -108,7 +108,6 @@ const Realizacje = () => {
             <div className="mobileOnly">
                 <Swiper
                     loop={true}
-                    pagination={{ clickable: true }}
                 >
                     <SwiperSlide>
                         <Img fluid={data.realizacje2.childImageSharp.fluid} alt="Realizacje1" />
