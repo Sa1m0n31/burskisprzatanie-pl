@@ -12,6 +12,9 @@ import '../../static/style/o-nas.css';
 import '../../static/style/footer.css';
 
 import LandingPodstrona from "../components/LandingPodstrona";
+import Cennik from "../components/Cennik";
+import ONas from "../components/ONas";
+import Footer from "../components/Footer";
 
 export default function Pranie() {
     return (<div className="app">
@@ -19,5 +22,8 @@ export default function Pranie() {
             <title>BurskiSprzątanie - Pranie ekstrakcyjne</title>
         </Helmet>
         <LandingPodstrona haslo="Pranie ekstrakcyjne" opis="Twoje kanapy, dywany, wykładziny lub fotele samochodowe mogą wyglądać jak nowe! Sprawdź różnicę i rozsiądź się wygodnie."/>
+        <Cennik opis="Twoje kanapy, dywany, wykładziny lub fotele samochodowe mogą wyglądać jak nowe! Sprawdź różnicę i rozsiądź się wygodnie." />
+        <ONas/>
+        <Footer/>
     </div>);
 }

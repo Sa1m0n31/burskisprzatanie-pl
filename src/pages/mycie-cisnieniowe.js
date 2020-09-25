@@ -12,6 +12,9 @@ import '../../static/style/o-nas.css';
 import '../../static/style/footer.css';
 
 import LandingPodstrona from "../components/LandingPodstrona";
+import Cennik from "../components/Cennik";
+import ONas from "../components/ONas";
+import Footer from "../components/Footer";
 
 export default function MycieCisnieniowe() {
     return (<div className="app">
@@ -19,5 +22,8 @@ export default function MycieCisnieniowe() {
             <title>BurskiSprzątanie - mycie ciśnieniowe</title>
         </Helmet>
         <LandingPodstrona haslo="Mycie ciśnieniowe" opis="Oczyść swoją kostkę lub elewację z mchu, graffiti i innych zanieczyszczeń."/>
+        <Cennik opis="Oczyść swoją kostkę lub elewację z mchu, graffiti i innych zanieczyszczeń." />
+        <ONas/>
+        <Footer/>
     </div>);
 }

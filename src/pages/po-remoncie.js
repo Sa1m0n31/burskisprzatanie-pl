@@ -12,6 +12,9 @@ import '../../static/style/o-nas.css';
 import '../../static/style/footer.css';
 
 import LandingPodstrona from "../components/LandingPodstrona";
+import Cennik from "../components/Cennik";
+import ONas from "../components/ONas";
+import Footer from "../components/Footer";
 
 export default function Biura() {
     return (<div className="app">
@@ -19,5 +22,8 @@ export default function Biura() {
             <title>BurskiSprzątanie - po remoncie</title>
         </Helmet>
         <LandingPodstrona haslo="Sprzątanie po remoncie i budowie" opis="Pozbędziemy się nawet gór pyłu i morza farby."/>
+        <Cennik opis="Pozbędziemy się nawet gór pyłu i morza farby." />
+        <ONas/>
+        <Footer/>
     </div>);
 }

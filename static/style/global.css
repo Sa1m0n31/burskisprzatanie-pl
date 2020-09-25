@@ -10,6 +10,7 @@
 html, body {
     max-width: 100%;
     overflow-x: hidden;
+    cursor: pointer;
 }
 
 a {
@@ -20,7 +21,6 @@ a {
 button {
     outline: none;
     border: none;
-    cursor: pointer;
 }
 
 .blue {

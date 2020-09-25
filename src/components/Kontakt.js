@@ -472,62 +472,62 @@ export default class Kontakt extends React.Component {
 
                 <Modal isOpen={this.state.uslugiOpen} closeTimeoutMS={500} onRequestClose={() => { this.setState({uslugiOpen: false}) }} portalClassName="uslugiMenu">
                     <label id="sprzatanieMieszkania" onClick={e => this.handleChange(e)}>
-                        <button id="sprzatanieMieszkania" name="sprzatanie-mieszkania">
-                            <div id="sprzatanieMieszkania" className={this.state.sprzatanieMieszkania ? "checked" : ""} />
+                        <button id="sprzatanieMieszkania" name="sprzatanie-mieszkania" onClick="">
+                            <div id="sprzatanieMieszkania" className={this.state.sprzatanieMieszkania ? "checked" : ""} onClick="" />
                         </button>
                         Sprzątanie mieszkania
                     </label>
                     <label id="hoteleIApartamenty" onClick={e => this.handleChange(e)}>
-                        <button id="hoteleIApartamenty" name="hotele-i-apartamenty">
-                            <div id="hoteleIApartamenty" className={this.state.hoteleIApartamenty ? "checked" : ""} />
+                        <button id="hoteleIApartamenty" name="hotele-i-apartamenty" onClick="">
+                            <div id="hoteleIApartamenty" className={this.state.hoteleIApartamenty ? "checked" : ""} onClick="" />
                         </button>
                         Hotele i apartamenty
                     </label>
                     <label id="biura" onClick={e => this.handleChange(e)}>
-                        <button id="biura" name="biura">
-                            <div id="biura" className={this.state.biura ? "checked" : ""} />
+                        <button id="biura" name="biura" onClick="">
+                            <div id="biura" className={this.state.biura ? "checked" : ""} onClick="" />
                         </button>
                         Biura
                     </label>
                     <label id="pranie" onClick={e => this.handleChange(e)}>
-                        <button id="pranie" name="pranie">
-                            <div id="pranie" className={this.state.pranie ? "checked" : ""} />
+                        <button id="pranie" name="pranie" onClick="">
+                            <div id="pranie" className={this.state.pranie ? "checked" : ""} onClick=""/>
                         </button>
                         Pranie
                     </label>
                     <label id="wnetrzeAuta" onClick={e => this.handleChange(e)}>
-                        <button id="wnetrzeAuta" name="wnetrze-auta">
-                            <div id="wnetrzeAuta" className={this.state.wnetrzeAuta ? "checked" : ""} />
+                        <button id="wnetrzeAuta" name="wnetrze-auta" onClick="">
+                            <div id="wnetrzeAuta" className={this.state.wnetrzeAuta ? "checked" : ""} onClick="" />
                         </button>
                         Wnętrze auta
                     </label>
                     <label id="groby" onClick={e => this.handleChange(e)}>
-                        <button id="groby" name="groby">
-                            <div id="wnetrzeAuta" className={this.state.groby ? "checked" : ""} />
+                        <button id="groby" name="groby" onClick="">
+                            <div id="wnetrzeAuta" className={this.state.groby ? "checked" : ""} onClick="" />
                         </button>
                         Groby
                     </label>
                     <label id="lokaleUzytkowe" onClick={e => this.handleChange(e)}>
-                        <button id="lokaleUzytkowe" name="lokale-uzytkowe">
-                            <div id="lokaleUzytkowe" className={this.state.lokaleUzytkowe ? "checked" : ""} />
+                        <button id="lokaleUzytkowe" name="lokale-uzytkowe" onClick="">
+                            <div id="lokaleUzytkowe" className={this.state.lokaleUzytkowe ? "checked" : ""} onClick=""/>
                         </button>
                         Lokale użytkowe
                     </label>
                     <label id="poRemoncie" onClick={e => this.handleChange(e)}>
-                        <button id="poRemoncie" name="po-remoncie">
-                            <div id="poRemoncie" className={this.state.poRemoncie ? "checked" : ""} />
+                        <button id="poRemoncie" name="po-remoncie" onClick="">
+                            <div id="poRemoncie" className={this.state.poRemoncie ? "checked" : ""} onClick=""/>
                         </button>
                         Po remoncie
                     </label>
                     <label id="mycieOkien" onClick={e => this.handleChange(e)}>
-                        <button id="mycieOkien" name="mycie-okien">
-                            <div className={this.state.mycieOkien ? "checked" : ""} />
+                        <button id="mycieOkien" name="mycie-okien" onClick="">
+                            <div className={this.state.mycieOkien ? "checked" : ""} onClick="" />
                         </button>
                         Mycie okien
                     </label>
                     <label id="mycieCisnieniowe" onClick={e => this.handleChange(e)}>
-                        <button id="mycieCisnieniowe" name="mycie-cisnieniowe">
-                            <div className={this.state.mycieCisnieniowe ? "checked" : ""} />
+                        <button id="mycieCisnieniowe" name="mycie-cisnieniowe" onClick="">
+                            <div className={this.state.mycieCisnieniowe ? "checked" : ""} onClick="" />
                         </button>
                         Mycie ciśnieniowe
                     </label>
@@ -542,14 +542,14 @@ export default class Kontakt extends React.Component {
                 <div className="usluga">
                     <h4>Zlecam usługę jako:</h4>
                     <label id="firma" onClick={e => this.handleChangeRatio(e)}>
-                        <button id="firma" name="firma">
-                            <div className={this.state.firma ? "checked" : ""} />
+                        <button id="firma" name="firma" onClick="">
+                            <div className={this.state.firma ? "checked" : ""} onClick="" />
                         </button>
                         Firma
                     </label>
                     <label id="osobaPrywatna" onClick={e => this.handleChangeRatio(e)}>
-                        <button id="osobaPrywatna" name="osoba-prywatna">
-                            <div className={this.state.osobaPrywatna ? "checked" : ""} />
+                        <button id="osobaPrywatna" name="osoba-prywatna" onClick="">
+                            <div className={this.state.osobaPrywatna ? "checked" : ""} onClick="" />
                         </button>
                         Osoba prywatna
                     </label>
@@ -557,22 +557,22 @@ export default class Kontakt extends React.Component {
                 <div className="usluga">
                     <h4>Usługa:</h4>
                     <label id="jednorazowo" onClick={e => this.handleChangeRatio(e)}>
-                        <button id="jednorazowo" name="jednorazowo">
-                            <div className={this.state.jednorazowo ? "checked" : ""} />
+                        <button id="jednorazowo" name="jednorazowo" onClick="">
+                            <div className={this.state.jednorazowo ? "checked" : ""} onClick="" />
                         </button>
                         Jednorazowa
                     </label>
                     <label id="cyklicznie" onClick={e => this.handleChangeRatio(e)}>
-                        <button id="cyklicznie" name="cyklicznie">
-                            <div className={this.state.cyklicznie ? "checked" : ""} />
+                        <button id="cyklicznie" name="cyklicznie" onClick="">
+                            <div className={this.state.cyklicznie ? "checked" : ""} onClick="" />
                         </button>
                         Cykliczna
                     </label>
                 </div>
                 <div className="politykaPrywatnosci">
                     <label id="politykaPrywatnosci" onClick={e => this.handleChangeRatio(e)}>
-                        <button id="politykaPrywatnosci" name="polityka-prywatnosci" className={this.state.politykaError ? "redBorder" : ""}>
-                            <div className={this.state.politykaPrywatnosci ? "checkedPolityka" : ""} />
+                        <button id="politykaPrywatnosci" name="polityka-prywatnosci" className={this.state.politykaError ? "redBorder" : ""} onClick="">
+                            <div className={this.state.politykaPrywatnosci ? "checkedPolityka" : ""} onClick="" />
                         </button>
                         Zapoznałem się i akceptuję politykę prywatności
                     </label>
@@ -611,8 +611,8 @@ export default class Kontakt extends React.Component {
                 <form action="https://formspree.io/moqpqzje" method="POST" onSubmit={e => this.handleModalSubmit(e)}>
                     <input className={this.state.modalPhoneError ? "redBorder" : ""} type="text" name="phoneNumberModal" value={this.state.phoneNumberModal} onChange={e => this.handleChangeInput(e)}/>
                     <label id="politykaModal" onClick={e => this.handleChangeRatio(e)}>
-                        <button id="politykaModal" name="polityka-prywatnosci" className={this.state.politykaModalError ? "redBorder" : ""}>
-                            <div id="politykaModal" className={this.state.politykaModal ? "checkedPolityka" : ""} />
+                        <button id="politykaModal" name="polityka-prywatnosci" className={this.state.politykaModalError ? "redBorder" : ""} onClick="">
+                            <div id="politykaModal" className={this.state.politykaModal ? "checkedPolityka" : ""} onClick="" />
                         </button>
                         Zapoznałem się i akceptuję politykę prywatności
                     </label>

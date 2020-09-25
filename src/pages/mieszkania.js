@@ -12,6 +12,9 @@ import '../../static/style/o-nas.css';
 import '../../static/style/footer.css';
 
 import LandingPodstrona from "../components/LandingPodstrona";
+import Cennik from "../components/Cennik";
+import ONas from "../components/ONas";
+import Footer from "../components/Footer";
 
 export default function Mieszkania() {
     return (<div className="app">
@@ -19,5 +22,8 @@ export default function Mieszkania() {
             <title>BurskiSprzątanie - biura</title>
         </Helmet>
         <LandingPodstrona haslo="Sprzątanie mieszkań" opis="Cykliczne lub jednorazowe. Sprawdź nasz unikalny system opieki nad Twoim mieszkaniem - poczuj się wyjątkowo."/>
+        <Cennik opis="Cykliczne lub jednorazowe. Sprawdź nasz unikalny system opieki nad Twoim mieszkaniem - poczuj się wyjątkowo." />
+        <ONas />
+        <Footer />
     </div>);
 }

@@ -1,34 +1,73 @@
 .cennik {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    padding: 50px;
+    color: #363636;
 }
 
-.cennik table {
-    margin: 100px 0;
-    border-radius: 50px;
-}
-
-.cennik table thead {
-    background-color: #75C3DE;
+.cennik .cennikInner {
     display: flex;
-    height: 80px;
-    width: 80vw;
-    justify-content: space-evenly;
+    flex-direction: column;
     align-items: center;
-    color: white;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
 }
 
-.cennik table tr {
+.cennik .opis {
+    margin: 50px 0;
+    text-align: justify;
+}
+
+.cennik .cennikInner > h3 {
+    font-size: calc(30px + 15 * ((100vw - 700px)/(700)));
+    font-weight: 100 !important;
+    text-align: center;
+}
+
+.cennik .buttonDiv {
+    width: 30vw;
     display: flex;
-    width: 100%;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 80px;
+    flex-direction: column;
 }
 
-.cennik table tr:nth-child(even) {
-    background-color: #f5f5f5;
+.cennik .buttonDiv .phoneBtn {
+    background-color: #4BAF4F;
+    margin: 50px 0;
+    border-radius: 12px;
+}
+
+.cennik .phoneBtn a, .cennik .messengerBtn a {
+    display: flex;
+    align-items: center;
+    height: 70px;
+    padding-left: 30px;
+}
+
+.cennik .phoneBtn img, .cennik .messengerBtn img {
+    width: 50px;
+    height: 50px;
+    margin: 0 20px;
+}
+
+@media(max-width: 1000px) {
+    .cennik .buttonDiv {
+        width: 50vw;
+    }
+}
+
+@media(max-width: 700px) {
+    .cennik .buttonDiv {
+        width: 70vw;
+    }
+
+    .cennik .phoneBtn a, .cennik .messengerBtn a {
+        padding-left: 0;
+    }
+
+    .cennik .phoneBtn img, .cennik .messengerBtn img {
+        margin: 0 10px;
+    }
+
+    .cennik .phoneBtn h3, .cennik .messengerBtn h3 {
+        font-size: 13px;
+    }
 }

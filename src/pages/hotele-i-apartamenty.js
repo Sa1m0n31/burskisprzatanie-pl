@@ -12,6 +12,9 @@ import '../../static/style/o-nas.css';
 import '../../static/style/footer.css';
 
 import LandingPodstrona from "../components/LandingPodstrona";
+import Cennik from "../components/Cennik";
+import ONas from "../components/ONas";
+import Footer from "../components/Footer";
 
 export default function HoteleIApartamenty() {
     return (<div className="app">
@@ -21,5 +24,8 @@ export default function HoteleIApartamenty() {
                     nonce="FDmu4cnd"></script>
         </Helmet>
         <LandingPodstrona haslo="Hotele i apartamenty" opis="Sprzątamy hotele, apartamenty i wspólnoty mieszkaniowe. Zobacz co możemy dla Ciebie zrobić."/>
+        <Cennik opis="Hotele i apartamenty" opis="Sprzątamy hotele, apartamenty i wspólnoty mieszkaniowe. Zobacz co możemy dla Ciebie zrobić." />
+        <ONas/>
+        <Footer/>
     </div>);
 }

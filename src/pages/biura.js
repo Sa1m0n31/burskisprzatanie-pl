@@ -13,6 +13,8 @@ import '../../static/style/footer.css';
 
 import LandingPodstrona from "../components/LandingPodstrona";
 import Cennik from "../components/Cennik";
+import ONas from "../components/ONas";
+import Footer from "../components/Footer";
 
 export default function Biura() {
     return (<div className="app">
@@ -20,6 +22,8 @@ export default function Biura() {
             <title>BurskiSprzątanie - biura</title>
         </Helmet>
         <LandingPodstrona haslo="Sprzątanie biura" opis="Każde zlecenie traktujemy indywidualnie, częstotliwość i zakres usług dopasowujemy do Twojego zapotrzebowania. Sprawdź, co możemy dla Ciebie zrobić, abyś Ty mógł się zająć swoim biznesem."/>
-        <Cennik />
+        <Cennik opis="Każde zlecenie traktujemy indywidualnie, częstotliwość i zakres usług dopasowujemy do Twojego zapotrzebowania. Sprawdź, co możemy dla Ciebie zrobić, abyś Ty mógł się zająć swoim biznesem." />
+        <ONas />
+        <Footer />
     </div>);
 }

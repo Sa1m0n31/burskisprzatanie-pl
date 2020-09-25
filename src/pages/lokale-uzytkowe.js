@@ -12,6 +12,9 @@ import '../../static/style/o-nas.css';
 import '../../static/style/footer.css';
 
 import LandingPodstrona from "../components/LandingPodstrona";
+import Cennik from "../components/Cennik";
+import ONas from "../components/ONas";
+import Footer from "../components/Footer";
 
 export default function LokaleUzytkowe() {
     return (<div className="app">
@@ -19,5 +22,8 @@ export default function LokaleUzytkowe() {
             <title>BurskiSprzątanie - biura</title>
         </Helmet>
         <LandingPodstrona haslo="Lokale użytkowe" opis="Niech klienci czują się u Ciebie dobrze dzięki uderzającej czystości. Sprawdź jakie rodzaje placówek sprzątamy."/>
+        <Cennik opis="Niech klienci czują się u Ciebie dobrze dzięki uderzającej czystości. Sprawdź jakie rodzaje placówek sprzątamy." />
+        <ONas/>
+        <Footer/>
     </div>);
 }

@@ -12,6 +12,9 @@ import '../../static/style/o-nas.css';
 import '../../static/style/footer.css';
 
 import LandingPodstrona from "../components/LandingPodstrona";
+import Cennik from "../components/Cennik";
+import ONas from "../components/ONas";
+import Footer from "../components/Footer";
 
 export default function Groby() {
     return (<div className="app">
@@ -19,5 +22,8 @@ export default function Groby() {
             <title>BurskiSprzątanie - opieka nad grobami</title>
         </Helmet>
         <LandingPodstrona haslo="Opieka nad grobami" opis="Uporządkujemy nagrobek i postawimy znicz aby uhonorować Twoich bliskich lub odświeżymy płytę nagrobka z pomocą cichej myjki ciśnieniowej."/>
+        <Cennik opis="Uporządkujemy nagrobek i postawimy znicz aby uhonorować Twoich bliskich lub odświeżymy płytę nagrobka z pomocą cichej myjki ciśnieniowej." />
+        <ONas/>
+        <Footer/>
     </div>);
 }

@@ -12,6 +12,9 @@ import '../../static/style/o-nas.css';
 import '../../static/style/footer.css';
 
 import LandingPodstrona from "../components/LandingPodstrona";
+import Cennik from "../components/Cennik";
+import ONas from "../components/ONas";
+import Footer from "../components/Footer";
 
 export default function MycieOkien() {
     return (<div className="app">
@@ -19,5 +22,8 @@ export default function MycieOkien() {
             <title>BurskiSprzątanie - mycie okien</title>
         </Helmet>
         <LandingPodstrona haslo="Mycie okien" opis="Umycie okien bywa niezwykle czasochłonne a walka ze smugami to niekiedy prawdziwa wojna. Zostaw to nam. Dzięki naszemu procesowi mycia zapomnisz o istnieniu smug."/>
+        <Cennik opis="Umycie okien bywa niezwykle czasochłonne a walka ze smugami to niekiedy prawdziwa wojna. Zostaw to nam. Dzięki naszemu procesowi mycia zapomnisz o istnieniu smug." />
+        <ONas/>
+        <Footer/>
     </div>);
 }

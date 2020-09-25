@@ -86,9 +86,9 @@ const Oferta = () => {
                     <img src={require("../../static/img/dom.png")} alt="sprzatanie-domu" ref={img1} />
                     <h4>Mieszkania i domy</h4>
                     <button>
-                        <AniLink bg="#75C3DE" cover to="/mieszkania" ref={oferta1} onMouseOver={() => handleAnimation(1)}>
+                        <a href="/mieszkania" ref={oferta1} onMouseOver={() => handleAnimation(1)}>
                             Oferta
-                        </AniLink>
+                        </a>
                     </button>
             </div>
             <div className="ofertaItem">
