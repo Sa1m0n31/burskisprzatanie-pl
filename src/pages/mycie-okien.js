@@ -18,6 +18,6 @@ export default function MycieOkien() {
         <Helmet>
             <title>BurskiSprzątanie - mycie okien</title>
         </Helmet>
-        <LandingPodstrona haslo="Mycie okien" opis="Każde zlecenie traktujemy indywidualnie, częstotliwość i zakres usług dopasowujemy do Twojego zapotrzebowania. Sprawdź, co możemy dla Ciebie zrobić, abyś Ty mógł się zająć swoim biznesem."/>
+        <LandingPodstrona haslo="Mycie okien" opis="Umycie okien bywa niezwykle czasochłonne a walka ze smugami to niekiedy prawdziwa wojna. Zostaw to nam. Dzięki naszemu procesowi mycia zapomnisz o istnieniu smug."/>
     </div>);
 }

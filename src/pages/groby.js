@@ -18,6 +18,6 @@ export default function Groby() {
         <Helmet>
             <title>BurskiSprzątanie - opieka nad grobami</title>
         </Helmet>
-        <LandingPodstrona haslo="Opieka nad grobami" opis="Każde zlecenie traktujemy indywidualnie, częstotliwość i zakres usług dopasowujemy do Twojego zapotrzebowania. Sprawdź, co możemy dla Ciebie zrobić, abyś Ty mógł się zająć swoim biznesem."/>
+        <LandingPodstrona haslo="Opieka nad grobami" opis="Uporządkujemy nagrobek i postawimy znicz aby uhonorować Twoich bliskich lub odświeżymy płytę nagrobka z pomocą cichej myjki ciśnieniowej."/>
     </div>);
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 
 const DlaczegoMy = () => {
-    return (<section className="dlaczegoMy">
+    return (<section id="dlaczegoMy" className="dlaczegoMy">
         <h2>Dlaczego <span className="blue">my</span>?</h2>
         <div className="dlaczegoMyInner">
             <div className="text text1">

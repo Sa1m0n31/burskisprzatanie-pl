@@ -18,6 +18,6 @@ export default function Biura() {
         <Helmet>
             <title>BurskiSprzątanie - po remoncie</title>
         </Helmet>
-        <LandingPodstrona haslo="Sprzątanie po remoncie" opis="Każde zlecenie traktujemy indywidualnie, częstotliwość i zakres usług dopasowujemy do Twojego zapotrzebowania. Sprawdź, co możemy dla Ciebie zrobić, abyś Ty mógł się zająć swoim biznesem."/>
+        <LandingPodstrona haslo="Sprzątanie po remoncie i budowie" opis="Pozbędziemy się nawet gór pyłu i morza farby."/>
     </div>);
 }

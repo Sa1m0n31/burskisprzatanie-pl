@@ -18,6 +18,6 @@ export default function MycieCisnieniowe() {
         <Helmet>
             <title>BurskiSprzątanie - mycie ciśnieniowe</title>
         </Helmet>
-        <LandingPodstrona haslo="Mycie ciśnieniowe" opis="Każde zlecenie traktujemy indywidualnie, częstotliwość i zakres usług dopasowujemy do Twojego zapotrzebowania. Sprawdź, co możemy dla Ciebie zrobić, abyś Ty mógł się zająć swoim biznesem."/>
+        <LandingPodstrona haslo="Mycie ciśnieniowe" opis="Oczyść swoją kostkę lub elewację z mchu, graffiti i innych zanieczyszczeń."/>
     </div>);
 }

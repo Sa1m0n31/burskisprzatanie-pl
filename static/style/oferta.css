@@ -52,7 +52,7 @@
 
 .oferta .ofertaItem button {
     background-color: #75C3DE;
-    color: white;
+    color: white !important;
     text-transform: uppercase;
     height: 40px;
     width: 50%;
@@ -74,11 +74,33 @@
         padding: 5vh 10vw;
     }
 
+    .oferta .ofertaItem a {
+        width: 35vw;
+        height: 35vw;
+        background-color: transparent;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .oferta .ofertaItem a h4 {
+        color: #363636 !important;
+    }
+
+    .oferta .ofertaItem button {
+        color: white !important;
+    }
+
     .oferta .ofertaGrid {
         grid-template-columns: repeat(2, 35vw);
         grid-template-rows: repeat(5, 35vw);
         grid-column-gap: 5vw;
         grid-row-gap: 30px;
+    }
+
+    .oferta .ofertaItem {
+        position: relative;
     }
 
     .oferta .ofertaItem img {

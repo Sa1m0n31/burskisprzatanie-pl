@@ -18,6 +18,6 @@ export default function WnetrzeAuta() {
         <Helmet>
             <title>BurskiSprzątanie - wnętrze auta</title>
         </Helmet>
-        <LandingPodstrona haslo="Wnętrze auta" opis="Podróż kilkuletnim samochodem z wnętrzem jakbyś wyjechał z salonu? Dzięki naszej usłudze kompleksowego detailingowego czyszczenia wnętrza to możliwe!"/>
+        <LandingPodstrona haslo="Detailing wnętrza auta" opis="Podróż kilkuletnim samochodem z wnętrzem jakbyś wyjechał z salonu? Dzięki naszej usłudze kompleksowego detailingowego czyszczenia wnętrza to możliwe!"/>
     </div>);
 }

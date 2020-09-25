@@ -1,9 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import { graphql, useStaticQuery } from "gatsby";
 import Img from 'gatsby-image';
 
 import AniLink from 'gatsby-plugin-transition-link/AniLink';
+import {ReCaptcha} from "react-recaptcha-v3";
+import Modal from "react-modal";
 
 const LandingPodstrona = (props) => {
 
@@ -19,12 +21,24 @@ const LandingPodstrona = (props) => {
                         words[1] = '<span class="' + styleHook + '">' + words[1] + '</span>';
                         this[i].innerHTML = words.join(' ');
                     }
+                    if (words[2]) {
+                        words[2] = '<span class="' + styleHook + '">' + words[2] + '</span>';
+                        this[i].innerHTML = words.join(' ');
+                    }
                 }
             };
 
             document.getElementsByTagName('h1').styleSecondWord('blue');
         }
     });
+
+    const [open, setOpen] = useState(false);
+    const [valid, setValid] = useState(false);
+    const [phoneNumber, setPhoneNumber] = useState("");
+    const [polityka, setPolityka] = useState(false);
+    const [phoneError, setPhoneError] = useState(false);
+    const [politykaError, setPolitykaError] = useState(false);
+    const [send, setSend] = useState(false);
 
     let data = useStaticQuery(graphql`
         query PodstronaQuery {
@@ -70,6 +84,34 @@ const LandingPodstrona = (props) => {
             }
         }
     }
+    groby: file(relativePath: { eq: "podstrona-groby.jpg" }) {
+        childImageSharp {
+            fluid(maxWidth: 2560, maxHeight: 1800) {
+                ...GatsbyImageSharpFluid
+            }
+        }
+    }
+    mycieOkien: file(relativePath: { eq: "podstrona-okna.jpg" }) {
+        childImageSharp {
+            fluid(maxWidth: 2560, maxHeight: 1800) {
+                ...GatsbyImageSharpFluid
+            }
+        }
+    }
+    mycieCisnieniowe: file(relativePath: { eq: "podstrona-cisnienie.jpg" }) {
+        childImageSharp {
+            fluid(maxWidth: 2560, maxHeight: 1800) {
+                ...GatsbyImageSharpFluid
+            }
+        }
+    }
+    poRemoncie: file(relativePath: { eq: "podstrona-remont.jpg" }) {
+        childImageSharp {
+            fluid(maxWidth: 2560, maxHeight: 1800) {
+                ...GatsbyImageSharpFluid
+            }
+        }
+    }
     
     
     }`);
@@ -93,16 +135,82 @@ const LandingPodstrona = (props) => {
         case "Wnętrze auta":
             data = data.wnetrzeAuta;
             break;
+        case "Opieka nad grobami":
+            data = data.groby;
+            break;
+        case "Sprzątanie po remoncie i budowie":
+            data = data.poRemoncie;
+            break;
+        case "Mycie okien":
+            data = data.mycieOkien;
+            break;
+        case "Mycie ciśnieniowe":
+            data = data.mycieCisnieniowe;
+            break;
         default:
             data = data.wnetrzeAuta;
             break;
     }
 
-    const goDown = () => {
-        if((typeof window  !== 'undefined')&&(typeof document !== 'undefined')) {
-            document.querySelector(".cennik").scrollIntoView({
-                behavior: "smooth"
-            });
+    const verifyCallback = (res) => {
+        if(res) {
+            setValid(true);
+        }
+    };
+
+    const handleChange = (e) => {
+        e.preventDefault();
+        if(e.target.id === "phoneNumberModal") {
+            setPhoneNumber(e.target.value);
+        }
+        else {
+            setPolityka(!polityka);
+        }
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        let isValid = true;
+
+        if(!valid) isValid = false;
+
+        /* Phone number validation */
+        if((isNaN(phoneNumber))||(phoneNumber.length > 11)||((phoneNumber.length < 9))) {
+            setPhoneError(true);
+            isValid = false;
+        }
+        else {
+            setPhoneError(false);
+        }
+
+        /* Polityka validation */
+        if(!polityka) {
+            setPolitykaError(true);
+            isValid = false;
+        }
+        else {
+            setPolitykaError(false);
+        }
+
+        if(isValid) {
+            const form = e.target;
+            const data = {
+                numerTelefonu: phoneNumber,
+                zlecenie: props.haslo
+            };
+            const xhr = new XMLHttpRequest();
+            xhr.open(form.method, form.action);
+            xhr.setRequestHeader("Accept", "application/json");
+            xhr.onreadystatechange = () => {
+                if (xhr.readyState !== XMLHttpRequest.DONE) return;
+                if (xhr.status === 200) {
+                    form.reset();
+                }
+            };
+            xhr.send(JSON.stringify(data));
+            setPhoneNumber("");
+            setPolityka(false);
+            setSend(true);
         }
     };
 
@@ -129,8 +237,41 @@ const LandingPodstrona = (props) => {
 
         <div className="haslo">
             <h1>{props.haslo}</h1>
-            <h2>{props.opis}</h2>
+            <h2 className="desktopOnly">{props.opis}</h2>
+            <button className="podstronaCallToAction" onClick={() => { setOpen(true); }}>
+                Dowiedz się wiecej
+            </button>
         </div>
+
+        <Modal portalClassName="formSend phoneForm" isOpen={open} closeTimeoutMS={500} onRequestClose={() => { setOpen(false); }}>
+            <img className="x" src={require("../../static/img/x.png")} alt="exit" onClick={() => { setOpen(false); }}/>
+            <img className="telefon" src={require("../../static/img/telefon-niebieski.png")} alt="telefon" />
+            <h3>Zostaw do siebie numer, a my oddzwonimy do Ciebie jeszcze dzisiaj!</h3>
+            <form action="https://formspree.io/moqpqzje" method="POST" onSubmit={e => handleSubmit(e)}>
+                <input id="phoneNumberModal" className={phoneError ? "redBorder" : ""} type="text" name="phoneNumberModal" value={phoneNumber} onChange={(e) => handleChange(e)}/>
+                <label id="politykaModal" onClick={e => handleChange(e)}>
+                    <button id="politykaModal" name="polityka-prywatnosci" className={politykaError ? "redBorder" : ""}>
+                        <div id="politykaModal" className={polityka ? "checkedPolityka" : ""} />
+                    </button>
+                    Zapoznałem się i akceptuję politykę prywatności
+                </label>
+                <ReCaptcha
+                    sitekey="6LdZVs8ZAAAAALyZPpx4JXLGSz7bJ8uMgGIH_DTM"
+                    render="implicit"
+                    verifyCallback={(res) => verifyCallback(res)}
+                />
+                <button type="submit">Zatwierdź</button>
+            </form>
+        </Modal>
+
+        <Modal isOpen={send} closeTimeoutMS={500} onRequestClose={() => { setSend(false); }} portalClassName="formSend">
+            <img className="modalExit" src={require("../../static/img/x.png")} alt="exit" onClick={() => {setSend(false)} } />
+            <div className="modalInner">
+                <img className="okejka" src={require("../../static/img/okejka.png")} alt="ok" />
+                <h2>Formularz wysłany!</h2>
+                <h3>Odezwę się do Ciebie jak najszybciej!</h3>
+            </div>
+        </Modal>
     </main>);
 };
 

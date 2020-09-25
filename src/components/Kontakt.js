@@ -396,10 +396,10 @@ export default class Kontakt extends React.Component {
     }
 
     render() {
-        return (<section className="kontakt">
+        return (<section id="kontakt" className="kontakt">
             <h2>Kontakt</h2>
             <h3>Zaznacz w formularzu czego potrzebujesz,<br/>a my odezwiemy się do Ciebie</h3>
-            <form action="https://formspree.io/xwkwkjao" method="POST" onSubmit={e => this.handleSubmit(e)}>
+            <form action="https://formspree.io/moqpqlgw" method="POST" onSubmit={e => this.handleSubmit(e)}>
                 <div className="row row1 desktopOnly">
                     <label id="sprzatanieMieszkania" onClick={e => this.handleChange(e)}>
                         <button id="sprzatanieMieszkania" name="sprzatanie-mieszkania">
@@ -608,7 +608,7 @@ export default class Kontakt extends React.Component {
                 <img className="x" src={require("../../static/img/x.png")} alt="exit" onClick={() => { this.setState({ phoneFormOpen: false }) }}/>
                 <img className="telefon" src={require("../../static/img/telefon-niebieski.png")} alt="telefon" />
                 <h3>Zostaw do siebie numer, a my oddzwonimy do Ciebie jeszcze dzisiaj!</h3>
-                <form action="https://formspree.io/xrgogvrk" method="POST" onSubmit={e => this.handleModalSubmit(e)}>
+                <form action="https://formspree.io/moqpqzje" method="POST" onSubmit={e => this.handleModalSubmit(e)}>
                     <input className={this.state.modalPhoneError ? "redBorder" : ""} type="text" name="phoneNumberModal" value={this.state.phoneNumberModal} onChange={e => this.handleChangeInput(e)}/>
                     <label id="politykaModal" onClick={e => this.handleChangeRatio(e)}>
                         <button id="politykaModal" name="polityka-prywatnosci" className={this.state.politykaModalError ? "redBorder" : ""}>

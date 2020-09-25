@@ -20,6 +20,6 @@ export default function HoteleIApartamenty() {
             <script async defer crossOrigin="anonymous" src="https://connect.facebook.net/pl_PL/sdk.js#xfbml=1&version=v8.0"
                     nonce="FDmu4cnd"></script>
         </Helmet>
-        <LandingPodstrona haslo="Hotele i apartamenty" opis="Jakiś tekst. Zobacz co możemy dla Ciebie zrobić, abyś Ty mógł się zająć swoim biznesem."/>
+        <LandingPodstrona haslo="Hotele i apartamenty" opis="Sprzątamy hotele, apartamenty i wspólnoty mieszkaniowe. Zobacz co możemy dla Ciebie zrobić."/>
     </div>);
 }
