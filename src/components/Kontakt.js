@@ -179,12 +179,18 @@ export default class Kontakt extends React.Component {
             this.setState({
                 jednorazowo: true,
                 cyklicznie: false
+            }, () => {
+                this.forceUpdate(() => { console.log("Force update, State: " + this.state.jednorazowo) });
             });
         }
         else if(name === "cyklicznie") {
             this.setState({
                 jednorazowo: false,
                 cyklicznie: true
+            }, () => {
+                this.forceUpdate(() => {
+                    console.log("Force update, State: " + this.state.cyklicznie);
+                })
             });
         }
         else if(name === "politykaPrywatnosci") {
@@ -264,13 +270,6 @@ export default class Kontakt extends React.Component {
         else {
             this.setState({
                 politykaError: false
-            });
-        }
-
-        /* TMP */
-        if(isValid) {
-            this.setState({
-                send: true
             });
         }
 
@@ -557,8 +556,8 @@ export default class Kontakt extends React.Component {
                 <div className="usluga">
                     <h4>Usługa:</h4>
                     <label id="jednorazowo" onClick={e => this.handleChangeRatio(e)}>
-                        <button id="jednorazowo" name="jednorazowo" onClick="" aria-label="jednorazowo">
-                            <div className={this.state.jednorazowo ? "checked" : ""} onClick="" />
+                        <button id="jednorazowo" name="jednorazowo" aria-label="jednorazowo" onClick={e => this.handleChangeRatio(e)}>
+                            <div id="jednorazowo" className={this.state.jednorazowo ? "checked" : ""} onClick={e => this.handleChangeRatio(e)} />
                         </button>
                         Jednorazowa
                     </label>
