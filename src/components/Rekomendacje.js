@@ -1,46 +1,8 @@
-import React, { useState } from "react";
-
-import { graphql, useStaticQuery } from "gatsby";
-import Img from 'gatsby-image';
-
-// Import Swiper React components
-import SwiperCore, { Pagination } from 'swiper';
-
-// Import Swiper styles
-import 'swiper/swiper.scss';
+import React from "react";
 
 import StarRatings from 'react-star-ratings';
 
 const Rekomendacje = () => {
-    SwiperCore.use([Pagination]);
-
-    const data = useStaticQuery(graphql`
-        query RekomendacjeQuery {
-    rekomendacje2: file(relativePath: { eq: "rekomendacje2.jpg" }) {
-        childImageSharp {
-            fluid(maxWidth: 280, maxHeight: 160) {
-                ...GatsbyImageSharpFluid
-            }
-        }
-    }
-    rekomendacje3: file(relativePath: { eq: "rekomendacje3.jpg" }) {
-        childImageSharp {
-            fluid(maxWidth: 300, maxHeight: 160) {
-                ...GatsbyImageSharpFluid
-            }
-        }
-    }
-    rekomendacje4: file(relativePath: { eq: "rekomendacje4.jpg" }) {
-        childImageSharp {
-            fluid(maxWidth: 280, maxHeight: 160) {
-                ...GatsbyImageSharpFluid
-            }
-        }
-    }
-    
-    }
-    `);
-
     return (<section className="rekomendacje">
         <h2>Rekomendacje</h2>
         <div className="rekomendacjeInner">

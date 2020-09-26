@@ -3,19 +3,13 @@ import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import Img from 'gatsby-image';
 
-import SwiperCore, {Pagination} from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/swiper.scss';
-import 'swiper/components/navigation/navigation.scss';
-import 'swiper/components/pagination/pagination.scss';
-import 'swiper/components/scrollbar/scrollbar.scss';
 
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
 const Realizacje = () => {
-    SwiperCore.use([Pagination]);
-
     const data = useStaticQuery(graphql`
         query RealizacjeQuery {
     realizacje1: file(relativePath: { eq: "realizacje1.jpg" }) {
