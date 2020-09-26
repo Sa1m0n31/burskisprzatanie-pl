@@ -2,11 +2,28 @@
     height: 100vh;
     min-height: 500px !important;
     position: relative;
+    z-index: 10000;
 }
 
 .landingPage .gatsby-image-wrapper {
     height: 100vh;
     min-height: 500px !important;
+}
+
+@media(min-width: 700px) {
+    .landingPage {
+        min-height: 600px !important;
+    }
+
+    .landingPage .gatsby-image-wrapper {
+        min-height: 600px !important;
+    }
+}
+
+@media(max-height: 400px) {
+    .landingPage .haslo {
+        bottom: 200px !important;
+    }
 }
 
 .landingPage .logo {
@@ -127,7 +144,7 @@
 .landingPage .haslo h1 {
     text-transform: uppercase;
     font-weight: 900;
-    font-size: calc(35px + 30 * ((100vw - 700px)/(1000)));
+    font-size: calc(37px + 30 * ((100vw - 700px)/(1000)));
 }
 
 .landingPage .haslo h3 {

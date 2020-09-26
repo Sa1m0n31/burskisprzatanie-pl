@@ -186,6 +186,9 @@ const LandingPodstrona = (props) => {
         if(!polityka) {
             setPolitykaError(true);
             isValid = false;
+            if(typeof document !== 'undefined') {
+                document.querySelector("#politykaModal>button").classList.add("redBorder");
+            }
         }
         else {
             setPolitykaError(false);
@@ -256,9 +259,7 @@ const LandingPodstrona = (props) => {
             <form action="https://formspree.io/mvovgozo" method="POST" onSubmit={e => handleSubmit(e)}>
                 <input id="phoneNumberModal" className={phoneError ? "redBorder" : ""} type="text" name="phoneNumberModal" value={phoneNumber} onChange={(e) => handleChange(e)}/>
                 <label id="politykaModal" onClick={e => handleChange(e)}>
-                    <button id="politykaModal" name="polityka-prywatnosci" className={politykaError ? "redBorder" : ""}>
-                        <div id="politykaModal" className={polityka ? "checkedPolityka" : ""} />
-                    </button>
+                    <button className={polityka ? "checkedPolityka" : ""} id="politykaModal" name="polityka-prywatnosci" />
                     Zapoznałem się i akceptuję politykę prywatności
                 </label>
                 <ReCaptcha

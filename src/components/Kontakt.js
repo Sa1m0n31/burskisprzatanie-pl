@@ -179,9 +179,11 @@ export default class Kontakt extends React.Component {
             this.setState({
                 jednorazowo: true,
                 cyklicznie: false
-            }, () => {
-                this.forceUpdate(() => { console.log("Force update, State: " + this.state.jednorazowo) });
             });
+            if(typeof document !== 'undefined') {
+                let div = document.createElement("div");
+
+            }
         }
         else if(name === "cyklicznie") {
             this.setState({
@@ -266,6 +268,9 @@ export default class Kontakt extends React.Component {
                 politykaError: true
             });
             isValid = false;
+            if(typeof document !== 'undefined') {
+                document.querySelector(".politykaPrywatnosci>label>button").classList.add("redBorder");
+            }
         }
         else {
             this.setState({
@@ -360,6 +365,9 @@ export default class Kontakt extends React.Component {
                 politykaModalError: true
             });
             isValid = false;
+            if(typeof document !== 'undefined') {
+                document.querySelector("#politykaModal>button").classList.add("redBorder");
+            }
         }
         else {
             this.setState({
@@ -401,65 +409,45 @@ export default class Kontakt extends React.Component {
             <form action="https://formspree.io/xwkwkjao" method="POST" onSubmit={e => this.handleSubmit(e)}>
                 <div className="row row1 desktopOnly">
                     <label id="sprzatanieMieszkania" onClick={e => this.handleChange(e)}>
-                        <button id="sprzatanieMieszkania" name="sprzatanie-mieszkania" aria-label="sprzatanie-mieszkania">
-                            <div id="sprzatanieMieszkania" className={this.state.sprzatanieMieszkania ? "checked" : ""} />
-                        </button>
+                        <button className={this.state.sprzatanieMieszkania ? "checked" : ""} id="sprzatanieMieszkania" name="sprzatanie-mieszkania" aria-label="sprzatanie-mieszkania" />
                         Sprzątanie mieszkania
                     </label>
                     <label id="hoteleIApartamenty" onClick={e => this.handleChange(e)}>
-                        <button id="hoteleIApartamenty" name="hotele-i-apartamenty" aria-label="hotele-i-apartamenty">
-                            <div id="hoteleIApartamenty" className={this.state.hoteleIApartamenty ? "checked" : ""} />
-                        </button>
+                        <button className={this.state.hoteleIApartamenty ? "checked" : ""} id="hoteleIApartamenty" name="hotele-i-apartamenty" aria-label="hotele-i-apartamenty" />
                         Hotele i apartamenty
                     </label>
                     <label id="biura" onClick={e => this.handleChange(e)}>
-                        <button id="biura" name="biura" aria-label="biura">
-                            <div id="biura" className={this.state.biura ? "checked" : ""} />
-                        </button>
+                        <button className={this.state.biura ? "checked" : ""} id="biura" name="biura" aria-label="biura" />
                         Biura
                     </label>
                     <label id="pranie" onClick={e => this.handleChange(e)}>
-                        <button id="pranie" name="pranie" aria-label="pranie">
-                            <div id="pranie" className={this.state.pranie ? "checked" : ""} />
-                        </button>
+                        <button className={this.state.pranie ? "checked" : ""} id="pranie" name="pranie" aria-label="pranie" />
                         Pranie
                     </label>
                     <label id="wnetrzeAuta" onClick={e => this.handleChange(e)}>
-                        <button id="wnetrzeAuta" name="wnetrze-auta" aria-label="wnetrze-auta">
-                            <div id="wnetrzeAuta" className={this.state.wnetrzeAuta ? "checked" : ""} />
-                        </button>
+                        <button className={this.state.wnetrzeAuta ? "checked" : ""} id="wnetrzeAuta" name="wnetrze-auta" aria-label="wnetrze-auta" />
                         Wnętrze auta
                     </label>
                 </div>
                 <div className="row row2 desktopOnly">
                     <label id="groby" onClick={e => this.handleChange(e)}>
-                        <button id="groby" name="groby" aria-label="groby">
-                            <div id="wnetrzeAuta" className={this.state.groby ? "checked" : ""} />
-                        </button>
+                        <button className={this.state.groby ? "checked" : ""} id="groby" name="groby" aria-label="groby" />
                         Groby
                     </label>
                     <label id="lokaleUzytkowe" onClick={e => this.handleChange(e)}>
-                        <button id="lokaleUzytkowe" name="lokale-uzytkowe" aria-label="lokale-uzytkowe">
-                            <div id="lokaleUzytkowe" className={this.state.lokaleUzytkowe ? "checked" : ""} />
-                        </button>
+                        <button className={this.state.lokaleUzytkowe ? "checked" : ""} id="lokaleUzytkowe" name="lokale-uzytkowe" aria-label="lokale-uzytkowe" />
                         Lokale użytkowe
                     </label>
                     <label id="poRemoncie" onClick={e => this.handleChange(e)}>
-                        <button id="poRemoncie" name="po-remoncie" aria-label="po-remoncie">
-                            <div id="poRemoncie" className={this.state.poRemoncie ? "checked" : ""} />
-                        </button>
+                        <button className={this.state.poRemoncie ? "checked" : ""} id="poRemoncie" name="po-remoncie" aria-label="po-remoncie" />
                         Po remoncie
                     </label>
                     <label id="mycieOkien" onClick={e => this.handleChange(e)}>
-                        <button id="mycieOkien" name="mycie-okien" aria-label="mycie-okien">
-                            <div id="mycieOkien" className={this.state.mycieOkien ? "checked" : ""} />
-                        </button>
+                        <button className={this.state.mycieOkien ? "checked" : ""} id="mycieOkien" name="mycie-okien" aria-label="mycie-okien" />
                         Mycie okien
                     </label>
                     <label id="mycieCisnieniowe" onClick={e => this.handleChange(e)}>
-                        <button id="mycieCisnieniowe" name="mycie-cisnieniowe" aria-label="mycie-cisnieniowe">
-                            <div id="mycieCisnieniowe" className={this.state.mycieCisnieniowe ? "checked" : ""} />
-                        </button>
+                        <button className={this.state.mycieCisnieniowe ? "checked" : ""} id="mycieCisnieniowe" name="mycie-cisnieniowe" aria-label="mycie-cisnieniowe" />
                         Mycie ciśnieniowe
                     </label>
                 </div>
@@ -471,63 +459,43 @@ export default class Kontakt extends React.Component {
 
                 <Modal isOpen={this.state.uslugiOpen} closeTimeoutMS={500} onRequestClose={() => { this.setState({uslugiOpen: false}) }} portalClassName="uslugiMenu">
                     <label id="sprzatanieMieszkania" onClick={e => this.handleChange(e)}>
-                        <button id="sprzatanieMieszkania" name="sprzatanie-mieszkania" onClick={e => this.handleChange(e)} aria-label="sprzatanie-mieszkania">
-                            <div id="sprzatanieMieszkania" className={this.state.sprzatanieMieszkania ? "checked" : ""} onClick={e => this.handleChange(e)} />
-                        </button>
+                        <button className={this.state.sprzatanieMieszkania ? "checked" : ""} id="sprzatanieMieszkania" name="sprzatanie-mieszkania" aria-label="sprzatanie-mieszkania" />
                         Sprzątanie mieszkania
                     </label>
                     <label id="hoteleIApartamenty" onClick={e => this.handleChange(e)}>
-                        <button id="hoteleIApartamenty" name="hotele-i-apartamenty" onClick="" aria-label="hotele-i-apartamenty">
-                            <div id="hoteleIApartamenty" className={this.state.hoteleIApartamenty ? "checked" : ""} onClick="" />
-                        </button>
+                        <button className={this.state.hoteleIApartamenty ? "checked" : ""} id="hoteleIApartamenty" name="hotele-i-apartamenty" aria-label="hotele-i-apartamenty" />
                         Hotele i apartamenty
                     </label>
                     <label id="biura" onClick={e => this.handleChange(e)}>
-                        <button id="biura" name="biura" onClick="" aria-label="biura">
-                            <div id="biura" className={this.state.biura ? "checked" : ""} onClick="" />
-                        </button>
+                        <button className={this.state.biura ? "checked" : ""} id="biura" name="biura" onClick="" aria-label="biura" />
                         Biura
                     </label>
                     <label id="pranie" onClick={e => this.handleChange(e)}>
-                        <button id="pranie" name="pranie" onClick="" aria-label="pranie">
-                            <div id="pranie" className={this.state.pranie ? "checked" : ""} onClick=""/>
-                        </button>
+                        <button className={this.state.pranie ? "checked" : ""} id="pranie" name="pranie" onClick="" aria-label="pranie" />
                         Pranie
                     </label>
                     <label id="wnetrzeAuta" onClick={e => this.handleChange(e)}>
-                        <button id="wnetrzeAuta" name="wnetrze-auta" onClick="" aria-label="wnetrze-auta">
-                            <div id="wnetrzeAuta" className={this.state.wnetrzeAuta ? "checked" : ""} onClick="" />
-                        </button>
+                        <button className={this.state.wnetrzeAuta ? "checked" : ""} id="wnetrzeAuta" name="wnetrze-auta" onClick="" aria-label="wnetrze-auta" />
                         Wnętrze auta
                     </label>
                     <label id="groby" onClick={e => this.handleChange(e)}>
-                        <button id="groby" name="groby" onClick="" aria-label="groby">
-                            <div id="wnetrzeAuta" className={this.state.groby ? "checked" : ""} onClick="" />
-                        </button>
+                        <button className={this.state.groby ? "checked" : ""} id="groby" name="groby" onClick="" aria-label="groby" />
                         Groby
                     </label>
                     <label id="lokaleUzytkowe" onClick={e => this.handleChange(e)}>
-                        <button id="lokaleUzytkowe" name="lokale-uzytkowe" onClick="" aria-label="lokale-uzytkowe">
-                            <div id="lokaleUzytkowe" className={this.state.lokaleUzytkowe ? "checked" : ""} onClick=""/>
-                        </button>
+                        <button className={this.state.lokaleUzytkowe ? "checked" : ""} id="lokaleUzytkowe" name="lokale-uzytkowe" onClick="" aria-label="lokale-uzytkowe" />
                         Lokale użytkowe
                     </label>
                     <label id="poRemoncie" onClick={e => this.handleChange(e)}>
-                        <button id="poRemoncie" name="po-remoncie" onClick="" aria-label="po-remoncie">
-                            <div id="poRemoncie" className={this.state.poRemoncie ? "checked" : ""} onClick=""/>
-                        </button>
+                        <button className={this.state.poRemoncie ? "checked" : ""} id="poRemoncie" name="po-remoncie" onClick="" aria-label="po-remoncie" />
                         Po remoncie
                     </label>
                     <label id="mycieOkien" onClick={e => this.handleChange(e)}>
-                        <button id="mycieOkien" name="mycie-okien" onClick="" aria-label="mycie-okien">
-                            <div className={this.state.mycieOkien ? "checked" : ""} onClick="" />
-                        </button>
+                        <button className={this.state.mycieOkien ? "checked" : ""} id="mycieOkien" name="mycie-okien" onClick="" aria-label="mycie-okien" />
                         Mycie okien
                     </label>
                     <label id="mycieCisnieniowe" onClick={e => this.handleChange(e)}>
-                        <button id="mycieCisnieniowe" name="mycie-cisnieniowe" onClick="" aria-label="mycie-cisnieniowe">
-                            <div className={this.state.mycieCisnieniowe ? "checked" : ""} onClick="" />
-                        </button>
+                        <button className={this.state.mycieCisnieniowe ? "checked" : ""} id="mycieCisnieniowe" name="mycie-cisnieniowe" onClick="" aria-label="mycie-cisnieniowe" />
                         Mycie ciśnieniowe
                     </label>
                 </Modal>
@@ -541,38 +509,28 @@ export default class Kontakt extends React.Component {
                 <div className="usluga">
                     <h4>Zlecam usługę jako:</h4>
                     <label id="firma" onClick={e => this.handleChangeRatio(e)}>
-                        <button id="firma" name="firma" onClick={() => {}} aria-label="firma">
-                            <div className={this.state.firma ? "checked" : ""} onClick="" />
-                        </button>
+                        <button className={this.state.firma ? "checked" : ""} id="firma" name="firma" onClick={() => {}} aria-label="firma" />
                         Firma
                     </label>
                     <label id="osobaPrywatna" onClick={e => this.handleChangeRatio(e)}>
-                        <button id="osobaPrywatna" name="osoba-prywatna" onClick="" aria-label="osoba-prywatna">
-                            <div className={this.state.osobaPrywatna ? "checked" : ""} onClick="" />
-                        </button>
+                        <button className={this.state.osobaPrywatna ? "checked" : ""} id="osobaPrywatna" name="osoba-prywatna" onClick="" aria-label="osoba-prywatna" />
                         Osoba prywatna
                     </label>
                 </div>
                 <div className="usluga">
                     <h4>Usługa:</h4>
                     <label id="jednorazowo" onClick={e => this.handleChangeRatio(e)}>
-                        <button id="jednorazowo" name="jednorazowo" aria-label="jednorazowo" onClick={e => this.handleChangeRatio(e)}>
-                            <div id="jednorazowo" className={this.state.jednorazowo ? "checked" : ""} onClick={e => this.handleChangeRatio(e)} />
-                        </button>
+                        <button id="jednorazowo" className={this.state.jednorazowo ? "checked" : ""} name="jednorazowo" aria-label="jednorazowo" onClick={e => this.handleChangeRatio(e)} />
                         Jednorazowa
                     </label>
                     <label id="cyklicznie" onClick={e => this.handleChangeRatio(e)}>
-                        <button id="cyklicznie" name="cyklicznie" onClick="" aria-label="cyklicznie">
-                            <div className={this.state.cyklicznie ? "checked" : ""} onClick="" />
-                        </button>
+                        <button className={this.state.cyklicznie ? "checked" : ""} id="cyklicznie" name="cyklicznie" aria-label="cyklicznie" />
                         Cykliczna
                     </label>
                 </div>
                 <div className="politykaPrywatnosci">
                     <label id="politykaPrywatnosci" onClick={e => this.handleChangeRatio(e)}>
-                        <button id="politykaPrywatnosci" name="polityka-prywatnosci" className={this.state.politykaError ? "redBorder" : ""} onClick="" aria-label="polityka-prywatnosci">
-                            <div className={this.state.politykaPrywatnosci ? "checkedPolityka" : ""} onClick="" />
-                        </button>
+                        <button className={this.state.politykaPrywatnosci ? "checkedPolityka" : ""} id="politykaPrywatnosci" name="polityka-prywatnosci" aria-label="polityka-prywatnosci" />
                         Zapoznałem się i akceptuję politykę prywatności
                     </label>
                 </div>
@@ -610,9 +568,7 @@ export default class Kontakt extends React.Component {
                 <form action="https://formspree.io/xrgogvrk" method="POST" onSubmit={e => this.handleModalSubmit(e)}>
                     <input className={this.state.modalPhoneError ? "redBorder" : ""} type="text" name="phoneNumberModal" value={this.state.phoneNumberModal} onChange={e => this.handleChangeInput(e)}/>
                     <label id="politykaModal" onClick={e => this.handleChangeRatio(e)}>
-                        <button id="politykaModal" name="polityka-prywatnosci" className={this.state.politykaModalError ? "redBorder" : ""} onClick="">
-                            <div id="politykaModal" className={this.state.politykaModal ? "checkedPolityka" : ""} onClick="" />
-                        </button>
+                        <button className={this.state.politykaModal ? "checkedPolityka" : ""} id="politykaModal" name="polityka-prywatnosci" />
                         Zapoznałem się i akceptuję politykę prywatności
                     </label>
                     <ReCaptcha
