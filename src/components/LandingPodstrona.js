@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import Img from 'gatsby-image';
 
-import AniLink from 'gatsby-plugin-transition-link/AniLink';
 import {ReCaptcha, loadReCaptcha} from "react-recaptcha-v3";
 import Modal from "react-modal";
 
@@ -228,9 +227,9 @@ const LandingPodstrona = (props) => {
         <menu>
             <ul>
                 <li>
-                    <AniLink cover to="/" bg="#75C3DE">
+                    <a href="/">
                         Strona główna
-                    </AniLink>
+                    </a>
                 </li>
                     <li><a href="/" onClick={() => { localStorage.setItem("aim", ".oferta"); }}>Oferta</a></li>
                     <li><a href="/" onClick={() => { localStorage.setItem("aim", ".dlaczegoMy"); }}>O nas</a></li>

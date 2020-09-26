@@ -1,7 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
-
-import TransitionLink from 'gatsby-plugin-transition-link';
-import AniLink from "gatsby-plugin-transition-link/AniLink";
+import React, { useRef } from "react";
 
 const Oferta = () => {
 

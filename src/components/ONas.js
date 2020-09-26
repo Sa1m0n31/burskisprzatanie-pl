@@ -1,9 +1,10 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
-import Img from 'gatsby-image';
+
+/* import Img from 'gatsby-image'; */
 
 const ONas = () => {
-    const data = useStaticQuery(graphql`
+    /* const data = useStaticQuery(graphql`
         query ONasQuery {
     onas: file(relativePath: { eq: "lukasz.jpg" }) {
         childImageSharp {
@@ -12,7 +13,7 @@ const ONas = () => {
             }
         }
     }}
-    `);
+    `); */
 
     return (<section className="oNas">
         <div className="oNasInner">

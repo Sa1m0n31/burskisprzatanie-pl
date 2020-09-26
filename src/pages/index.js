@@ -24,8 +24,6 @@ import Kontakt from "../components/Kontakt";
 import ONas from "../components/ONas";
 import Footer from "../components/Footer";
 
-import Temporary from "../components/Temporary";
-
 export default function Home() {
   return (<div className="app">
     <Helmet>

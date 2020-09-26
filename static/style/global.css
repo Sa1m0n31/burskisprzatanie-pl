@@ -60,6 +60,7 @@ label {
     overflow: hidden !important;
     transition: all 0.3s ease !important;
     left: 4px !important;
+    z-index: 1000000 !important;
 }
 
 .grecaptcha-badge:hover {

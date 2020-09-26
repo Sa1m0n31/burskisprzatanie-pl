@@ -9,8 +9,6 @@ import SwiperCore, { Pagination } from 'swiper';
 // Import Swiper styles
 import 'swiper/swiper.scss';
 
-import TinderCard from 'react-tinder-card';
-
 import StarRatings from 'react-star-ratings';
 
 const Rekomendacje = () => {
@@ -39,47 +37,9 @@ const Rekomendacje = () => {
             }
         }
     }
-    fixly: file(relativePath: { eq: "fixly.png" }) {
-        childImageSharp {
-            fluid(maxWidth: 1000, maxHeight: 1000) {
-                ...GatsbyImageSharpFluid
-            }
-        }
-    }
-    fixly1: file(relativePath: { eq: "fixly1.png" }) {
-        childImageSharp {
-            fluid(maxWidth: 1000, maxHeight: 1000) {
-                ...GatsbyImageSharpFluid
-            }
-        }
-    }
-    fixly2: file(relativePath: { eq: "fixly2.png" }) {
-        childImageSharp {
-            fluid(maxWidth: 1000, maxHeight: 1000) {
-                ...GatsbyImageSharpFluid
-            }
-        }
-    }
     
     }
     `);
-
-    const kolejka = [
-        data.rekomendacje2,
-        data.rekomendacje3,
-        data.rekomendacje4
-    ];
-
-    const cardLeftScreen = () => {
-        if(typeof document !== 'undefined') {
-            let els = document.getElementsByClassName("swipe");
-            for(let i=0; i<els.length; i++) {
-                els[i].style.transition = "none";
-                els[i].style.transform = "none";
-                els[i].style.display = "block";
-            }
-        }
-    };
 
     return (<section className="rekomendacje">
         <h2>Rekomendacje</h2>

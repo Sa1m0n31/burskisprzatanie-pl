@@ -187,6 +187,7 @@
     text-transform: uppercase;
     font-size: calc(16px + 16 * ((100vw - 700px)/(1000)));
     padding: 0 10px;
+    cursor: pointer;
 }
 
 .podstrona .podstronaCallToAction:hover {
@@ -338,7 +339,7 @@
     }
 
     .landingPage .leftBtns button a img {
-        width: 40px;
+        width: 45px;
         height: 40px;
     }
 

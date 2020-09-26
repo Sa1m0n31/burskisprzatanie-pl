@@ -18,17 +18,7 @@ module.exports = {
     },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-transition-link`,
     `gatsby-plugin-sass`,
-    {
-      resolve: `gatsby-plugin-nprogress`,
-      options: {
-        // Setting a color is optional.
-        color: `tomato`,
-        // Disable the loading spinner.
-        showSpinner: true
-      }
-    },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {

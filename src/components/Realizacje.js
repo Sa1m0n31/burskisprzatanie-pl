@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import { graphql, useStaticQuery } from "gatsby";
 import Img from 'gatsby-image';
@@ -55,14 +55,6 @@ const Realizacje = () => {
     }
     }
     `);
-
-    let [ image, setImage ] = useState(0);
-
-    let kolejka = [
-        data.realizacje1,
-        data.realizacje2,
-        data.realizacje3
-    ];
 
     const responsive = {
         superLargeDesktop: {
