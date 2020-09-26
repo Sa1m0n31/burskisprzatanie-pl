@@ -65,6 +65,14 @@
     padding: 3px;
 }
 
+.uslugiMenu label button {
+    border-radius: 4px !important;
+}
+
+.kontakt .row button {
+    border-radius: 6px;
+}
+
 .kontakt form textarea {
     width: 60vw;
     height: 200px;

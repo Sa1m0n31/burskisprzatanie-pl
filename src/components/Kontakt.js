@@ -405,7 +405,7 @@ export default class Kontakt extends React.Component {
     render() {
         return (<section id="kontakt" className="kontakt">
             <h2>Kontakt</h2>
-            <h3>Zaznacz w formularzu czego potrzebujesz,<br/>a my odezwiemy się do Ciebie</h3>
+            <h3>Czego potrzebujesz?</h3>
             <form action="https://formspree.io/xwkwkjao" method="POST" onSubmit={e => this.handleSubmit(e)}>
                 <div className="row row1 desktopOnly">
                     <label id="sprzatanieMieszkania" onClick={e => this.handleChange(e)}>
@@ -422,17 +422,17 @@ export default class Kontakt extends React.Component {
                     </label>
                     <label id="pranie" onClick={e => this.handleChange(e)}>
                         <button className={this.state.pranie ? "checked" : ""} id="pranie" name="pranie" aria-label="pranie" />
-                        Pranie
+                        Pranie ekstrakcyjne
                     </label>
                     <label id="wnetrzeAuta" onClick={e => this.handleChange(e)}>
                         <button className={this.state.wnetrzeAuta ? "checked" : ""} id="wnetrzeAuta" name="wnetrze-auta" aria-label="wnetrze-auta" />
-                        Wnętrze auta
+                        Detailing wnętrza auta
                     </label>
                 </div>
                 <div className="row row2 desktopOnly">
                     <label id="groby" onClick={e => this.handleChange(e)}>
                         <button className={this.state.groby ? "checked" : ""} id="groby" name="groby" aria-label="groby" />
-                        Groby
+                        Opieka nad grobami
                     </label>
                     <label id="lokaleUzytkowe" onClick={e => this.handleChange(e)}>
                         <button className={this.state.lokaleUzytkowe ? "checked" : ""} id="lokaleUzytkowe" name="lokale-uzytkowe" aria-label="lokale-uzytkowe" />
@@ -472,7 +472,7 @@ export default class Kontakt extends React.Component {
                     </label>
                     <label id="pranie" onClick={e => this.handleChange(e)}>
                         <button className={this.state.pranie ? "checked" : ""} id="pranie" name="pranie" onClick="" aria-label="pranie" />
-                        Pranie
+                        Pranie ekstrakcyjne
                     </label>
                     <label id="wnetrzeAuta" onClick={e => this.handleChange(e)}>
                         <button className={this.state.wnetrzeAuta ? "checked" : ""} id="wnetrzeAuta" name="wnetrze-auta" onClick="" aria-label="wnetrze-auta" />
