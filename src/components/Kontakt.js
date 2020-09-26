@@ -472,8 +472,8 @@ export default class Kontakt extends React.Component {
 
                 <Modal isOpen={this.state.uslugiOpen} closeTimeoutMS={500} onRequestClose={() => { this.setState({uslugiOpen: false}) }} portalClassName="uslugiMenu">
                     <label id="sprzatanieMieszkania" onClick={e => this.handleChange(e)}>
-                        <button id="sprzatanieMieszkania" name="sprzatanie-mieszkania" onClick="" aria-label="sprzatanie-mieszkania">
-                            <div id="sprzatanieMieszkania" className={this.state.sprzatanieMieszkania ? "checked" : ""} onClick="" />
+                        <button id="sprzatanieMieszkania" name="sprzatanie-mieszkania" onClick={() => {}} aria-label="sprzatanie-mieszkania">
+                            <div id="sprzatanieMieszkania" className={this.state.sprzatanieMieszkania ? "checked" : ""} onClick={() => {}} />
                         </button>
                         Sprzątanie mieszkania
                     </label>
@@ -534,18 +534,15 @@ export default class Kontakt extends React.Component {
                 </Modal>
 
                 <div className="inputy">
-                    <label htmlFor="name" />
                     <input id="name" className={this.state.emailError ? "redBorder" : ""} type="text" name="email" placeholder="Email" value={this.state.email} onChange={e => this.handleChangeInput(e)}/>
                     <p>lub</p>
-                    <label htmlFor="phoneNumber" />
                     <input id="phoneNumber" className={this.state.phoneError ? "redBorder" : ""} type="text" name="phoneNumber" placeholder="Numer telefonu" value={this.state.phoneNumber} onChange={e => this.handleChangeInput(e)}/>
                 </div>
-                <label className="msgLabel" htmlFor="msg" />
                 <textarea id="msg" name="msg" placeholder="Dodatkowe uwagi" value={this.state.msg} onChange={e => this.handleChangeInput(e)} />
                 <div className="usluga">
                     <h4>Zlecam usługę jako:</h4>
                     <label id="firma" onClick={e => this.handleChangeRatio(e)}>
-                        <button id="firma" name="firma" onClick="" aria-label="firma">
+                        <button id="firma" name="firma" onClick={() => {}} aria-label="firma">
                             <div className={this.state.firma ? "checked" : ""} onClick="" />
                         </button>
                         Firma
