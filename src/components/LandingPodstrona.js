@@ -173,13 +173,11 @@ const LandingPodstrona = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         let isValid = true;
-        console.log("Submit form");
 
         /* Phone number validation */
         if((isNaN(parseInt(phoneNumber)))||(phoneNumber.length > 11)||((phoneNumber.length < 9))) {
             setPhoneError(true);
             isValid = false;
-            console.log("Not a number");
         }
         else {
             setPhoneError(false);
@@ -196,7 +194,6 @@ const LandingPodstrona = (props) => {
 
         /* Recaptcha verification */
         if(!valid) {
-            console.log("Recaptcha failed");
             isValid = false;
         }
 
@@ -220,6 +217,7 @@ const LandingPodstrona = (props) => {
             setPhoneNumber("");
             setPolityka(false);
             setSend(true);
+            setOpen(false);
         }
     };
 
@@ -256,7 +254,7 @@ const LandingPodstrona = (props) => {
             <img className="x" src={require("../../static/img/x.png")} alt="exit" onClick={() => { setOpen(false); }}/>
             <img className="telefon" src={require("../../static/img/telefon-niebieski.png")} alt="telefon" />
             <h3>Zostaw do siebie numer, a my oddzwonimy do Ciebie jeszcze dzisiaj!</h3>
-            <form action="https://formspree.io/xoqpvqag" method="POST" onSubmit={e => handleSubmit(e)}>
+            <form action="https://formspree.io/mvovgozo" method="POST" onSubmit={e => handleSubmit(e)}>
                 <input id="phoneNumberModal" className={phoneError ? "redBorder" : ""} type="text" name="phoneNumberModal" value={phoneNumber} onChange={(e) => handleChange(e)}/>
                 <label id="politykaModal" onClick={e => handleChange(e)}>
                     <button id="politykaModal" name="polityka-prywatnosci" className={politykaError ? "redBorder" : ""}>

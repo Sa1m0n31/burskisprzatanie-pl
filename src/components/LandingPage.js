@@ -158,7 +158,7 @@ const LandingPage = () => {
 
         <div className="mobileOnly leftBtns">
             <button className="messengerBtn">
-                <a href="https://m.me/burskisprzatanie" target="_blank">
+                <a href="https://m.me/burskisprzatanie" target="_blank" rel="noreferrer">
                     <img src={require("../../static/img/messenger.png")} alt="messenger" />
                 </a>
             </button>

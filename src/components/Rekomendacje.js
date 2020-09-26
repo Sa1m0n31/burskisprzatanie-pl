@@ -94,7 +94,7 @@ const Rekomendacje = () => {
                     starRatedColor="#FFD700"
                     starDimension='20px'
                 />
-                <h4 className="imie">Bartek</h4>
+                <h3 className="imie">Bartek</h3>
                 <div className="data">21 września 2020</div>
                 <p className="text">Wszystko w jak najlepszym porządku. Zarówno kontakt z Panem Łukaszem, jak i wykonanie samej usługi sprzątania jest godne polecenia.</p>
                 <img className="opinieFixly" src="https://fixly.pl/profil/mAYK1kwm/widget-a01.png" alt="fixly" />
@@ -110,7 +110,7 @@ const Rekomendacje = () => {
                         starRatedColor="#FFD700"
                         starDimension='20px'
                     />
-                    <h4 className="imie">Aleksander</h4>
+                    <h3 className="imie">Aleksander</h3>
                     <div className="data">19 września 2020</div>
                     <p className="text">Solidnie wykonana robota w uczciwej cenie. Polecam.</p>
                     <img className="opinieFixly" src="https://fixly.pl/profil/mAYK1kwm/widget-a01.png" alt="fixly" />
@@ -126,7 +126,7 @@ const Rekomendacje = () => {
                         starRatedColor="#FFD700"
                         starDimension='20px'
                     />
-                    <h4 className="imie">Szymon</h4>
+                    <h3 className="imie">Szymon</h3>
                     <div className="data">18 września 2020</div>
                     <p className="text">Perfekcyjnie czyściutkie okna, wszystko na czas, przemiła obsługa. Zdecydowanie polecam.</p>
                     <img className="opinieFixly" src="https://fixly.pl/profil/mAYK1kwm/widget-a01.png" alt="fixly" />

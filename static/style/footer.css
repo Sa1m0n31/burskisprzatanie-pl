@@ -7,7 +7,7 @@ footer {
     align-items: center;
 }
 
-footer h5 {
+footer h4 {
     margin: 0 5px;
     text-align: center;
     font-weight: 100;
@@ -22,7 +22,7 @@ footer a {
         justify-content: space-evenly;
     }
 
-    footer h5 {
+    footer h4 {
         margin: 0;
         font-size: 12px;
     }
