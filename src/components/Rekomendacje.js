@@ -85,7 +85,7 @@ const Rekomendacje = () => {
         <h2>Rekomendacje</h2>
         <div className="rekomendacjeInner">
             <div className="opinia">
-                <a href="https://fixly.pl/profil/mAYK1kwm" target="_blank">
+                <a href="https://fixly.pl/profil/mAYK1kwm" target="_blank" rel="noreferrer">
                 <img className="avatar" src={require("../../static/img/b.jpg")} alt="avatar" />
                 <StarRatings
                     className="ocena"
@@ -101,7 +101,7 @@ const Rekomendacje = () => {
                 </a>
             </div>
             <div className="opinia">
-                <a href="https://fixly.pl/profil/mAYK1kwm" target="_blank">
+                <a href="https://fixly.pl/profil/mAYK1kwm" target="_blank" rel="noreferrer">
                     <img className="avatar" src={require("../../static/img/a.jpg")} alt="avatar" />
                     <StarRatings
                         className="ocena"
@@ -117,7 +117,7 @@ const Rekomendacje = () => {
                 </a>
             </div>
             <div className="opinia">
-                <a href="https://fixly.pl/profil/mAYK1kwm" target="_blank">
+                <a href="https://fixly.pl/profil/mAYK1kwm" target="_blank" rel="noreferrer">
                     <img className="avatar" src={require("../../static/img/s.jpg")} alt="avatar" />
                     <StarRatings
                         className="ocena"

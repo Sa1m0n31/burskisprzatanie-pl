@@ -4,12 +4,14 @@ import { graphql, useStaticQuery } from "gatsby";
 import Img from 'gatsby-image';
 
 import AniLink from 'gatsby-plugin-transition-link/AniLink';
-import {ReCaptcha} from "react-recaptcha-v3";
+import {ReCaptcha, loadReCaptcha} from "react-recaptcha-v3";
 import Modal from "react-modal";
 
 const LandingPodstrona = (props) => {
 
     useEffect(() => {
+        loadReCaptcha("6LdZVs8ZAAAAALyZPpx4JXLGSz7bJ8uMgGIH_DTM");
+
         if(typeof document !== 'undefined') {
             Object.prototype.styleSecondWord = function(styleHook){
                 styleHook = styleHook || 'secondWord';
@@ -171,13 +173,13 @@ const LandingPodstrona = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         let isValid = true;
-
-        if(!valid) isValid = false;
+        console.log("Submit form");
 
         /* Phone number validation */
-        if((isNaN(phoneNumber))||(phoneNumber.length > 11)||((phoneNumber.length < 9))) {
+        if((isNaN(parseInt(phoneNumber)))||(phoneNumber.length > 11)||((phoneNumber.length < 9))) {
             setPhoneError(true);
             isValid = false;
+            console.log("Not a number");
         }
         else {
             setPhoneError(false);
@@ -192,7 +194,14 @@ const LandingPodstrona = (props) => {
             setPolitykaError(false);
         }
 
+        /* Recaptcha verification */
+        if(!valid) {
+            console.log("Recaptcha failed");
+            isValid = false;
+        }
+
         if(isValid) {
+            console.log("Sending email");
             const form = e.target;
             const data = {
                 numerTelefonu: phoneNumber,
@@ -225,9 +234,9 @@ const LandingPodstrona = (props) => {
                         Strona główna
                     </AniLink>
                 </li>
-                <li><a href="/#oferta">Oferta</a></li>
-                <li><a href="/#dlaczegoMy">O nas</a></li>
-                <li><a href="/#kontakt">Kontakt</a></li>
+                    <li><a href="/" onClick={() => { localStorage.setItem("aim", ".oferta"); }}>Oferta</a></li>
+                    <li><a href="/" onClick={() => { localStorage.setItem("aim", ".dlaczegoMy"); }}>O nas</a></li>
+                    <li onClick={() => { setOpen(true); }}>Kontakt</li>
             </ul>
             <div className="phoneNumber">
                 <img src={require("../../static/img/telefon.png")} alt="telefon" />
@@ -247,7 +256,7 @@ const LandingPodstrona = (props) => {
             <img className="x" src={require("../../static/img/x.png")} alt="exit" onClick={() => { setOpen(false); }}/>
             <img className="telefon" src={require("../../static/img/telefon-niebieski.png")} alt="telefon" />
             <h3>Zostaw do siebie numer, a my oddzwonimy do Ciebie jeszcze dzisiaj!</h3>
-            <form action="https://formspree.io/moqpqzje" method="POST" onSubmit={e => handleSubmit(e)}>
+            <form action="https://formspree.io/xoqpvqag" method="POST" onSubmit={e => handleSubmit(e)}>
                 <input id="phoneNumberModal" className={phoneError ? "redBorder" : ""} type="text" name="phoneNumberModal" value={phoneNumber} onChange={(e) => handleChange(e)}/>
                 <label id="politykaModal" onClick={e => handleChange(e)}>
                     <button id="politykaModal" name="polityka-prywatnosci" className={politykaError ? "redBorder" : ""}>
@@ -263,6 +272,7 @@ const LandingPodstrona = (props) => {
                 <button type="submit">Zatwierdź</button>
             </form>
         </Modal>
+
 
         <Modal isOpen={send} closeTimeoutMS={500} onRequestClose={() => { setSend(false); }} portalClassName="formSend">
             <img className="modalExit" src={require("../../static/img/x.png")} alt="exit" onClick={() => {setSend(false)} } />

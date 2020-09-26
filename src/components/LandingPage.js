@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { graphql, useStaticQuery } from "gatsby";
 import Img from 'gatsby-image';
@@ -7,6 +7,18 @@ import { bubble as HamburgerMenu } from 'react-burger-menu';
 import { Link } from 'react-scroll';
 
 const LandingPage = () => {
+
+    useEffect(() => {
+        if(localStorage.getItem("aim")) {
+            let aim = localStorage.getItem("aim");
+            localStorage.removeItem("aim");
+            if(typeof document !== 'undefined') {
+                document.querySelector(aim).scrollIntoView({behavior: "smooth"});
+            }
+        }
+    });
+
+
     let styles = {
         bmBurgerButton: {
             position: 'fixed',
@@ -102,14 +114,14 @@ const LandingPage = () => {
 
         <div className="buttonDiv">
             <button className="messengerBtn">
-                <a href="https://m.me/burskisprzatanie" target="_blank">
+                <a href="https://m.me/burskisprzatanie" target="_blank" rel="noreferrer">
                     <img src={require("../../static/img/messenger.png")} alt="messenger" />
                     <h3>Napisz do nas na messengerze</h3>
                 </a>
             </button>
 
             <button className="phoneBtn">
-                <a href="tel:+48728879491">
+                <a href="tel:+48728879491" rel="noreferrer">
                     <img src={require("../../static/img/whatsapp.png")} alt="telefon" />
                     <h3>Zadzwoń do nas</h3>
                 </a>

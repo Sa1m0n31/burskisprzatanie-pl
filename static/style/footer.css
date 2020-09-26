@@ -7,9 +7,10 @@ footer {
     align-items: center;
 }
 
-footer h6 {
+footer h5 {
     margin: 0 5px;
     text-align: center;
+    font-weight: 100;
 }
 
 footer a {
@@ -21,8 +22,9 @@ footer a {
         justify-content: space-evenly;
     }
 
-    footer h6 {
+    footer h5 {
         margin: 0;
+        font-size: 12px;
     }
 
     footer .middle {

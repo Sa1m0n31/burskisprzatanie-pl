@@ -6,14 +6,14 @@ const Cennik = (props) => {
         <div className="cennikInner">
             <div className="buttonDiv">
                 <button className="messengerBtn">
-                    <a href="https://m.me/burskisprzatanie" target="_blank">
+                    <a href="https://m.me/burskisprzatanie" target="_blank" rel="noreferrer">
                         <img src={require("../../static/img/messenger.png")} alt="messenger" />
                         <h3>Napisz na messengerze</h3>
                     </a>
                 </button>
 
                 <button className="phoneBtn">
-                    <a href="tel:+48728879491">
+                    <a href="tel:+48728879491" rel="noreferrer">
                         <img src={require("../../static/img/whatsapp.png")} alt="telefon" />
                         <h3>Zadzwoń do nas</h3>
                     </a>

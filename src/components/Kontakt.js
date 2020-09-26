@@ -534,11 +534,17 @@ export default class Kontakt extends React.Component {
                 </Modal>
 
                 <div className="inputy">
-                    <input className={this.state.emailError ? "redBorder" : ""} type="text" name="email" placeholder="Email" value={this.state.email} onChange={e => this.handleChangeInput(e)}/>
+                    <label htmlFor="email">
+                        <input className={this.state.emailError ? "redBorder" : ""} type="text" name="email" placeholder="Email" value={this.state.email} onChange={e => this.handleChangeInput(e)}/>
+                    </label>
                     <p>lub</p>
-                    <input className={this.state.phoneError ? "redBorder" : ""} type="text" name="phoneNumber" placeholder="Numer telefonu" value={this.state.phoneNumber} onChange={e => this.handleChangeInput(e)}/>
+                    <label htmlFor="phoneNumber">
+                        <input className={this.state.phoneError ? "redBorder" : ""} type="text" name="phoneNumber" placeholder="Numer telefonu" value={this.state.phoneNumber} onChange={e => this.handleChangeInput(e)}/>
+                    </label>
                 </div>
-                <textarea name="msg" placeholder="Dodatkowe uwagi" value={this.state.msg} onChange={e => this.handleChangeInput(e)} />
+                <label htmlFor="msg" className="msgLabel">
+                    <textarea name="msg" placeholder="Dodatkowe uwagi" value={this.state.msg} onChange={e => this.handleChangeInput(e)} />
+                </label>
                 <div className="usluga">
                     <h4>Zlecam usługę jako:</h4>
                     <label id="firma" onClick={e => this.handleChangeRatio(e)}>

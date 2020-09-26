@@ -33,7 +33,7 @@
     align-self: center;
 }
 
-.kontakt form label, .uslugiMenu label {
+.kontakt form label:not(.msgLabel), .uslugiMenu label {
     display: flex;
     margin: 10px 1vw;
     height: 25px;
@@ -44,6 +44,11 @@
     position: relative;
     z-index: 10;
     background-color: transparent;
+}
+
+.kontakt .msgLabel {
+    display: flex;
+    justify-content: center;
 }
 
 .kontakt form label button, .uslugiMenu label button {

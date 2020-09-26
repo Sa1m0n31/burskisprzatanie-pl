@@ -31,9 +31,13 @@
     align-items: center;
     padding: 10px;
     border-radius: 10px;
-    -webkit-box-shadow: 0 0 3px 0 rgba(0,0,0,0.75);
-    -moz-box-shadow: 0 0 3px 0 rgba(0,0,0,0.75);
-    box-shadow: 0 0 3px 0 rgba(0,0,0,0.75);
+    border: 3px solid #d5d5d5;
+}
+
+.rekomendacje .opinia > a:hover {
+    -webkit-box-shadow: 0 0 13px 0 rgba(0,0,0,0.75);
+    -moz-box-shadow: 0 0 13px 0 rgba(0,0,0,0.75);
+    box-shadow: 0 0 13px 0 rgba(0,0,0,0.75);
 }
 
 .rekomendacje .opinia .avatar {

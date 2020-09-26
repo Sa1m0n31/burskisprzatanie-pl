@@ -29,7 +29,7 @@ const ONas = () => {
             </button>*/}
             <div className="socialMedia facebook">
                 <h4>Znajdziesz nas na facebooku</h4>
-                <a href="https://www.facebook.com/burskisprzatanie" target="_blank">
+                <a href="https://www.facebook.com/burskisprzatanie" target="_blank" rel="noreferrer">
                     <img className="sm" src={require("../../static/img/facebook.png")} alt="facebook"/>
                 </a>
             </div>
@@ -38,7 +38,7 @@ const ONas = () => {
                 <img className="sm" src={require("../../static/img/instagram.png")} alt="instagram" />
             </div>*/}
             <div className="socialMedia fixly">
-                <a href="https://fixly.pl/profil/mAYK1kwm" target="_blank">
+                <a href="https://fixly.pl/profil/mAYK1kwm" target="_blank" rel="noreferrer">
                     <img alt="Polecają mnie na Fixly"
                          src="https://fixly.pl/profil/mAYK1kwm/widget-a01.png" />
                 </a>
