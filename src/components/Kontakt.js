@@ -472,8 +472,8 @@ export default class Kontakt extends React.Component {
 
                 <Modal isOpen={this.state.uslugiOpen} closeTimeoutMS={500} onRequestClose={() => { this.setState({uslugiOpen: false}) }} portalClassName="uslugiMenu">
                     <label id="sprzatanieMieszkania" onClick={e => this.handleChange(e)}>
-                        <button id="sprzatanieMieszkania" name="sprzatanie-mieszkania" onClick={() => {}} aria-label="sprzatanie-mieszkania">
-                            <div id="sprzatanieMieszkania" className={this.state.sprzatanieMieszkania ? "checked" : ""} onClick={() => {}} />
+                        <button id="sprzatanieMieszkania" name="sprzatanie-mieszkania" onClick={e => this.handleChange(e)} aria-label="sprzatanie-mieszkania">
+                            <div id="sprzatanieMieszkania" className={this.state.sprzatanieMieszkania ? "checked" : ""} onClick={e => this.handleChange(e)} />
                         </button>
                         Sprzątanie mieszkania
                     </label>
