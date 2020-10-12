@@ -5,7 +5,7 @@
 }
 
 .realizacje h2 {
-    font-size: calc(30px + 25 * ((100vw - 300px)/(1000)));
+    font-size: calc(20px + 25 * ((100vw - 300px)/(1000)));
     color: #363636;
     font-weight: 100;
 }

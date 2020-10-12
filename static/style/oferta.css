@@ -8,7 +8,7 @@
 }
 
 .oferta h2 {
-    font-size: calc(20px + 32 * ((100vw - 300px)/(1000)));
+    font-size: calc(20px + 25 * ((100vw - 300px)/(1000)));
 }
 
 .oferta h3 {
@@ -26,6 +26,13 @@
     grid-column-gap: 2vw;
     grid-template-rows: repeat(2, 16vw);
     grid-row-gap: 20px;
+}
+
+@media(min-width: 2000px) {
+    .oferta .ofertaGrid {
+        grid-template-columns: repeat(5, 14vw);
+        grid-template-rows: repeat(2, 14vw);
+    }
 }
 
 .oferta .ofertaGrid .ofertaItem {

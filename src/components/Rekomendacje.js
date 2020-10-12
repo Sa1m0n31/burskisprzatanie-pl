@@ -6,7 +6,7 @@ const Rekomendacje = () => {
     return (<section className="rekomendacje">
         <h2>Rekomendacje</h2>
         <div className="rekomendacjeInner">
-            <div className="opinia">
+            <div className="opinia no-select">
                 <a href="https://fixly.pl/profil/mAYK1kwm" target="_blank" rel="noreferrer">
                 <img className="avatar" src={require("../../static/img/b.jpg")} alt="avatar" />
                 <StarRatings
@@ -22,7 +22,7 @@ const Rekomendacje = () => {
                 <img className="opinieFixly" src="https://fixly.pl/profil/mAYK1kwm/widget-a01.png" alt="fixly" />
                 </a>
             </div>
-            <div className="opinia">
+            <div className="opinia no-select">
                 <a href="https://fixly.pl/profil/mAYK1kwm" target="_blank" rel="noreferrer">
                     <img className="avatar" src={require("../../static/img/a.jpg")} alt="avatar" />
                     <StarRatings
@@ -38,7 +38,7 @@ const Rekomendacje = () => {
                     <img className="opinieFixly" src="https://fixly.pl/profil/mAYK1kwm/widget-a01.png" alt="fixly" />
                 </a>
             </div>
-            <div className="opinia">
+            <div className="opinia no-select">
                 <a href="https://fixly.pl/profil/mAYK1kwm" target="_blank" rel="noreferrer">
                     <img className="avatar" src={require("../../static/img/s.jpg")} alt="avatar" />
                     <StarRatings

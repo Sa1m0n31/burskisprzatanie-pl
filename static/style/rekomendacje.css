@@ -6,7 +6,8 @@
 }
 
 .rekomendacje h2 {
-    font-size: calc(30px + 25 * ((100vw - 300px)/(1000)));
+    font-size: calc(20px + 25 * ((100vw - 300px)/(1000)));
+    margin-bottom: 20px;
     font-weight: 100;
     color: #363636;
 }
@@ -16,6 +17,16 @@
     justify-content: space-evenly;
     width: 90vw;
     margin: 20px 0;
+}
+
+@media(min-width: 2000px) {
+    .rekomendacje .rekomendacjeInner {
+        width: 70vw;
+    }
+
+    .rekomendacje .rekomendacjeInner .opinia a {
+        width: 15vw;
+    }
 }
 
 .rekomendacje .opinia > a {

@@ -452,49 +452,49 @@ export default class Kontakt extends React.Component {
                     </label>
                 </div>
 
-                <div className="mobileOnly uslugiBtn" onClick={() => { this.setState({ uslugiOpen: true }) }}>
+                <div className="mobileOnly uslugiBtn no-select" onClick={() => { this.setState({ uslugiOpen: true }) }}>
                     <h3>Naciśnij i rozwiń listę usług</h3>
                     <div className="blueArea" />
                 </div>
 
                 <Modal isOpen={this.state.uslugiOpen} closeTimeoutMS={500} onRequestClose={() => { this.setState({uslugiOpen: false}) }} portalClassName="uslugiMenu">
-                    <label id="sprzatanieMieszkania" onClick={e => this.handleChange(e)}>
+                    <label className="no-select" id="sprzatanieMieszkania" onClick={e => this.handleChange(e)}>
                         <button className={this.state.sprzatanieMieszkania ? "checked" : ""} id="sprzatanieMieszkania" name="sprzatanie-mieszkania" aria-label="sprzatanie-mieszkania" />
                         Sprzątanie mieszkania
                     </label>
-                    <label id="hoteleIApartamenty" onClick={e => this.handleChange(e)}>
+                    <label className="no-select" id="hoteleIApartamenty" onClick={e => this.handleChange(e)}>
                         <button className={this.state.hoteleIApartamenty ? "checked" : ""} id="hoteleIApartamenty" name="hotele-i-apartamenty" aria-label="hotele-i-apartamenty" />
                         Hotele i apartamenty
                     </label>
-                    <label id="biura" onClick={e => this.handleChange(e)}>
+                    <label className="no-select" id="biura" onClick={e => this.handleChange(e)}>
                         <button className={this.state.biura ? "checked" : ""} id="biura" name="biura" onClick="" aria-label="biura" />
                         Biura
                     </label>
-                    <label id="pranie" onClick={e => this.handleChange(e)}>
+                    <label className="no-select" id="pranie" onClick={e => this.handleChange(e)}>
                         <button className={this.state.pranie ? "checked" : ""} id="pranie" name="pranie" onClick="" aria-label="pranie" />
                         Pranie ekstrakcyjne
                     </label>
-                    <label id="wnetrzeAuta" onClick={e => this.handleChange(e)}>
+                    <label className="no-select" id="wnetrzeAuta" onClick={e => this.handleChange(e)}>
                         <button className={this.state.wnetrzeAuta ? "checked" : ""} id="wnetrzeAuta" name="wnetrze-auta" onClick="" aria-label="wnetrze-auta" />
                         Wnętrze auta
                     </label>
-                    <label id="groby" onClick={e => this.handleChange(e)}>
+                    <label className="no-select" id="groby" onClick={e => this.handleChange(e)}>
                         <button className={this.state.groby ? "checked" : ""} id="groby" name="groby" onClick="" aria-label="groby" />
                         Groby
                     </label>
-                    <label id="lokaleUzytkowe" onClick={e => this.handleChange(e)}>
+                    <label className="no-select" id="lokaleUzytkowe" onClick={e => this.handleChange(e)}>
                         <button className={this.state.lokaleUzytkowe ? "checked" : ""} id="lokaleUzytkowe" name="lokale-uzytkowe" onClick="" aria-label="lokale-uzytkowe" />
                         Lokale użytkowe
                     </label>
-                    <label id="poRemoncie" onClick={e => this.handleChange(e)}>
+                    <label className="no-select" id="poRemoncie" onClick={e => this.handleChange(e)}>
                         <button className={this.state.poRemoncie ? "checked" : ""} id="poRemoncie" name="po-remoncie" onClick="" aria-label="po-remoncie" />
                         Po remoncie
                     </label>
-                    <label id="mycieOkien" onClick={e => this.handleChange(e)}>
+                    <label className="no-select" id="mycieOkien" onClick={e => this.handleChange(e)}>
                         <button className={this.state.mycieOkien ? "checked" : ""} id="mycieOkien" name="mycie-okien" onClick="" aria-label="mycie-okien" />
                         Mycie okien
                     </label>
-                    <label id="mycieCisnieniowe" onClick={e => this.handleChange(e)}>
+                    <label className="no-select" id="mycieCisnieniowe" onClick={e => this.handleChange(e)}>
                         <button className={this.state.mycieCisnieniowe ? "checked" : ""} id="mycieCisnieniowe" name="mycie-cisnieniowe" onClick="" aria-label="mycie-cisnieniowe" />
                         Mycie ciśnieniowe
                     </label>
@@ -508,28 +508,28 @@ export default class Kontakt extends React.Component {
                 <textarea id="msg" name="msg" placeholder="Dodatkowe uwagi" value={this.state.msg} onChange={e => this.handleChangeInput(e)} />
                 <div className="usluga">
                     <h4>Zlecam usługę jako:</h4>
-                    <label id="firma" onClick={e => this.handleChangeRatio(e)}>
+                    <label className="no-select"  id="firma" onClick={e => this.handleChangeRatio(e)}>
                         <button className={this.state.firma ? "checked" : ""} id="firma" name="firma" onClick={() => {}} aria-label="firma" />
                         Firma
                     </label>
-                    <label id="osobaPrywatna" onClick={e => this.handleChangeRatio(e)}>
+                    <label className="no-select"  id="osobaPrywatna" onClick={e => this.handleChangeRatio(e)}>
                         <button className={this.state.osobaPrywatna ? "checked" : ""} id="osobaPrywatna" name="osoba-prywatna" onClick="" aria-label="osoba-prywatna" />
                         Osoba prywatna
                     </label>
                 </div>
                 <div className="usluga">
                     <h4>Usługa:</h4>
-                    <label id="jednorazowo" onClick={e => this.handleChangeRatio(e)}>
+                    <label className="no-select"  id="jednorazowo" onClick={e => this.handleChangeRatio(e)}>
                         <button id="jednorazowo" className={this.state.jednorazowo ? "checked" : ""} name="jednorazowo" aria-label="jednorazowo" onClick={e => this.handleChangeRatio(e)} />
                         Jednorazowa
                     </label>
-                    <label id="cyklicznie" onClick={e => this.handleChangeRatio(e)}>
+                    <label className="no-select"  id="cyklicznie" onClick={e => this.handleChangeRatio(e)}>
                         <button className={this.state.cyklicznie ? "checked" : ""} id="cyklicznie" name="cyklicznie" aria-label="cyklicznie" />
                         Cykliczna
                     </label>
                 </div>
                 <div className="politykaPrywatnosci">
-                    <label id="politykaPrywatnosci" onClick={e => this.handleChangeRatio(e)}>
+                    <label className="no-select"  id="politykaPrywatnosci" onClick={e => this.handleChangeRatio(e)}>
                         <button className={this.state.politykaPrywatnosci ? "checkedPolityka" : ""} id="politykaPrywatnosci" name="polityka-prywatnosci" aria-label="polityka-prywatnosci" />
                         Zapoznałem się i akceptuję politykę prywatności
                     </label>
@@ -543,7 +543,7 @@ export default class Kontakt extends React.Component {
                     />
                 </div>
 
-                <button type="submit">Wyślij</button>
+                <button className="no-select" type="submit">Wyślij</button>
 
                 <Modal isOpen={this.state.send} closeTimeoutMS={500} onRequestClose={() => { this.setState({ send: false }) }} portalClassName="formSend">
                     <img className="modalExit" src={require("../../static/img/x.png")} alt="exit" onClick={() => this.setState({ send: false })} />
@@ -555,7 +555,7 @@ export default class Kontakt extends React.Component {
                 </Modal>
             </form>
 
-            <div className="rightDownBtn" onClick={() => { this.setState({ phoneFormOpen: true }) }}>
+            <div className="rightDownBtn no-select" onClick={() => { this.setState({ phoneFormOpen: true }) }}>
                 <h5 className="desktopOnly">Hej!<br/>Zostaw do siebie numer -<br/><span className="bold white">ODDZWONIMY!</span></h5>
                 <img src={require("../../static/img/info-popup-bg.png")} alt="zadzwoń do nas" className="info desktopOnly"/>
                 <img src={require("../../static/img/popup-icon.png")} alt="telefon" className="telefon"/>

@@ -8,14 +8,14 @@
 
 .kontakt h2 {
     text-align: center;
-    font-size: calc(30px + 25 * ((100vw - 300px)/(1000)));
+    font-size: calc(20px + 25 * ((100vw - 300px)/(1000)));
     font-weight: 100;
     text-transform: uppercase;
 }
 
 .kontakt h3 {
     font-weight: 100;
-    font-size: calc(13px + 20 * ((100vw - 300px)/(1000)));
+    font-size: calc(13px + 10 * ((100vw - 300px)/(1000)));
     text-align: center;
     margin-top: 10px;
 }

@@ -99,7 +99,7 @@ const LandingPage = () => {
         <img className="logo" src={require("../../static/img/logo.png")} alt="burski-sprzatanie-logo" />
         <Img imgStyle={{objectPosition: '40% 0%' }} fluid={data.landingPage.childImageSharp.fluid} alt="burski-sprzatanie" />
 
-        <menu>
+        <menu className="no-select">
             <ul>
                 <li>Strona główna</li>
                 <li onClick={() => handleScroll("oferta")}>Oferta</li>

@@ -51,6 +51,69 @@ const Realizacje = () => {
             }
         }
     }
+    realizacje6: file(relativePath: { eq: "realizacje6.JPG" }) {
+        childImageSharp {
+            fluid(maxWidth: 500, maxHeight: 670) {
+                ...GatsbyImageSharpFluid
+            }
+        }
+    }
+    realizacje7: file(relativePath: { eq: "realizacje7.JPG" }) {
+        childImageSharp {
+            fluid(maxWidth: 500, maxHeight: 670) {
+                ...GatsbyImageSharpFluid
+            }
+        }
+    }
+    realizacje8: file(relativePath: { eq: "realizacje8.JPG" }) {
+        childImageSharp {
+            fluid(maxWidth: 500, maxHeight: 670) {
+                ...GatsbyImageSharpFluid
+            }
+        }
+    }
+    realizacje9: file(relativePath: { eq: "realizacje9.JPG" }) {
+        childImageSharp {
+            fluid(maxWidth: 500, maxHeight: 670) {
+                ...GatsbyImageSharpFluid
+            }
+        }
+    }
+     realizacje10: file(relativePath: { eq: "realizacje10.JPG" }) {
+        childImageSharp {
+            fluid(maxWidth: 500, maxHeight: 670) {
+                ...GatsbyImageSharpFluid
+            }
+        }
+    }
+     realizacje11: file(relativePath: { eq: "realizacje11.JPG" }) {
+        childImageSharp {
+            fluid(maxWidth: 500, maxHeight: 670) {
+                ...GatsbyImageSharpFluid
+            }
+        }
+    }
+     realizacje12: file(relativePath: { eq: "realizacje12.JPG" }) {
+        childImageSharp {
+            fluid(maxWidth: 500, maxHeight: 670) {
+                ...GatsbyImageSharpFluid
+            }
+        }
+    }
+     realizacje13: file(relativePath: { eq: "realizacje13.JPG" }) {
+        childImageSharp {
+            fluid(maxWidth: 500, maxHeight: 670) {
+                ...GatsbyImageSharpFluid
+            }
+        }
+    }
+     realizacje14: file(relativePath: { eq: "realizacje14.JPG" }) {
+        childImageSharp {
+            fluid(maxWidth: 500, maxHeight: 670) {
+                ...GatsbyImageSharpFluid
+            }
+        }
+    }
     }
     `);
 
@@ -73,8 +136,6 @@ const Realizacje = () => {
             items: 1
         }
     };
-
-    const [slide, setSlide] = useState(0);
 
     const changeSlide = (swiper) => {
         let index = swiper.activeIndex;
@@ -116,6 +177,33 @@ const Realizacje = () => {
                         <div>
                             <Img fluid={data.realizacje5.childImageSharp.fluid} alt="Realizacje1" />
                         </div>
+                        <div>
+                            <Img fluid={data.realizacje6.childImageSharp.fluid} alt="Realizacje1" />
+                        </div>
+                        <div>
+                            <Img fluid={data.realizacje7.childImageSharp.fluid} alt="Realizacje1" />
+                        </div>
+                        <div>
+                            <Img fluid={data.realizacje8.childImageSharp.fluid} alt="Realizacje1" />
+                        </div>
+                        <div>
+                            <Img fluid={data.realizacje9.childImageSharp.fluid} alt="Realizacje1" />
+                        </div>
+                        <div>
+                            <Img fluid={data.realizacje10.childImageSharp.fluid} alt="Realizacje1" />
+                        </div>
+                        <div>
+                            <Img fluid={data.realizacje11.childImageSharp.fluid} alt="Realizacje1" />
+                        </div>
+                        <div>
+                            <Img fluid={data.realizacje12.childImageSharp.fluid} alt="Realizacje1" />
+                        </div>
+                        <div>
+                            <Img fluid={data.realizacje13.childImageSharp.fluid} alt="Realizacje1" />
+                        </div>
+                        <div>
+                            <Img fluid={data.realizacje14.childImageSharp.fluid} alt="Realizacje1" />
+                        </div>
                     </Carousel>
                 </div>
             </div>
@@ -136,6 +224,33 @@ const Realizacje = () => {
                     </SwiperSlide>
                     <SwiperSlide>
                         <Img fluid={data.realizacje4.childImageSharp.fluid} alt="Realizacje4" />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <Img fluid={data.realizacje6.childImageSharp.fluid} alt="Realizacje4" />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <Img fluid={data.realizacje7.childImageSharp.fluid} alt="Realizacje4" />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <Img fluid={data.realizacje8.childImageSharp.fluid} alt="Realizacje4" />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <Img fluid={data.realizacje9.childImageSharp.fluid} alt="Realizacje4" />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <Img fluid={data.realizacje10.childImageSharp.fluid} alt="Realizacje4" />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <Img fluid={data.realizacje11.childImageSharp.fluid} alt="Realizacje4" />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <Img fluid={data.realizacje12.childImageSharp.fluid} alt="Realizacje4" />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <Img fluid={data.realizacje13.childImageSharp.fluid} alt="Realizacje4" />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <Img fluid={data.realizacje14.childImageSharp.fluid} alt="Realizacje4" />
                     </SwiperSlide>
                 </Swiper>
                 <div style={{display: "flex", justifyContent: "center"}}>
