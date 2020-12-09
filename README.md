@@ -1,5 +1,7 @@
-Website for cleaning company.
+Company website for cleaning company.
 
-Stack: React, Gatsby.
+<b>Stack</b>: React, Gatsby, SASS
 
-Website: https://burskisprzatanie.pl
+<b>Libraries</b>: GSAP, react-helmet, react-recaptcha-v3
+
+Website available at: https://burskisprzatanie.pl
